@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPooledObject {
-    
-    public float speed = 20f;
+
+    public float speed = 30f;
     public int damage = 40;
     public Rigidbody rb;
 
@@ -21,22 +21,28 @@ public class Bullet : MonoBehaviour, IPooledObject {
         else if(GameObject.FindWithTag("Player").transform.localScale.x == -1)
         {
             localVelocity = transform.right * speed * Time.deltaTime;
+
         }
 
         rb.velocity = transform.TransformDirection(localVelocity);
     }
 
-    //void OnTriggerEnter (Collider hitInfo)
-    //{
-    //    EnemyHealth enemy = hitInfo.GetComponent<EnemyHealth>();
 
-    //    if (enemy != null)
-    //    {
-    //        enemy.TakeDamage(damage);
-    //    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
 
-    //    Destroy(gameObject);
-    //}
+        if (collision.transform.tag == "Enemy")
+        {
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+
+            gameObject.SetActive(false);
+        }
+
+    }
 
 
 }
