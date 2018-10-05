@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     bool grounded = false;
     public Transform groundCheck;
     float groundRadius = 0.2f;
+
     public LayerMask whatIsGround;
 
     public float jumpForce = 700f;
@@ -23,10 +24,10 @@ public class PlayerController : MonoBehaviour {
 
         Rigidbody rb = GetComponent<Rigidbody>();
 
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        anim.SetBool("ground", grounded);
+        //grounded = Physics.OverlapSphere(groundCheck.position, groundRadius, whatIsGround);
+        //anim.SetBool("ground", grounded);
 
-        anim.SetFloat("vSpeed", rb.velocity.y);
+        //anim.SetFloat("vSpeed", rb.velocity.y);
 
         float move = Input.GetAxis("Horizontal");
 
@@ -44,8 +45,8 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         Rigidbody rb = GetComponent<Rigidbody>();
 
-        if (grounded && Input.GetButtonDown("Jump")) {
-            anim.SetBool("ground", false);
+        if (Input.GetButtonDown("Jump")) {
+            //anim.SetBool("ground", false);
             rb.AddForce(new Vector2(0, jumpForce));
         }
     }
