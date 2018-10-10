@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiamondCollect : MonoBehaviour {
+public class ItemCollect : MonoBehaviour {
 
     // To be added under Player's component
     // Must have AudioSource with empty clip
@@ -45,7 +45,10 @@ public class DiamondCollect : MonoBehaviour {
     }
 
     public void CollectMeat() {
-        // Health + 1
-    }
+        audioSource.clip = collectMeat;
+        audioSource.Play();
 
+        SendMessage("Heal");
+
+    }
 }

@@ -13,7 +13,7 @@ public class CurrentScore : MonoBehaviour {
     public GameObject plus10;
     // TextMeshPro plus30 to instantiate
     public GameObject plus30;
-    
+
     private int lastHeight;
     private int addScore;
 
@@ -23,7 +23,7 @@ public class CurrentScore : MonoBehaviour {
 
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         HeightScore();
 
     }
@@ -60,12 +60,15 @@ public class CurrentScore : MonoBehaviour {
     private void AppearAndDestroy(string type) {
         GameObject plusScoreText;
 
+        int plusScoreLength = currentScoreText.text.Length - 1;
+        float xPos = 20 + (plusScoreLength * 15);
+
         switch (type) {
             case "Normal":
                 plusScoreText = Instantiate(plus10, currentScoreText.transform.position, Quaternion.identity);
                 plusScoreText.transform.SetParent(currentScoreText.gameObject.transform);
-
-                plusScoreText.transform.localPosition = new Vector3(65f, -50f, 0f);
+                
+                plusScoreText.transform.localPosition = new Vector3(xPos, -50f, 0f);
 
                 Destroy(plusScoreText, 0.5f);
                 break;
@@ -73,8 +76,8 @@ public class CurrentScore : MonoBehaviour {
             case "Special":
                 plusScoreText = Instantiate(plus30, currentScoreText.transform.position, Quaternion.identity);
                 plusScoreText.transform.SetParent(currentScoreText.gameObject.transform);
-
-                plusScoreText.transform.localPosition = new Vector3(65f, -50f, 0f);
+                
+                plusScoreText.transform.localPosition = new Vector3(xPos, -50f, 0f);
 
                 Destroy(plusScoreText, 0.5f);
                 break;
@@ -82,4 +85,5 @@ public class CurrentScore : MonoBehaviour {
         }
 
     }
+    
 }
