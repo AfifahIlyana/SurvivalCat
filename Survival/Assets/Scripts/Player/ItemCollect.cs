@@ -42,6 +42,10 @@ public class ItemCollect : MonoBehaviour {
 
     public void CollectPowerUp() {
         // Invicible for 5 seconds
+        // Play potion pickup audio
+
+        // sendMessage to power up
+
     }
 
     public void CollectMeat() {
