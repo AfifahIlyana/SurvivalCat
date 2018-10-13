@@ -1,24 +1,25 @@
 fileFormatVersion: 2
-guid: 94509628e989e974e9ae0f1fdcb7a08c
+guid: 8bbeb6c89058d4317b584281d74b6812
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Drumstick
-    2100002: Meat
-    2100004: Bone
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Icosphere
+    100000: Base
+    100002: //RootNode
+    100004: Button
+    400000: Base
+    400002: //RootNode
+    400004: Button
+    2100000: Button
+    2100002: Base
+    2300000: Base
+    2300002: Button
+    3300000: Base
+    3300002: Button
+    4300000: Button
+    4300002: Base
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Drumstick
-    second: {fileID: 2100000, guid: 57c3fe76782782d48a98598a23845e87, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
