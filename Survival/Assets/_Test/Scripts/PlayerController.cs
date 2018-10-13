@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour {
         
         if (Input.GetButtonDown("Jump")) {
             //anim.SetBool("ground", false);
-            rb.AddForce(new Vector2(0, jumpForce));
+            rb.AddForce(new Vector2(move, jumpForce));
         }
 
     }

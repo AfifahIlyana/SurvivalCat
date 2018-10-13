@@ -14,6 +14,7 @@ public class Health : MonoBehaviour {
 
     private void UpdateHeart() {
         for (int i = 0; i < heart.Length; i++) {
+            Debug.Log("heart " + heart[i]);
             if (i > currentHeart - 1) {
                 heart[i].SetActive(false);
 
