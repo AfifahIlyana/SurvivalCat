@@ -8,51 +8,35 @@ public class PlayerController : MonoBehaviour
 {
     PlayerMovement m_playerMovement;
     Animator m_animator;
+    Rigidbody m_rigidBody;
 
-    public float maxSpeed = 10f;
-    bool facingRight = true;
+    float m_move;
+    public float m_jumpForce;
 
-    bool grounded = false;
+    bool m_isGrounded = false;
     public Transform groundCheck;
     float groundRadius = 0.2f;
 
     public LayerMask whatIsGround;
 
-    public float jumpForce = 700f;
-
 	void Start () 
     {
         m_playerMovement = GetComponent<PlayerMovement>();
+        m_rigidBody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
 	}
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
-
-        Rigidbody rb = GetComponent<Rigidbody>();
-
         //grounded = Physics.OverlapSphere(groundCheck.position, groundRadius, whatIsGround);
         //anim.SetBool("ground", grounded);
-
+        //
         //anim.SetFloat("vSpeed", rb.velocity.y);
 
-        float move = Input.GetAxis("Horizontal");
+        m_move = GetAxis().x;
 
-        m_animator.SetFloat("speed", Mathf.Abs(move));
-        
-        rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
-
-        if (move > 0 && !facingRight)
-            Flip();
-        else if (move < 0 && facingRight)
-            Flip();
-        
-        if (Input.GetButtonDown("Jump")) 
-        {
-            //anim.SetBool("ground", false);
-            rb.AddForce(new Vector2(move, jumpForce));
-        }
-
+        m_playerMovement.Move(m_rigidBody, m_move, m_animator);
+        m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
 
     private void Update()
@@ -60,11 +44,8 @@ public class PlayerController : MonoBehaviour
         m_playerMovement.RotatePlayer();
     }
 
-    void Flip() {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+    Vector3 GetAxis ()
+    {
+        return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     }
-    
 }
