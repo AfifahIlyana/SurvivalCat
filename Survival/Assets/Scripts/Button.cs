@@ -11,6 +11,14 @@ public class Button : MonoBehaviour {
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.GetComponent<PlayerMovement>().RotatePlayerNow();
+        }
+    }
+
     private void OnTriggerStay(Collider other) {
         if (other.tag == "Player") {
 

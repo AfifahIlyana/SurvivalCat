@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(move));
 
         Vector3 moves = CheckRotationDirection(move);
-        rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, moves.y, moves.z * m_maxSpeed);
+        rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, rigidBody.velocity.y, moves.z * m_maxSpeed);
 
         if (move > 0 && !m_isFacingRight)
         {
@@ -47,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Rotate(-1f, 0);
         }
+    }
+
+    public void RotatePlayerNow()
+    {
+        Rotate(1f, 1);
     }
 
     private void Rotate(float dir, int i)
