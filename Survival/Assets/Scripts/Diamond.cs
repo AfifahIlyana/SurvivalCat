@@ -9,7 +9,6 @@ public class Diamond : MonoBehaviour {
     // Destroy gameobject
 
     private void OnTriggerEnter(Collider other) {
-
         if (other.gameObject.tag == "Player") {
             ItemCollect diamondCollect = other.gameObject.GetComponent<ItemCollect>();
             diamondCollect.CollectDiamond();
