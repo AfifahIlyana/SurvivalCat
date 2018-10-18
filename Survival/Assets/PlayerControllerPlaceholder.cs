@@ -27,25 +27,16 @@ public class PlayerControllerPlaceholder : MonoBehaviour {
         //anim.SetBool("ground", grounded);
 
         anim.SetFloat("vSpeed", rb2d.velocity.y);
-        
+
         float move = Input.GetAxis("Horizontal");
 
-        if (move != 0) {
-
-            anim.SetFloat("speed", Mathf.Abs(move));
-            rb2d.velocity = new Vector2(move * maxSpeed, rb2d.velocity.y);
-
-            anim.SetBool("isWalking", true);
-
-        } else {
-
-            anim.SetBool("isWalking", false);
-
-        }
+        anim.SetFloat("speed", Mathf.Abs(move));
         
-        if (move < 0 && !facingRight)
+        rb2d.velocity = new Vector2(move * maxSpeed, rb2d.velocity.y);
+
+        if (move > 0 && !facingRight)
             Flip();
-        else if (move > 0 && facingRight)
+        else if (move < 0 && facingRight)
             Flip();
 
     }
