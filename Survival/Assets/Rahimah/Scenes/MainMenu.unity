@@ -435,7 +435,7 @@ Prefab:
         type: 2}
       propertyPath: Characters.Array.data[0]
       value: 
-      objectReference: {fileID: 1116042703899002, guid: eb28091bbafe31d4eb63c949a10eafe4,
+      objectReference: {fileID: 1656193101172496, guid: 4e349a4048e07bb428bcebdaf247e959,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1d7964751b748542a14cd74e76481f9, type: 2}
@@ -522,7 +522,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -706,7 +706,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -747,6 +747,56 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427229577}
   m_CullTransparentMesh: 0
+--- !u!1001 &1534975376
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683502940187790, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091107041996148, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091107041996148, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e349a4048e07bb428bcebdaf247e959, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1554451865
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +878,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1058,7 +1108,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1604507064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44485474, y: -3.3141327, z: 0}
+  m_LocalPosition: {x: 0.91, y: -3.22, z: 0}
   m_LocalScale: {x: 0.9671054, y: 0.9671054, z: 0.9671054}
   m_Children: []
   m_Father: {fileID: 0}
