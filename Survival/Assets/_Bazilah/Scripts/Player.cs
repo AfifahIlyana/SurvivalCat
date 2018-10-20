@@ -38,36 +38,36 @@ public class Player: MonoBehaviour
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    //anim.SetBool("ground", false);
-        //    Vector3 moves = CheckRotationDirection(move);
-        //    rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
-        //}
+        if (Input.GetButtonDown("Jump"))
+        {
+            //anim.SetBool("ground", false);
+            Vector3 moves = CheckRotationDirection(move);
+            rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
+        }
 
         //swipe up for 
-        foreach (Touch touch in Input.touches)
-        {
-            if (touch.phase == TouchPhase.Began)
-            {
-                firstFinger = touch.position;
-                lastFinger = touch.position;
-            }
-            if (touch.phase == TouchPhase.Moved)
-            {
-                lastFinger = touch.position;
-            }
-            if (touch.phase == TouchPhase.Ended)
-            {
-                if ((firstFinger.y - lastFinger.y) < -80) // up swipe
-                {
-                    Vector3 moves = CheckRotationDirection(move);
-                    rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
+        //foreach (Touch touch in Input.touches)
+        //{
+        //    if (touch.phase == TouchPhase.Began)
+        //    {
+        //        firstFinger = touch.position;
+        //        lastFinger = touch.position;
+        //    }
+        //    if (touch.phase == TouchPhase.Moved)
+        //    {
+        //        lastFinger = touch.position;
+        //    }
+        //    if (touch.phase == TouchPhase.Ended)
+        //    {
+        //        if ((firstFinger.y - lastFinger.y) < -80) // up swipe
+        //        {
+        //            Vector3 moves = CheckRotationDirection(move);
+        //            rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
 
-                }
+        //        }
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void RotatePlayer()

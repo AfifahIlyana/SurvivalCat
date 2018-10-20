@@ -5,13 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerInput : MonoBehaviour
 {
+    public float gravityScale = 1.0f;
     public Joystick joystick;
     Animator m_animator;
     Player m_playerMovement;
     Rigidbody m_rigidBody;
 
     float m_move;
-    public float m_jumpForce;
+    public float m_jumpForce = 500f;
 
     bool m_isGrounded = false;
     public Transform groundCheck;
@@ -40,6 +41,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+        transform.Translate(Vector3.down * gravityScale * Time.deltaTime);
         m_playerMovement.RotatePlayer();
 
         if (Input.GetButtonDown("Fire1"))
