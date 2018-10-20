@@ -20,6 +20,8 @@ public class Button : MonoBehaviour {
             // Trigger tower rotation
             // Enable character control
 
+            other.GetComponent<PlayerMovement>().RotatePlayerNow();
+
         }
     }
 
