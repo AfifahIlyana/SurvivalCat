@@ -9,22 +9,31 @@ public class PlayerMovement : MonoBehaviour
 
     public float m_maxSpeed = 10f;
     private bool m_isFacingRight = true;
+    private Animator anim;
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         animator.SetFloat("speed", Mathf.Abs(move));
-
+        anim = GetComponent<Animator>();
+        
         Vector3 moves = CheckRotationDirection(move);
-        rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, rigidBody.velocity.y, moves.z * m_maxSpeed);
 
-        if (move > 0 && !m_isFacingRight)
-        {
-            Flip();
+        if (move != 0f) {
+
+            anim.SetBool("isWalking", true);
+            rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, rigidBody.velocity.y, moves.z * m_maxSpeed);
+
+            if (move < 0 && !m_isFacingRight) {
+                Flip();
+            } else if (move > 0 && m_isFacingRight) {
+                Flip();
+            }
+
+        } else {
+            anim.SetBool("isWalking", false);
+
         }
-        else if (move < 0 && m_isFacingRight)
-        {
-            Flip();
-        }
+
     }
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
@@ -49,8 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void RotatePlayerNow()
-    {
+    public void RotatePlayerNow() {
         Rotate(1f, 1);
     }
 
