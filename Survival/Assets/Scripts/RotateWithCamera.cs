@@ -6,15 +6,30 @@ public class RotateWithCamera : MonoBehaviour
 {
 
     public Transform m_player;
+    public bool m_position;
+    public bool m_rotation;
 
 	void Start () 
     {
-        transform.rotation = m_player.transform.rotation;
-		
+        if (m_position)
+        {
+            transform.position = m_player.transform.position;
+        }
+        if (m_rotation)
+        {
+            transform.rotation = m_player.transform.rotation;
+        }
 	}
 	
 	void Update () 
     {
-        transform.rotation = m_player.transform.rotation;
+        if (m_position)
+        {
+            transform.position = m_player.transform.position;
+        }
+        if (m_rotation)
+        {
+            transform.rotation = m_player.transform.rotation;
+        }
 	}
 }

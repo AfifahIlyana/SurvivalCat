@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
             anim.SetBool("isWalking", true);
             rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, rigidBody.velocity.y, moves.z * m_maxSpeed);
+            //rigidBody.velocity += Vector3.right * move;
 
             if (move < 0 && !m_isFacingRight) {
                 Flip();
