@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float m_maxSpeed = 10f;
     private bool m_isFacingRight = true;
+    private float m_rotate;
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
@@ -72,15 +73,41 @@ public class PlayerMovement : MonoBehaviour
             m_initialRotation = transform.rotation.eulerAngles.y;
         }
 
-        transform.Rotate(Vector3.up, 90f * dir * Time.deltaTime, Space.World);
+        //RotateTest1(dir);
+
+        //RotateTest2(dir);
+
+        RotateTest3();
+
 
         if (Mathf.Abs(m_initialRotation - transform.rotation.eulerAngles.y) >= 90f)
         {
             m_isRotating[i] = false;
-            //m_initialRotation += 90f * dir;
-            //transform.rotation = Quaternion.AngleAxis(m_initialRotation + (dir *90f), Vector3.up);
-            //transform.eulerAngles = new Vector3(transform.eulerAngles.x, m_initialRotation, transform.eulerAngles.z);
         }
+    }
+
+
+
+    private void RotateTest1(float dir)
+    {
+        transform.Rotate(Vector3.up, 90f * dir * Time.fixedDeltaTime, Space.World);
+    }
+
+    private void RotateTest2(float dir)
+    {
+        //Vector3 relativePos = (target.position + new Vector3(0, 1.5f, 0)) - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.left * dir);
+
+        Quaternion current = transform.localRotation;
+
+        transform.localRotation = Quaternion.Slerp(current, rotation, Time.deltaTime);
+    }
+
+    private void RotateTest3()
+    {
+        transform.localRotation = Quaternion.Euler(Vector3.up * m_rotate);
+
+        m_rotate++;
     }
 
     void Flip()
