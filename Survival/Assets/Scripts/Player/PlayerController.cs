@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour 
 {
     PlayerMovement m_playerMovement;
@@ -12,12 +13,6 @@ public class PlayerController : MonoBehaviour
 
     float m_move;
     public float m_jumpForce;
-
-    bool m_isGrounded = false;
-    public Transform groundCheck;
-    float groundRadius = 0.2f;
-
-    public LayerMask whatIsGround;
 
 	void Start () 
     {
@@ -28,24 +23,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //grounded = Physics.OverlapSphere(groundCheck.position, groundRadius, whatIsGround);
-        //anim.SetBool("ground", grounded);
-        //
-        //anim.SetFloat("vSpeed", rb.velocity.y);
-
-        m_move = GetAxis().x;
-
+        m_move = Utility.GetAxis().x;
         m_playerMovement.Move(m_rigidBody, m_move, m_animator);
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
 
-    private void Update()
+    void Update()
     {
         m_playerMovement.RotatePlayer();
-    }
-
-    Vector3 GetAxis ()
-    {
-        return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     }
 }

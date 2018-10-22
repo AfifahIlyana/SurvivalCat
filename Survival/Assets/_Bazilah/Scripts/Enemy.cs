@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-
-    public CharacterController enemyController;
+    
+    public CharacterController controller;
     public float currentSpeed;
-
     public int health = 100;
-    public GameObject deathEffect;
 
     private Health playerHealth;
     private Animator animator;
@@ -19,7 +17,6 @@ public class Enemy : MonoBehaviour {
     public void Start()
     {
         animator = GetComponent<Animator>();
-        enemyController = GetComponent<CharacterController>();
     }
 
 
@@ -28,13 +25,27 @@ public class Enemy : MonoBehaviour {
         transform.Translate(direction * currentSpeed * Time.deltaTime);
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.gameObject.tag == "Edge")
+        {
+            Debug.Log("The edge is triggered");
+
+            //turn around
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+            direction.x *= -1;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Edge")
         {
             Debug.Log("The edge is triggered");
-            ////turn around
+
+            //turn around
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;

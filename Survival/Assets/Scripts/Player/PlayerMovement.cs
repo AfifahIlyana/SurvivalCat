@@ -9,28 +9,32 @@ public class PlayerMovement : MonoBehaviour
 
     public float m_maxSpeed = 10f;
     private bool m_isFacingRight = true;
-    private Animator anim;
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         animator.SetFloat("speed", Mathf.Abs(move));
-        anim = GetComponent<Animator>();
-        
-        Vector3 moves = CheckRotationDirection(move);
 
-        if (move != 0f) {
+        if (move != 0f) 
+        {
 
-            anim.SetBool("isWalking", true);
-            rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, rigidBody.velocity.y, moves.z * m_maxSpeed);
+            animator.SetBool("isWalking", true);
 
-            if (move < 0 && !m_isFacingRight) {
+            var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
+            localVelocity.x = move * m_maxSpeed;
+            rigidBody.velocity = transform.TransformDirection(localVelocity);
+
+            if (move < 0 && !m_isFacingRight) 
+            {
                 Flip();
-            } else if (move > 0 && m_isFacingRight) {
+            } else if (move > 0 && m_isFacingRight) 
+            {
                 Flip();
             }
 
-        } else {
-            anim.SetBool("isWalking", false);
+        } 
+        else 
+        {
+            animator.SetBool("isWalking", false);
 
         }
 
@@ -40,9 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            //anim.SetBool("ground", false);
-            Vector3 moves = CheckRotationDirection(move);
-            rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
+            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
         }
     }
 
@@ -79,31 +81,6 @@ public class PlayerMovement : MonoBehaviour
             //transform.rotation = Quaternion.AngleAxis(m_initialRotation + (dir *90f), Vector3.up);
             //transform.eulerAngles = new Vector3(transform.eulerAngles.x, m_initialRotation, transform.eulerAngles.z);
         }
-    }
-
-    private Vector3 CheckRotationDirection(float move)
-    {
-        if (transform.rotation.eulerAngles.y <= 45f && transform.rotation.eulerAngles.y >= -45f)
-        {
-            Debug.Log("Positive x");
-            return new Vector3(move, 0f, 0f);
-        }
-        else if (transform.rotation.eulerAngles.y >= 45f && transform.rotation.eulerAngles.y <= 135)
-        {
-            Debug.Log("Negative x");
-            return new Vector3(0f, 0f, -move);
-        }
-        else if(transform.rotation.eulerAngles.y >= 135f && transform.rotation.eulerAngles.y <= 275f)
-        {
-            Debug.Log("Positive z");
-            return new Vector3(-move, 0f, 0f);
-        }
-        else if (transform.rotation.eulerAngles.y <= -45f && transform.rotation.eulerAngles.y >= -135f)
-        {
-            Debug.Log("Negative z");
-            return new Vector3(0f, 0f, move);
-        }
-        return Vector3.zero;
     }
 
     void Flip()
