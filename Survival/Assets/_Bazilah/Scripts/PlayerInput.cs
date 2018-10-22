@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerInput : MonoBehaviour
 {
-    public float gravityScale = 1.0f;
     public Joystick joystick;
+
     Animator m_animator;
     Player m_playerMovement;
     Rigidbody m_rigidBody;
@@ -14,11 +14,6 @@ public class PlayerInput : MonoBehaviour
     float m_move;
     public float m_jumpForce = 500f;
 
-    bool m_isGrounded = false;
-    public Transform groundCheck;
-    float groundRadius = 0.2f;
-
-    public LayerMask whatIsGround;
 
     void Start()
     {
@@ -29,37 +24,70 @@ public class PlayerInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        //grounded = Physics.OverlapSphere(groundCheck.position, groundRadius, whatIsGround);
-        //anim.SetBool("ground", grounded);
-        //
-        //anim.SetFloat("vSpeed", rb.velocity.y);
+        //Debug.Log("b"+joystick.Horizontal);
 
-        m_move = GetAxis().x;
+        //m_move = Utility.GetAxis().x;
+        //m_move = Utility.GetAxisJoystick(joystick).x;
+        //Debug.Log("b "+m_move);
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            Touch touch = Input.GetTouch(i);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (touch.position.x > (Screen.width / 2))
+                {
+                    m_move = 1f; //moves player right
+                }
+
+                if (touch.position.x < (Screen.width / 2))
+                {
+                    m_move = -1f; //moves player left
+                }
+            }
+        }
+
         m_playerMovement.Move(m_rigidBody, m_move, m_animator);
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
+
+
     }
 
     private void Update()
     {
-        transform.Translate(Vector3.down * gravityScale * Time.deltaTime);
         m_playerMovement.RotatePlayer();
 
-        if (Input.GetButtonDown("Fire1"))
+        for (var i = 0; i < Input.touchCount; ++i)
         {
-            m_playerMovement.Shoot();
-            m_animator.SetBool("isShooting", true);
-        } else
-        {
-            m_animator.SetBool("isShooting", false);
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
+            {
+                if (Input.GetTouch(i).tapCount == 2)
+                {
+                    Debug.Log("Double tap..");
+                    m_playerMovement.Shoot();
+                    m_animator.SetBool("isShooting", true);
+                } else {
+                    m_animator.SetBool("isShooting", false);
+                }
+            }
         }
+
+
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    m_playerMovement.Shoot();
+        //    m_animator.SetBool("isShooting", true);
+        //} else
+        //{
+        //    m_animator.SetBool("isShooting", false);
+        //}
 
       
     }
 
-    Vector3 GetAxis()
+    public Vector3 GetAxisJoystick(Joystick joystick)
     {
-        return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //return new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+        return new Vector3(joystick.Horizontal, 0, joystick.Vertical);
     }
 }
 

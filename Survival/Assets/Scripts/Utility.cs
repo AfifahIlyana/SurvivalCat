@@ -8,4 +8,10 @@ public class Utility : MonoBehaviour
     {
         return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     }
+
+    public static Vector3 GetAxisJoystick(Joystick joystick)
+    {
+        Debug.Log("a"+joystick.Horizontal);
+        return new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+    }
 }
