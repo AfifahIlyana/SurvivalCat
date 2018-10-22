@@ -45,7 +45,7 @@ public class Player: MonoBehaviour
             rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
         }
 
-        //swipe up for 
+        //swipe up for jumping
         //foreach (Touch touch in Input.touches)
         //{
         //    if (touch.phase == TouchPhase.Began)
