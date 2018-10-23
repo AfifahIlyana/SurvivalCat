@@ -45,6 +45,9 @@ public class Health : MonoBehaviour {
 
             // trigger gameover animation
 
+            GameOver gameover = GetComponent<GameOver>();
+            gameover.TriggerGameOver();
+
         }
 
         UpdateHeart();
