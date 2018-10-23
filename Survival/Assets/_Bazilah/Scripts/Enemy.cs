@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     
-    public CharacterController controller;
     public float currentSpeed;
     public int health = 100;
 

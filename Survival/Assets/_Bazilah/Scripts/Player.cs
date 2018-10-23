@@ -22,7 +22,7 @@ public class Player: MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(move));
 
         var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-        localVelocity.x = move * m_maxSpeed * Time.deltaTime;
+        localVelocity.x = move * m_maxSpeed;
         rigidBody.velocity = transform.TransformDirection(localVelocity);
 
 
