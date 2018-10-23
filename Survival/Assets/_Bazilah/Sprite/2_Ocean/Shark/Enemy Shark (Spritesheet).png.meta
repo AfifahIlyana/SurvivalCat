@@ -113,18 +113,25 @@ TextureImporter:
       name: Enemy Shark (Spritesheet)_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 460
-        width: 406
-        height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 375
+        y: 170
+        width: 631
+        height: 496
+      alignment: 9
+      pivot: {x: 0.5007924, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -311, y: -243}
+        - {x: -311, y: -153}
+        - {x: -311, y: 55}
+        - {x: -99, y: 243}
+        - {x: 302, y: 243}
+        - {x: 310, y: -240}
+        - {x: 20, y: -243}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a5be23bbf82b425fae1e466c4442ff0
+      spriteID: 968f6448b6847499abdf5bac6f086c09
       vertices: []
       indices: 
       edges: []
@@ -133,18 +140,18 @@ TextureImporter:
       name: Enemy Shark (Spritesheet)_1
       rect:
         serializedVersion: 2
-        x: 380
-        y: 175
-        width: 622
-        height: 486
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 119
+        y: 341
+        width: 175
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70c0fc375118e48fcabbd954b343b814
+      spriteID: 23603eb0449a849bea64d76dbd5e7c36
       vertices: []
       indices: 
       edges: []
@@ -153,18 +160,18 @@ TextureImporter:
       name: Enemy Shark (Spritesheet)_2
       rect:
         serializedVersion: 2
-        x: 124
-        y: 346
-        width: 165
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 170
+        y: 181
+        width: 182.99997
+        height: 126
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1114e9af081cd4731aa6eff02b6dd99d
+      spriteID: dc6566d11b8c345fc9cadaa5c2ef2d6f
       vertices: []
       indices: 
       edges: []
@@ -173,18 +180,23 @@ TextureImporter:
       name: Enemy Shark (Spritesheet)_3
       rect:
         serializedVersion: 2
-        x: 175
-        y: 186
-        width: 173
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+        x: 29.000015
+        y: 452.00003
+        width: 427
+        height: 210.99997
+      alignment: 9
+      pivot: {x: 0.50117093, y: 0.5308056}
+      border: {x: 0, y: 0, z: 8, w: 0}
+      outline:
+      - - {x: -159, y: -107}
+        - {x: -209, y: -8}
+        - {x: -165, y: 75}
+        - {x: 204, y: 94}
+        - {x: 208, y: -79}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34598017e840440cfba73069581a9eef
+      spriteID: def545694ea67431caf23e1cabeca9a6
       vertices: []
       indices: 
       edges: []
@@ -192,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fa10f724d895d4f6381d0dd738db4cc9
+    spriteID: 08ff848f52ec842ab8b89dc3653b505c
     vertices: []
     indices: 
     edges: []
@@ -200,6 +212,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 
+  userData: 636758772830000000
   assetBundleName: 
   assetBundleVariant: 
