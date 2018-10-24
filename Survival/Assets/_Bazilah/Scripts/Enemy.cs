@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     
-    public CharacterController controller;
     public float currentSpeed;
     public int health = 100;
 
@@ -25,9 +24,9 @@ public class Enemy : MonoBehaviour {
         transform.Translate(direction * currentSpeed * Time.deltaTime);
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnTriggerEnter(Collider other)
     {
-        if (hit.collider.gameObject.tag == "Edge")
+        if (other.gameObject.tag == "Edge")
         {
             Debug.Log("The edge is triggered");
 
@@ -36,22 +35,10 @@ public class Enemy : MonoBehaviour {
             theScale.x *= -1;
             transform.localScale = theScale;
             direction.x *= -1;
-        }
+        } 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Edge")
-        {
-            Debug.Log("The edge is triggered");
-
-            //turn around
-            Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
-            transform.localScale = theScale;
-            direction.x *= -1;
-        }
-    }
+  
 
 
     public void TakeDamage(int damage)

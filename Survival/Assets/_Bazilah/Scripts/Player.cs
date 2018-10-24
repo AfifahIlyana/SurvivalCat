@@ -18,14 +18,16 @@ public class Player: MonoBehaviour
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
+        //Debug.Log(move);
         animator.SetFloat("speed", Mathf.Abs(move));
 
-        Vector3 moves = CheckRotationDirection(move);
-        rigidBody.velocity = new Vector3(moves.x * m_maxSpeed, moves.y, moves.z * m_maxSpeed);
+        var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
+        localVelocity.x = move * m_maxSpeed;
+        rigidBody.velocity = transform.TransformDirection(localVelocity);
+
 
         if (move > 0 && !m_isFacingRight)
         {
-            
             Flip();
         }
         else if (move < 0 && m_isFacingRight)
@@ -38,38 +40,36 @@ public class Player: MonoBehaviour
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            //anim.SetBool("ground", false);
-            Vector3 moves = CheckRotationDirection(move);
-            rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+        //}
 
         //swipe up for jumping
-        //foreach (Touch touch in Input.touches)
-        //{
-        //    if (touch.phase == TouchPhase.Began)
-        //    {
-        //        firstFinger = touch.position;
-        //        lastFinger = touch.position;
-        //    }
-        //    if (touch.phase == TouchPhase.Moved)
-        //    {
-        //        lastFinger = touch.position;
-        //    }
-        //    if (touch.phase == TouchPhase.Ended)
-        //    {
-        //        if ((firstFinger.y - lastFinger.y) < -80) // up swipe
-        //        {
-        //            Vector3 moves = CheckRotationDirection(move);
-        //            rigidBody.AddForce(new Vector3(moves.x * m_maxSpeed, jumpForce, moves.z * m_maxSpeed));
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                firstFinger = touch.position;
+                lastFinger = touch.position;
+            }
+            if (touch.phase == TouchPhase.Moved)
+            {
+                lastFinger = touch.position;
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if ((firstFinger.y - lastFinger.y) < -80) // up swipe
+                {
+                    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
 
-        //        }
+                }
 
-        //    }
-        //}
+            }
+        }
     }
 
+    //test the rotation 
     public void RotatePlayer()
     {
         if (Input.GetKeyDown(KeyCode.Q) || m_isRotating[1])
@@ -99,31 +99,6 @@ public class Player: MonoBehaviour
             //transform.rotation = Quaternion.AngleAxis(m_initialRotation + (dir *90f), Vector3.up);
             //transform.eulerAngles = new Vector3(transform.eulerAngles.x, m_initialRotation, transform.eulerAngles.z);
         }
-    }
-
-    private Vector3 CheckRotationDirection(float move)
-    {
-        if (transform.rotation.eulerAngles.y <= 45f && transform.rotation.eulerAngles.y >= -45f)
-        {
-            Debug.Log("Positive x");
-            return new Vector3(move, 0f, 0f);
-        }
-        else if (transform.rotation.eulerAngles.y >= 45f && transform.rotation.eulerAngles.y <= 135)
-        {
-            Debug.Log("Negative x");
-            return new Vector3(0f, 0f, -move);
-        }
-        else if (transform.rotation.eulerAngles.y >= 135f && transform.rotation.eulerAngles.y <= 275f)
-        {
-            Debug.Log("Positive z");
-            return new Vector3(-move, 0f, 0f);
-        }
-        else if (transform.rotation.eulerAngles.y <= -45f && transform.rotation.eulerAngles.y >= -135f)
-        {
-            Debug.Log("Negative z");
-            return new Vector3(0f, 0f, move);
-        }
-        return Vector3.zero;
     }
 
     void Flip()
