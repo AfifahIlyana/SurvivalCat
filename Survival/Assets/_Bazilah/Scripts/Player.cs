@@ -16,15 +16,15 @@ public class Player: MonoBehaviour
     public float m_maxSpeed = 10f;
     private bool m_isFacingRight = true;
 
+
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         //Debug.Log(move);
         animator.SetFloat("speed", Mathf.Abs(move));
 
         var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-        localVelocity.x = move * m_maxSpeed;
+        localVelocity.x = move * m_maxSpeed * Time.deltaTime;
         rigidBody.velocity = transform.TransformDirection(localVelocity);
-
 
         if (move > 0 && !m_isFacingRight)
         {

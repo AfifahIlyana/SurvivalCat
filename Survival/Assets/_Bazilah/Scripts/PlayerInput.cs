@@ -14,13 +14,9 @@ public class PlayerInput : MonoBehaviour
     float m_move;
     public float m_jumpForce = 500f;
 
-    private float timePressed = 0f;
-    private float timeLastPressed = 0f;
-    public float timeDelayThreshold = 1f;
-
     void Start()
     {
-        Input.multiTouchEnabled = true;
+        
         m_playerMovement = GetComponent<Player>();
         m_rigidBody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
@@ -31,7 +27,7 @@ public class PlayerInput : MonoBehaviour
         //m_move = Utility.GetAxis().x;
         //m_move = Utility.GetAxisJoystick(joystick).x;
 
-        m_playerMovement.Move(m_rigidBody, m_move, m_animator);
+        m_playerMovement.Move(m_rigidBody, m_move * Time.deltaTime, m_animator);
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
 
 
@@ -68,6 +64,7 @@ public class PlayerInput : MonoBehaviour
 
     void PlayerTouchMovement()
     {
+
         for (int i = 0; i < Input.touchCount; i++)
         {
             Touch touch = Input.GetTouch(i);
@@ -77,7 +74,9 @@ public class PlayerInput : MonoBehaviour
 
                 if (touch.position.x > (Screen.width / 2))
                 {
+                    
                     m_move = 1f; //moves player right
+                   
                 }
 
                 if (touch.position.x < (Screen.width / 2))
@@ -85,11 +84,6 @@ public class PlayerInput : MonoBehaviour
                     m_move = -1f; //moves player left
                 }
 
-                //when it double tap, the player stop walking and giving the chance to shoot
-                if (touch.tapCount == 2)
-                {
-                    m_move = 0f;
-                }
             }
 
             if (touch.phase == TouchPhase.Ended)
