@@ -15,13 +15,14 @@ public class Bullet : MonoBehaviour {
         rb.velocity = transform.forward * speed;
     }
 
+
     void OnTriggerEnter (Collider hitInfo)
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        Health enemyHealth = hitInfo.GetComponent<Health>();
 
-        if (enemy != null)
+        if (enemyHealth != null)
         {
-            enemy.TakeDamage(damage);
+            enemyHealth.TakeDamageEnemy(damage);
         }
 
         Destroy(gameObject);
