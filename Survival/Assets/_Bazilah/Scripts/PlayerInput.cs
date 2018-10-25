@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerInput : MonoBehaviour
 {
     public Button shootButton;
+
     Animator m_animator;
     Player m_playerMovement;
     Rigidbody m_rigidBody;
@@ -16,6 +17,7 @@ public class PlayerInput : MonoBehaviour
 
     void Start()
     {
+        
         m_playerMovement = GetComponent<Player>();
         m_rigidBody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
@@ -35,7 +37,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-
+       
         m_playerMovement.RotatePlayer();
         PlayerTouchMovement();
     }
@@ -75,7 +77,7 @@ public class PlayerInput : MonoBehaviour
     }
 
 
-
+   
   
 }
 
