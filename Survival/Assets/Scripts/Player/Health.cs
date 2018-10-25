@@ -54,8 +54,18 @@ public class Health : MonoBehaviour {
         
     }
 
-    private void KnockBack() {
+    public void TakeDamageEnemy(int damage)
+    {
+        Enemy.health -= damage;
 
+        if (Enemy.health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    private void KnockBack() {
 
     }
 
