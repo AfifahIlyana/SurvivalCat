@@ -45,7 +45,7 @@ public class Health : MonoBehaviour {
 
             // trigger gameover animation
 
-            GameOver gameover = GetComponent<GameOver>();
+            GameOver gameover = GameObject.FindGameObjectWithTag("GameOverTrigger").GetComponent<GameOver>();
             gameover.TriggerGameOver();
 
         }
