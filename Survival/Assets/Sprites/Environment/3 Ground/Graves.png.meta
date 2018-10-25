@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 56cd785ae24f53945b1d1001cdea3980
+guid: 7f60f3c5036fdfa4cbbc923b098a0613
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Ghost_head
-    21300002: Ghost_LHand
-    21300004: Ghost_Body
-    21300006: Ghost_RHand
-    21300008: Ghost_Head
+    21300000: Graves_0
+    21300002: Graves_1
+    21300004: Graves_2
+    21300006: Graves_3
+    21300008: Graves_4
+    21300010: Graves_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,6 +87,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -100,81 +112,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost_Head
+      name: Graves_0
       rect:
         serializedVersion: 2
-        x: 31.620216
-        y: 369.81412
-        width: 307.89218
-        height: 290.90213
-      alignment: 9
-      pivot: {x: 0.49816072, y: 0.49221325}
+        x: 477
+        y: 180
+        width: 538
+        height: 992
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f93a924a7343fa8449b2f26828fb3442
+      spriteID: c72b8b568e4a21144b8f09af138a7309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_LHand
+      name: Graves_1
       rect:
         serializedVersion: 2
-        x: 418.02084
-        y: 436.54898
-        width: 90.095184
-        height: 114.29324
-      alignment: 9
-      pivot: {x: 0.4936907, y: 0.5026633}
+        x: 1272
+        y: 1007
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ef61a64414cc8f429474aa36d0d51b4
+      spriteID: 881fd84734c48514ebeb96f1e4824ebd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Body
+      name: Graves_2
       rect:
         serializedVersion: 2
-        x: 73.28339
-        y: 111.61508
-        width: 235.46317
-        height: 244.12067
-      alignment: 9
-      pivot: {x: 0.5232946, y: 0.49723327}
+        x: 1300
+        y: 189
+        width: 515
+        height: 970
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd92633c2175d2f4e8ba67c7d4d71a92
+      spriteID: 1b47e278daa86ae4f8d06afd7a263f70
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_RHand
+      name: Graves_3
       rect:
         serializedVersion: 2
-        x: 408.82715
-        y: 223.67711
-        width: 107.03125
-        height: 114.54939
-      alignment: 9
-      pivot: {x: 0.48278284, y: 0.47423115}
+        x: 2060
+        y: 176
+        width: 499
+        height: 1051
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36fac8553c491544faf158ffceba78b8
+      spriteID: 89ce60f69d1fd2e439d599ab655e01c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graves_4
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 896
+        width: 20
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f8c7fd3e486bb4fbbfda764e8aeb69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graves_5
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 585
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed14d1bf4c55614ea53e204bf29f6d3
       vertices: []
       indices: 
       edges: []
@@ -182,7 +234,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3693f284d4e2adf4c81168dc6eaae8d5
+    spriteID: a96d80b298cd9664aae91bc9f223b9b8
     vertices: []
     indices: 
     edges: []
@@ -190,6 +242,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636760319910046039
+  userData: 
   assetBundleName: 
   assetBundleVariant: 
