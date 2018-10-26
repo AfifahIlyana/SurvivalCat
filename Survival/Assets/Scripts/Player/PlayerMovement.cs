@@ -10,6 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float m_maxSpeed = 10f;
     private bool m_isFacingRight = true;
     private float m_rotate;
+    Quaternion m_targetRotation;
+
+    [SerializeField]
+    private Transform m_front;
+    [SerializeField]
+    private Transform m_right;
+    [SerializeField]
+    private Transform m_left;
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
@@ -61,6 +69,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void ActivateRotatePlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) || m_isRotating[1])
+        {
+            //m_isRotating[1] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(90, Vector3.up);
+        }
+        else if (Input.GetKeyDown(KeyCode.E) || m_isRotating[0])
+        {
+            //m_isRotating[0] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(-90, Vector3.up);
+        }
+    }
+
     public void RotatePlayerNow() {
         Rotate(1f, 1);
     }
@@ -77,7 +101,9 @@ public class PlayerMovement : MonoBehaviour
 
         //RotateTest2(dir);
 
-        RotateTest3();
+        //RotateTest3();
+
+        RotateTest4(dir);
 
 
         if (Mathf.Abs(m_initialRotation - transform.rotation.eulerAngles.y) >= 90f)
@@ -85,8 +111,6 @@ public class PlayerMovement : MonoBehaviour
             m_isRotating[i] = false;
         }
     }
-
-
 
     private void RotateTest1(float dir)
     {
@@ -108,6 +132,17 @@ public class PlayerMovement : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.up * m_rotate);
 
         m_rotate++;
+    }
+
+    private void RotateTest4(float dir)
+    {
+        transform.rotation = Quaternion.Lerp(m_front.transform.rotation, m_right.transform.rotation , m_rotate * Time.deltaTime);
+        m_rotate++;
+    }
+
+    public void RotateTest5()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, m_targetRotation, 5f * Time.deltaTime);
     }
 
     void Flip()
