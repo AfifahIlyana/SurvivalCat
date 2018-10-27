@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerAttack))]
+[RequireComponent(typeof(PlayerData))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour 
