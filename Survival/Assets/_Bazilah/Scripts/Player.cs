@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player: MonoBehaviour
 {
-    private Vector3 firstFinger;
-    private Vector3 lastFinger;
+    //private Vector3 firstFinger;
+    //private Vector3 lastFinger;
 
     public bool[] m_isRotating = { false, false };
     float m_initialRotation = 0;
@@ -16,54 +16,56 @@ public class Player: MonoBehaviour
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
-        //Debug.Log(move);
         animator.SetFloat("speed", Mathf.Abs(move));
 
-        var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-        localVelocity.x = move * m_maxSpeed * Time.deltaTime;
-        rigidBody.velocity = transform.TransformDirection(localVelocity);
+        if (move != 0f)
+        {
+            var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
+            localVelocity.x = move * m_maxSpeed;
+            rigidBody.velocity = transform.TransformDirection(localVelocity);
 
-        if (move > 0 && !m_isFacingRight)
-        {
-            Flip();
-        }
-        else if (move < 0 && m_isFacingRight)
-        {
-           
-            Flip();
+            if (move < 0 && !m_isFacingRight)
+            {
+                Flip();
+            }
+            else if (move > 0 && m_isFacingRight)
+            {
+                Flip();
+            }
+
         }
 
     }
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-        //}
-
-        //swipe up for jumping
-        foreach (Touch touch in Input.touches)
+        if (Input.GetButtonDown("Jump"))
         {
-            if (touch.phase == TouchPhase.Began)
-            {
-                firstFinger = touch.position;
-                lastFinger = touch.position;
-            }
-            if (touch.phase == TouchPhase.Moved)
-            {
-                lastFinger = touch.position;
-            }
-            if (touch.phase == TouchPhase.Ended)
-            {
-                if ((firstFinger.y - lastFinger.y) < -80) // up swipe
-                {
-                    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-
-                }
-
-            }
+            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
         }
+
+        ////swipe up for jumping
+        //foreach (Touch touch in Input.touches)
+        //{
+        //    if (touch.phase == TouchPhase.Began)
+        //    {
+        //        firstFinger = touch.position;
+        //        lastFinger = touch.position;
+        //    }
+        //    if (touch.phase == TouchPhase.Moved)
+        //    {
+        //        lastFinger = touch.position;
+        //    }
+        //    if (touch.phase == TouchPhase.Ended)
+        //    {
+        //        if ((firstFinger.y - lastFinger.y) < -80) // up swipe
+        //        {
+        //            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+
+        //        }
+
+        //    }
+        //}
     }
 
     //test the rotation 
