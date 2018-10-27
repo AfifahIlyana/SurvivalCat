@@ -7,12 +7,13 @@
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour 
 {
-    PlayerMovement m_playerMovement;
-    Animator m_animator;
-    Rigidbody m_rigidBody;
+    private PlayerMovement m_playerMovement;
+    private Animator m_animator;
+    private Rigidbody m_rigidBody;
 
-    float m_move;
-    public float m_jumpForce;
+    [SerializeField]
+    private float m_jumpForce;
+    private float m_move;
 
 	void Start () 
     {

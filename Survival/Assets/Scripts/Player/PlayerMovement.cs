@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour 
 {
-    public bool[] m_isRotating = {false, false};
-    float m_initialRotation = 0;
+    [SerializeField]
+    private bool[] m_isRotating = {false, false};
+    [SerializeField]
+    private float m_maxSpeed = 10f;
 
-    public float m_maxSpeed = 10f;
+    private float m_initialRotation = 0;
     private bool m_isFacingRight = true;
     private Quaternion m_targetRotation;
 
