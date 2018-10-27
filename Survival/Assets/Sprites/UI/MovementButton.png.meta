@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 78c7c3455af26b540a13b3991c8d1db6
+guid: 2ab318b3f622bee41ad801ca278b442c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ShootButton_0
-    21300002: ShootButton_1
+    21300000: MovementButton_0
+    21300002: MovementButton_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShootButton_0
+      name: MovementButton_0
       rect:
         serializedVersion: 2
-        x: 885
-        y: 449
-        width: 1232
-        height: 1231
+        x: 696
+        y: 564
+        width: 749
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60bbbbe919b2a814bafd6dbaa10fc58a
+      spriteID: 0632906c92566d9458cceba93cda3f6e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootButton_1
+      name: MovementButton_1
       rect:
         serializedVersion: 2
-        x: 2386
-        y: 781
-        width: 596
-        height: 596
+        x: 1604
+        y: 673
+        width: 513
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfa83b54f2eb5f5408b651c5ff6a6431
+      spriteID: 150328a42ead7d24493b1a711720c34e
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7ae600c22b620b24ea78c0f1c31185a3
+    spriteID: 56f56b981dda8354799ecc0e7b6a2edf
     vertices: []
     indices: 
     edges: []

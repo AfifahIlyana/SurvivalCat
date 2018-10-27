@@ -8,7 +8,8 @@ public class GameOver : MonoBehaviour {
     public GameObject pauseButton;
     public GameObject playerHealth;
     public GameObject score;
-    public GameObject shootingButton;
+    public GameObject movementButton;
+    public GameObject actionButton;
 
     public GameObject gameOverScreen; // add the game over screen UI 
     public SaveBestScore scoreSave;
@@ -22,7 +23,8 @@ public class GameOver : MonoBehaviour {
         pauseButton.SetActive(false);
         playerHealth.SetActive(false);
         score.SetActive(false);
-        shootingButton.SetActive(false);
+        movementButton.SetActive(false);
+        actionButton.SetActive(false);
 
         gameOverScreen.SetActive(true);
         scoreSave.GetFinalScore(); // Save score if higher than the current best score
