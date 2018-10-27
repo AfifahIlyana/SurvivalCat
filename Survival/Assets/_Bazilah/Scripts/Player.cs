@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player: MonoBehaviour
 {
-    public Transform bulletSpawn;
-    public GameObject bulletPrefab;
-
     private Vector3 firstFinger;
     private Vector3 lastFinger;
 
@@ -112,11 +109,6 @@ public class Player: MonoBehaviour
         //transform.Rotate(0f, 180f, 0f);
     }
 
-    public void Shoot()
-    {
-       Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
-
-    }
 
 
 }

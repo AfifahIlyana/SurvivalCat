@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
     
     private void Start() {
         heart = GameObject.FindGameObjectsWithTag("Heart");
+
         
     }
 
