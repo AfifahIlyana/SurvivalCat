@@ -61,14 +61,14 @@ public class CurrentScore : MonoBehaviour {
         GameObject plusScoreText;
 
         int plusScoreLength = currentScoreText.text.Length - 1;
-        float xPos = 300 + (plusScoreLength * 70);
+        float xPos = 20 + (plusScoreLength * 15);
 
         switch (type) {
             case "Normal":
                 plusScoreText = Instantiate(plus10, currentScoreText.transform.position, Quaternion.identity);
                 plusScoreText.transform.SetParent(currentScoreText.gameObject.transform);
                 
-                plusScoreText.transform.localPosition = new Vector3(xPos, 0f, 0f);
+                plusScoreText.transform.localPosition = new Vector3(xPos, -50f, 0f);
 
                 Destroy(plusScoreText, 0.5f);
                 break;

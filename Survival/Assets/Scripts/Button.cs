@@ -7,8 +7,6 @@ public class Button : MonoBehaviour {
     private bool rotated = false;
     private Animator animButton;
 
-    public object onClick { get; internal set; }
-
     private void Start() {
         animButton = GetComponent<Animator>();
 

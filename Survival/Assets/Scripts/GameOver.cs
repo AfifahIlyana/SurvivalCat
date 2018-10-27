@@ -8,20 +8,10 @@ public class GameOver : MonoBehaviour {
     public GameObject gameOverScreen; // add the game over screen UI 
     public SaveBestScore scoreSave;
 
-    public GameObject score;
-    public GameObject pauseButton;
-    public GameObject shootButton;
-
     private Text scoreText;
 
     public void TriggerGameOver() {
-
-        Time.timeScale = 0;
-
-        score.SetActive(false);
-        pauseButton.SetActive(false);
-        shootButton.SetActive(false);
-
+        
         gameOverScreen.SetActive(true);
         scoreSave.GetFinalScore(); // Save score if higher than the current best score
 

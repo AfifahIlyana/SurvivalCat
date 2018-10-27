@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     
     public float currentSpeed;
-    public static int health = 100;
+    public int health = 100;
 
     private Health playerHealth;
     private Animator animator;
@@ -38,4 +38,22 @@ public class Enemy : MonoBehaviour {
         } 
     }
 
+  
+
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Die()
+    {
+        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }
