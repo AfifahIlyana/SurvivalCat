@@ -45,7 +45,7 @@ public class Health : MonoBehaviour {
 
             // trigger gameover animation
 
-            GameOver gameover = GameObject.FindGameObjectWithTag("GameOverTrigger").GetComponent<GameOver>();
+            GameOver gameover = GetComponent<GameOver>();
             gameover.TriggerGameOver();
 
         }
@@ -54,18 +54,8 @@ public class Health : MonoBehaviour {
         
     }
 
-    public void TakeDamageEnemy(int damage)
-    {
-        Enemy.health -= damage;
-
-        if (Enemy.health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-
     private void KnockBack() {
+
 
     }
 

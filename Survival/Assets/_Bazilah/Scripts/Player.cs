@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player: MonoBehaviour
 {
+    public Transform bulletSpawn;
+    public GameObject bulletPrefab;
+
     private Vector3 firstFinger;
     private Vector3 lastFinger;
 
@@ -16,10 +19,11 @@ public class Player: MonoBehaviour
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
+        //Debug.Log(move);
         animator.SetFloat("speed", Mathf.Abs(move));
 
         var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-        localVelocity.x = move * m_maxSpeed ;
+        localVelocity.x = move * m_maxSpeed * Time.deltaTime;
         rigidBody.velocity = transform.TransformDirection(localVelocity);
 
         if (move > 0 && !m_isFacingRight)
@@ -108,7 +112,11 @@ public class Player: MonoBehaviour
         //transform.Rotate(0f, 180f, 0f);
     }
 
+    public void Shoot()
+    {
+       Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
 
+    }
 
 
 }

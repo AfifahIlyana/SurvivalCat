@@ -5,7 +5,7 @@ using UnityEngine;
 public class OOB_GameOver : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "GameOverTrigger") {
+        if (other.tag == "Player") {
             GameOver gameOver = other.GetComponent<GameOver>();
             gameOver.TriggerGameOver();
 
