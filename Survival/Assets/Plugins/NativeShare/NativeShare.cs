@@ -111,7 +111,7 @@ public class NativeShare
 
 		return this;
 	}
-
+    
 	public void Share()
 	{
 		if( files.Count == 0 && subject.Length == 0 && text.Length == 0 )
