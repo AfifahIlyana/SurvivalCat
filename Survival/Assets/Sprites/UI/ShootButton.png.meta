@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: f24426ff2cf31c24595d7c7479753978
+guid: 78c7c3455af26b540a13b3991c8d1db6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Hearts_0
-    21300002: Hearts_1
+    21300000: ShootButton_0
+    21300002: ShootButton_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hearts_0
+      name: ShootButton_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 750
+        x: 885
+        y: 449
+        width: 1232
+        height: 1231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1efe1bf01ba36674f8acad46d638fb08
+      spriteID: 60bbbbe919b2a814bafd6dbaa10fc58a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hearts_1
+      name: ShootButton_1
       rect:
         serializedVersion: 2
-        x: 800
-        y: 0
-        width: 800
-        height: 750
+        x: 2386
+        y: 781
+        width: 596
+        height: 596
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932017cf3dbc6a44a86a8420a42b5839
+      spriteID: bfa83b54f2eb5f5408b651c5ff6a6431
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6bf9524807fab034cb37a30a3d036b61
+    spriteID: 7ae600c22b620b24ea78c0f1c31185a3
     vertices: []
     indices: 
     edges: []

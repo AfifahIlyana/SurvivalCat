@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        m_playerMovement.RotatePlayer();
+        //m_playerMovement.RotatePlayer();
+        m_playerMovement.ActivateRotatePlayer();
+        m_playerMovement.RotateTest5();
+
     }
 }

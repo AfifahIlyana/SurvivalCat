@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour 
 {
-    [SerializeField]
-    private float m_maxSpeed = 10f;
-    [SerializeField]
-    private bool[] m_isRotating = { false, false };
+    public bool[] m_isRotating = {false, false};
+    float m_initialRotation = 0;
 
+    public float m_maxSpeed = 10f;
     private bool m_isFacingRight = true;
-    private float m_initialRotation = 0;
+    private Quaternion m_targetRotation;
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
@@ -90,6 +91,23 @@ public class PlayerMovement : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+    public void ActivateRotatePlayer() {
+        if (Input.GetKeyDown(KeyCode.Q) || m_isRotating[1]) {
+            //m_isRotating[1] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(90, Vector3.up);
+        } else if (Input.GetKeyDown(KeyCode.E) || m_isRotating[0]) {
+            //m_isRotating[0] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(-90, Vector3.up);
+        }
+    }
+
+    public void RotateTest5() {
+        transform.rotation = Quaternion.Lerp(transform.rotation, m_targetRotation, 5f * Time.deltaTime);
+    }
+
 
     //Rotation alternative
     //float currentAngle = transform.rotation.eulerAngles.y;

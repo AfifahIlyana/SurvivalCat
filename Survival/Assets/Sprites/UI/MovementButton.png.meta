@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: f24426ff2cf31c24595d7c7479753978
+guid: 2ab318b3f622bee41ad801ca278b442c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Hearts_0
-    21300002: Hearts_1
+    21300000: MovementButton_0
+    21300002: MovementButton_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hearts_0
+      name: MovementButton_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 750
+        x: 696
+        y: 564
+        width: 749
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1efe1bf01ba36674f8acad46d638fb08
+      spriteID: 1fa4892eba0a2cb42a8856afdeb883a1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hearts_1
+      name: MovementButton_1
       rect:
         serializedVersion: 2
-        x: 800
-        y: 0
-        width: 800
-        height: 750
+        x: 1604
+        y: 673
+        width: 513
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932017cf3dbc6a44a86a8420a42b5839
+      spriteID: 8f528b4ec0ff4e749b48d394467364f8
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6bf9524807fab034cb37a30a3d036b61
+    spriteID: 2cfce158d9a4f4d4d915af75beaf12c2
     vertices: []
     indices: 
     edges: []
