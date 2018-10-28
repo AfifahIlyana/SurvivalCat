@@ -5,11 +5,14 @@
 [RequireComponent(typeof(PlayerData))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour 
 {
-    private PlayerMovement m_playerMovement;
     private Animator m_animator;
     private Rigidbody m_rigidBody;
+    private PlayerMovement m_playerMovement;
+    private PlayerData m_playerData;
+    private PlayerHealth m_playerHealth;
 
     [SerializeField]
     private float m_jumpForce;
@@ -17,9 +20,13 @@ public class PlayerController : MonoBehaviour
 
 	void Start () 
     {
-        m_playerMovement = GetComponent<PlayerMovement>();
-        m_rigidBody = GetComponent<Rigidbody>();
         m_animator = GetComponent<Animator>();
+        m_rigidBody = GetComponent<Rigidbody>();
+        m_playerMovement = GetComponent<PlayerMovement>();
+        m_playerData = GetComponent<PlayerData>();
+        m_playerHealth = GetComponent<PlayerHealth>();
+
+        m_playerHealth.ResetHealth(m_playerData);
 	}
 
     void FixedUpdate()
