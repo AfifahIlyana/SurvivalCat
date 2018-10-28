@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerAttack))]
+[RequireComponent(typeof(PlayerData))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour 
 {
-    PlayerMovement m_playerMovement;
-    Animator m_animator;
-    Rigidbody m_rigidBody;
+    private PlayerMovement m_playerMovement;
+    private Animator m_animator;
+    private Rigidbody m_rigidBody;
 
-    float m_move;
-    public float m_jumpForce;
+    [SerializeField]
+    private float m_jumpForce;
+    private float m_move;
 
 	void Start () 
     {
