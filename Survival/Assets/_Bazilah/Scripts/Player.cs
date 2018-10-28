@@ -11,38 +11,31 @@ public class Player: MonoBehaviour
     float m_initialRotation = 0;
 
     public float m_maxSpeed = 10f;
-    private bool m_isFacingRight = true;
+    public bool m_isFacingRight = true;
 
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         animator.SetFloat("speed", Mathf.Abs(move));
+        var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
+        localVelocity.x = move * m_maxSpeed;
+        rigidBody.velocity = transform.TransformDirection(localVelocity);
 
-        if (move != 0f)
+        if (move < 0 && !m_isFacingRight)
         {
-            var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-            localVelocity.x = move * m_maxSpeed;
-            rigidBody.velocity = transform.TransformDirection(localVelocity);
-
-            if (move < 0 && !m_isFacingRight)
-            {
-                Flip();
-            }
-            else if (move > 0 && m_isFacingRight)
-            {
-                Flip();
-            }
-
+            Flip();
+        }
+        else if (move > 0 && m_isFacingRight)
+        {
+            Flip();
         }
 
     }
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-        }
+
+        rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
 
         ////swipe up for jumping
         //foreach (Touch touch in Input.touches)
