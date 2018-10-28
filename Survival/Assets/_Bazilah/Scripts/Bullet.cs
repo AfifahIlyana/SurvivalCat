@@ -10,22 +10,35 @@ public class Bullet : MonoBehaviour {
     public Rigidbody rb;
 
     // Use this for initialization
-    void Start()
+    void Update()
     {
-        rb.velocity = transform.forward * speed;
-    }
+        var localVelocity = transform.InverseTransformDirection(rb.velocity);
 
-    void OnTriggerEnter (Collider hitInfo)
-    {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-
-        if (enemy != null)
+        if (GameObject.FindWithTag("Player").GetComponent<Player>().m_isFacingRight)
         {
-            enemy.TakeDamage(damage);
+            localVelocity = transform.right * speed;
+            rb.velocity = transform.TransformDirection(localVelocity);
         }
 
-        Destroy(gameObject);
+        else
+        {
+            localVelocity = -(transform.right) * speed;
+            rb.velocity = transform.TransformDirection(localVelocity);
+        }
+
     }
+
+    //void OnTriggerEnter (Collider hitInfo)
+    //{
+    //    Enemy enemy = hitInfo.GetComponent<Enemy>();
+
+    //    if (enemy != null)
+    //    {
+    //        enemy.TakeDamage(damage);
+    //    }
+
+    //    Destroy(gameObject);
+    //}
 
 
 }

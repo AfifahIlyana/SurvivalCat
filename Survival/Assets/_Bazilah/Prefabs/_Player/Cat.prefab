@@ -772,6 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isRotating: 0000
   m_maxSpeed: 10
+  m_isFacingRight: 1
 --- !u!114 &114176168329224860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -804,7 +805,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
-  m_jumpForce: 300
 --- !u!114 &114554058005366922
 MonoBehaviour:
   m_ObjectHideFlags: 1
