@@ -2,26 +2,25 @@
 
 public class ScoreSystem : MonoBehaviour 
 {
-    public void HeightScore(float lastHeight, GameObject player)
+    public int HeightScore(int lastHeight, GameObject player)
     {
-        int yRounded = Mathf.RoundToInt(player.gameObject.transform.position.y);
-
+        int yRounded = Mathf.RoundToInt(player.transform.position.y);
         if (yRounded > lastHeight)
         {
             lastHeight++;
-
             AddScore(1, player);
-
             //addScore = int.Parse(currentScoreText.text) + 1;
             //currentScoreText.text = addScore.ToString();
-
         }
+        return lastHeight;
     }
 
     public void AddScore(int addScore, GameObject player)
     {
-        player.GetComponent<PlayerData>().m_score += addScore;
-
+        if (player != null)
+        {
+            player.GetComponent<PlayerData>().m_score += addScore;
+        }
         //AppearAndDestroy("Normal");
     }
 
