@@ -5,22 +5,25 @@ public class MyGameManager : MonoBehaviour
     private GameObject m_player;
     private ScoreSystem m_scoreSystem;
 
-    [HideInInspector]
+    //[HideInInspector]
     public int m_lastHeight;
 
-	void Start () 
+    private void Awake()
     {
-        m_player = GameObject.FindGameObjectWithTag("Player");
+        m_player = GameObject.Find("Cat");
         m_scoreSystem = GetComponent<ScoreSystem>();
-
+    }
+    void Start () 
+    {
         m_scoreSystem.ResetScore(m_player);
+        m_lastHeight = 0;
 	}
 	
 	void Update () 
     {
         if (m_player != null)
         {
-            m_scoreSystem.HeightScore(m_lastHeight, m_player);
+            m_lastHeight = m_scoreSystem.HeightScore(m_lastHeight, m_player);
         }
 	}
 }
