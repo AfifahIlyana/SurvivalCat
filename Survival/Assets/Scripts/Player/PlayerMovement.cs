@@ -11,42 +11,38 @@ public class PlayerMovement : MonoBehaviour
     private bool m_isFacingRight = true;
     private Quaternion m_targetRotation;
 
+    private Vector3 m_firstFinger;
+    private Vector3 m_lastFinger;
+
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         animator.SetFloat("speed", Mathf.Abs(move));
 
-        if (move != 0f) 
+        var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
+        localVelocity.x = move * m_maxSpeed;
+        rigidBody.velocity = transform.TransformDirection(localVelocity);
+
+        if (move < 0 && !m_isFacingRight)
         {
-
-            animator.SetBool("isWalking", true);
-
-            var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-            localVelocity.x = move * m_maxSpeed;
-            rigidBody.velocity = transform.TransformDirection(localVelocity);
-
-            if (move < 0 && !m_isFacingRight) 
-            {
-                Flip();
-            } else if (move > 0 && m_isFacingRight) 
-            {
-                Flip();
-            }
-
-        } 
-        else 
+            Flip();
+        }
+        else if (move > 0 && m_isFacingRight)
         {
-            animator.SetBool("isWalking", false);
-
+            Flip();
         }
 
     }
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+        //}
+
+        Debug.Log("im jumping");
+        rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+        Debug.Log("im jumping after");
     }
 
     public void RotatePlayer()
@@ -116,4 +112,29 @@ public class PlayerMovement : MonoBehaviour
     //Quaternion target = Quaternion.Euler(0, 90 * dir, 0);
     //// Dampen towards the target rotation
     //transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5f);
+
+    public void JumpSwipe(float move, float jumpForce, Rigidbody rigidBody)
+    {
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                m_firstFinger = touch.position;
+                m_lastFinger = touch.position;
+            }
+            if (touch.phase == TouchPhase.Moved)
+            {
+                m_lastFinger = touch.position;
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if ((m_firstFinger.y - m_lastFinger.y) < -80) // up swipe
+                {
+                    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+
+                }
+
+            }
+        }
+    }
 }

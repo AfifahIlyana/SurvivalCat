@@ -12,7 +12,7 @@ public class Utility : MonoBehaviour
 
     public static Vector3 GetAxisJoystick(Joystick joystick)
     {
-        return new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+        return new Vector3(joystick.Horizontal, joystick.Vertical, 0 );
     }
 
 

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212471860417570070}
   m_Layer: 8
   m_Name: Left
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4117417561278306}
   m_Layer: 0
   m_Name: Leg
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 137227415233516870}
   m_Layer: 0
   m_Name: Left Leg
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4657055635757628}
   m_Layer: 8
   m_Name: Hand
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 212800722403858168}
   m_Layer: 8
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 114148921629495770}
   m_Layer: 0
   m_Name: New bone
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 212006642291579720}
   m_Layer: 8
   m_Name: Hat
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4325144233874040}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,13 +211,13 @@ GameObject:
   - component: {fileID: 95269374309107110}
   - component: {fileID: 54906505192250710}
   - component: {fileID: 65203880168759316}
-  - component: {fileID: 114044539069054630}
-  - component: {fileID: 114614941837505402}
-  - component: {fileID: 114848625569960460}
   - component: {fileID: 65561169301446240}
   - component: {fileID: 82161753163155712}
-  - component: {fileID: 114165830578935702}
-  - component: {fileID: 114552557261195808}
+  - component: {fileID: 114664977929686186}
+  - component: {fileID: 114141766487437432}
+  - component: {fileID: 114598055593511704}
+  - component: {fileID: 114307424319885752}
+  - component: {fileID: 114463449759325804}
   m_Layer: 8
   m_Name: Cat
   m_TagString: Player
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 212825843478566074}
   m_Layer: 8
   m_Name: Head
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 137194838402424212}
   m_Layer: 0
   m_Name: Right Leg
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 137295185937338286}
   m_Layer: 0
   m_Name: Player spritesheet (cat)_4
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 114008758677657620}
   m_Layer: 0
   m_Name: New bone
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +518,7 @@ Transform:
   m_GameObject: {fileID: 1668260749087390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.37, y: 3.51, z: -0.56}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4510972805046228}
   - {fileID: 4157748208025242}
@@ -712,21 +712,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114044539069054630
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668260749087390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4223525f5b9daec4987436813fcab815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectNormal: {fileID: 8300000, guid: 92a5bc2b0dfe4f3448e6bed16c5992d2, type: 3}
-  collectSpecial: {fileID: 8300000, guid: 80c419b0fe3e45f46bf27dbb5c2d443a, type: 3}
-  collectMeat: {fileID: 8300000, guid: 508e77299b405794b86377626a6b1865, type: 3}
-  collectPowerUp: {fileID: 0}
 --- !u!114 &114104742642509104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -739,10 +724,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.7230542
+  m_Length: 0.7230543
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4073356364297068}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114141766487437432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668260749087390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6759963111204bf3a967521b94e0dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114148921629495770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,20 +755,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114165830578935702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668260749087390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d560862a993f64ade80cf1c45992daf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_isRotating: 0000
-  m_maxSpeed: 10
-  m_isFacingRight: 1
 --- !u!114 &114176168329224860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -793,7 +775,7 @@ MonoBehaviour:
   m_Bones: []
   m_BoneTransforms:
   - {fileID: 4711251516330826}
---- !u!114 &114552557261195808
+--- !u!114 &114307424319885752
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -801,10 +783,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1668260749087390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0f65a55115cf467fb9c9ce1841ec94c, type: 3}
+  m_Script: {fileID: 11500000, guid: af7cd6c68e80e44f48c305a38cebd610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
+  m_health: 0
+  m_score: 0
+  m_attack: 0
+  m_speed: 0
+--- !u!114 &114463449759325804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668260749087390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab353fa1580a04f75a0af8ab383309c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isRotating: 0000
+  m_maxSpeed: 10
 --- !u!114 &114554058005366922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -827,7 +825,7 @@ MonoBehaviour:
   - {fileID: 4157720553172782}
   - {fileID: 4751233878970608}
   - {fileID: 4073356364297068}
---- !u!114 &114614941837505402
+--- !u!114 &114598055593511704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -835,12 +833,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1668260749087390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0ec6133e4f004c428b88545a353b493, type: 3}
+  m_Script: {fileID: 11500000, guid: cf19b118f5b134f73aba6fdafd741947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScoreText: {fileID: 0}
-  plus10: {fileID: 1026486089068968, guid: 5b0265ac2b9c0de4c86c8b69b50b5976, type: 2}
-  plus30: {fileID: 1856605212329672, guid: 4995338e3139a8444a85005a799371c2, type: 2}
+--- !u!114 &114664977929686186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668260749087390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72053144e843a1147913698a0e8530d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_jumpForce: 300
+  joystick: {fileID: 0}
 --- !u!114 &114826087881360612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -877,17 +885,6 @@ MonoBehaviour:
   m_Bones: []
   m_BoneTransforms:
   - {fileID: 4190267820566684}
---- !u!114 &114848625569960460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668260749087390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c25e04a4ce0ef2046aab88ba439559a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &137194838402424212
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
