@@ -6,6 +6,7 @@ public class PowerUpsSystem : MonoBehaviour
 {
     private AudioSource m_audioSource;
     private ScoreSystem m_scoreSystem;
+    private MyUIManager m_myUiManager;
 
     [SerializeField]
     private string m_type;
@@ -14,10 +15,11 @@ public class PowerUpsSystem : MonoBehaviour
     [SerializeField]
     AudioClip m_audioClip;
 
-    private void Start()
+    private void Awake()
     {
         m_audioSource = GetComponent<AudioSource>();
-        m_scoreSystem = GameObject.Find("MyGameManager").GetComponent<ScoreSystem>();
+        m_scoreSystem = GameObject.Find("Game Manager").GetComponent<ScoreSystem>();
+        m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,12 +31,20 @@ public class PowerUpsSystem : MonoBehaviour
                 if (m_scoreSystem != null)
                 {
                     m_scoreSystem.AddScore(m_point, other.gameObject);
+                    Debug.Log("updating score ui...");
+                    m_myUiManager.UpdateScoreStatus(other.gameObject);
                 }
             }
 
             if (m_type.ToLower() == "drumstick")
             {
-                other.GetComponent<PlayerHealth>().AddHealth();
+                int playerHealth = other.GetComponent<PlayerData>().m_health;
+
+                if (playerHealth < 3)
+                {
+                    other.GetComponent<PlayerHealth>().AddHealth(m_point, other.gameObject);
+                    m_myUiManager.UpdateHealthStatus(playerHealth, true);
+                }
             }
 
             if (m_audioSource != null)
