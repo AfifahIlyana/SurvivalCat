@@ -18,4 +18,5 @@ public class Weapon : MonoBehaviour {
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         animator.SetTrigger("isShooting");
 	}
+
 }

@@ -40,9 +40,7 @@ public class PlayerMovement : MonoBehaviour
         //    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
         //}
 
-        Debug.Log("im jumping");
         rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-        Debug.Log("im jumping after");
     }
 
     public void RotatePlayer()
