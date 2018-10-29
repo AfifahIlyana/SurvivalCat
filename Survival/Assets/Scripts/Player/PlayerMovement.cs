@@ -102,15 +102,6 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, m_targetRotation, 5f * Time.deltaTime);
     }
 
-
-    //Rotation alternative
-    //float currentAngle = transform.rotation.eulerAngles.y;
-    //transform.rotation = Quaternion.AngleAxis(currentAngle + (Time.deltaTime * -90f), Vector3.up);
-    //
-    //Quaternion target = Quaternion.Euler(0, 90 * dir, 0);
-    //// Dampen towards the target rotation
-    //transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5f);
-
     public void JumpSwipe(float move, float jumpForce, Rigidbody rigidBody)
     {
         foreach (Touch touch in Input.touches)
