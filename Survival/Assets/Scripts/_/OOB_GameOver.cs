@@ -6,7 +6,7 @@ public class OOB_GameOver : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            GameOver gameOver = other.GetComponent<GameOver>();
+            GameOver gameOver = GameObject.FindGameObjectWithTag("GameOverTrigger").GetComponent<GameOver>();
             gameOver.TriggerGameOver();
 
         }

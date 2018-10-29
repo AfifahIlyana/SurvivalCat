@@ -1,51 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour 
 {
-    public bool[] m_isRotating = {false, false};
-    float m_initialRotation = 0;
+    [SerializeField]
+    private bool[] m_isRotating = {false, false};
+    [SerializeField]
+    private float m_maxSpeed = 10f;
 
-    public float m_maxSpeed = 10f;
+    private float m_initialRotation = 0;
     private bool m_isFacingRight = true;
+    private Quaternion m_targetRotation;
+
+    private Vector3 m_firstFinger;
+    private Vector3 m_lastFinger;
 
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         animator.SetFloat("speed", Mathf.Abs(move));
 
-        if (move != 0f) 
+        var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
+        localVelocity.x = move * m_maxSpeed;
+        rigidBody.velocity = transform.TransformDirection(localVelocity);
+
+        if (move < 0 && !m_isFacingRight)
         {
-
-            animator.SetBool("isWalking", true);
-
-            var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-            localVelocity.x = move * m_maxSpeed;
-            rigidBody.velocity = transform.TransformDirection(localVelocity);
-
-            if (move < 0 && !m_isFacingRight) 
-            {
-                Flip();
-            } else if (move > 0 && m_isFacingRight) 
-            {
-                Flip();
-            }
-
-        } 
-        else 
+            Flip();
+        }
+        else if (move > 0 && m_isFacingRight)
         {
-            animator.SetBool("isWalking", false);
-
+            Flip();
         }
 
     }
 
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+        //}
+
+        rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
     }
 
     public void RotatePlayer()
@@ -91,6 +86,23 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    public void ActivateRotatePlayer() {
+        if (Input.GetKeyDown(KeyCode.Q) || m_isRotating[1]) {
+            //m_isRotating[1] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(90, Vector3.up);
+        } else if (Input.GetKeyDown(KeyCode.E) || m_isRotating[0]) {
+            //m_isRotating[0] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(-90, Vector3.up);
+        }
+    }
+
+    public void RotateTest5() {
+        transform.rotation = Quaternion.Lerp(transform.rotation, m_targetRotation, 5f * Time.deltaTime);
+    }
+
+
     //Rotation alternative
     //float currentAngle = transform.rotation.eulerAngles.y;
     //transform.rotation = Quaternion.AngleAxis(currentAngle + (Time.deltaTime * -90f), Vector3.up);
@@ -98,4 +110,29 @@ public class PlayerMovement : MonoBehaviour
     //Quaternion target = Quaternion.Euler(0, 90 * dir, 0);
     //// Dampen towards the target rotation
     //transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5f);
+
+    public void JumpSwipe(float move, float jumpForce, Rigidbody rigidBody)
+    {
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                m_firstFinger = touch.position;
+                m_lastFinger = touch.position;
+            }
+            if (touch.phase == TouchPhase.Moved)
+            {
+                m_lastFinger = touch.position;
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if ((m_firstFinger.y - m_lastFinger.y) < -80) // up swipe
+                {
+                    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+
+                }
+
+            }
+        }
+    }
 }
