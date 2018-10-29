@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    private Player player;
+    private PlayerMovement player;
     public float speed = 20f;
     public int damage = 40;
     public Rigidbody rb;
@@ -13,18 +13,20 @@ public class Bullet : MonoBehaviour {
     void Update()
     {
         var localVelocity = transform.InverseTransformDirection(rb.velocity);
+        localVelocity = transform.right * speed;
+        rb.velocity = transform.TransformDirection(localVelocity);
 
-        if (GameObject.FindWithTag("Player").GetComponent<Player>().m_isFacingRight)
-        {
-            localVelocity = transform.right * speed;
-            rb.velocity = transform.TransformDirection(localVelocity);
-        }
+        //if (GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().m_isFacingRight)
+        //{
+        //    localVelocity = transform.right * speed;
+        //    rb.velocity = transform.TransformDirection(localVelocity);
+        //}
 
-        else
-        {
-            localVelocity = -(transform.right) * speed;
-            rb.velocity = transform.TransformDirection(localVelocity);
-        }
+        //else
+        //{
+        //    localVelocity = -(transform.right) * speed;
+        //    rb.velocity = transform.TransformDirection(localVelocity);
+        //}
 
     }
 

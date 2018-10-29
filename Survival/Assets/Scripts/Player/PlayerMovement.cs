@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float m_maxSpeed = 10f;
 
     private float m_initialRotation = 0;
-    private bool m_isFacingRight = true;
+    public static bool m_isFacingRight = true;
     private Quaternion m_targetRotation;
 
     private Vector3 m_firstFinger;

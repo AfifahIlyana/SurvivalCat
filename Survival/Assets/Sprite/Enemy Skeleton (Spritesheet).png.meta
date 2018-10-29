@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: f71e7a3d60d4940098a9a271ec8bd369
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Skeleton_Head
+    21300002: SkeletonHand_R
+    21300004: SkeletonHand_L
+    21300006: Skeleton_mouth
+    21300008: Skeleton_Body
+    21300010: Enemy Skeleton (Spritesheet)_5
+    21300012: SkeletonLeg_R
+    21300014: SkeletonLeg_L
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_Head
+      rect:
+        serializedVersion: 2
+        x: 41.637604
+        y: 409.20474
+        width: 145.2594
+        height: 132.46536
+      alignment: 9
+      pivot: {x: 0.4981598, y: 0.50424695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c704e211eea2f344cada14160e08edf9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonHand_R
+      rect:
+        serializedVersion: 2
+        x: 200.93788
+        y: 336.40442
+        width: 145.69234
+        height: 183.12494
+      alignment: 9
+      pivot: {x: 0.5049141, y: 0.49198967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86600bd19bf82d84e809e8adbc28ee53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonHand_L
+      rect:
+        serializedVersion: 2
+        x: 384.2857
+        y: 308.42477
+        width: 83.547516
+        height: 223.63968
+      alignment: 9
+      pivot: {x: 0.49330366, y: 0.50114197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484cf89a6c7ea0f46b27aab83bc4508d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_mouth
+      rect:
+        serializedVersion: 2
+        x: 67.8536
+        y: 337.94427
+        width: 84.79757
+        height: 69.93707
+      alignment: 9
+      pivot: {x: 0.5029201, y: 0.4940974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3d02eb55f5b634686c3cd4bb31a23b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Body
+      rect:
+        serializedVersion: 2
+        x: 36.29059
+        y: 40.447727
+        width: 164.53812
+        height: 251.70215
+      alignment: 9
+      pivot: {x: 0.54218084, y: 0.49483997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48f58fe0a8f3be408a24c5cac9d24b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Skeleton (Spritesheet)_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 141
+        width: 16
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67aad15960047c748a1a0ddffb648cfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonLeg_R
+      rect:
+        serializedVersion: 2
+        x: 242.5463
+        y: 48.21644
+        width: 88.62091
+        height: 227.23727
+      alignment: 9
+      pivot: {x: 0.5129005, y: 0.49632508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9fc742d89103940879f2bc61998d8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonLeg_L
+      rect:
+        serializedVersion: 2
+        x: 376.24237
+        y: 41.309143
+        width: 96.51526
+        height: 236.29565
+      alignment: 9
+      pivot: {x: 0.5821691, y: 0.5184886}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca0c38f8e31a4d4eb0583cfd5b58ea7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7071833202b81d64fb9478905bcb5c29
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 636758585671157559
+  assetBundleName: 
+  assetBundleVariant: 
