@@ -13,11 +13,11 @@ public class PowerUpsSystem : MonoBehaviour
     [SerializeField]
     private int m_point;
     [SerializeField]
-    AudioClip m_audioClip;
+    private AudioClip m_audioClip;
 
     private void Awake()
     {
-        m_audioSource = GetComponent<AudioSource>();
+        m_audioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         m_scoreSystem = GameObject.Find("Game Manager").GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
@@ -31,8 +31,6 @@ public class PowerUpsSystem : MonoBehaviour
                 if (m_scoreSystem != null)
                 {
                     m_scoreSystem.AddScore(m_point, other.gameObject);
-                    Debug.Log("updating score ui...");
-                    m_myUiManager.UpdateScoreStatus(other.gameObject);
                 }
             }
 

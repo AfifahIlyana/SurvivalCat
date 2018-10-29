@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
         //m_move = Utility.GetAxis().x;
         //m_move = Utility.GetAxisJoystick(joystick).x;
-
+        //
         //m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
         //m_playerMovement.JumpSwipe(m_move, m_jumpForce, m_rigidBody);
         //m_move = Utility.GetAxisJoystick(joystick).y;
