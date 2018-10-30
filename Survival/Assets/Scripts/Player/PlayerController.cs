@@ -11,27 +11,33 @@ public class PlayerController : MonoBehaviour
 {
     private Animator m_animator;
     private Rigidbody m_rigidBody;
+
     private PlayerMovement m_playerMovement;
     private PlayerData m_playerData;
+    private PlayerAttack m_playerAttack;
     private PlayerHealth m_playerHealth;
 
     [SerializeField]
-    private float m_jumpForce;
+    private float m_jumpForce = 300f;
     private float m_move;
 
     [SerializeField]
     private Joystick joystick;
 
-	void Start () 
+	void Awake () 
     {
         m_animator = GetComponent<Animator>();
         m_rigidBody = GetComponent<Rigidbody>();
         m_playerMovement = GetComponent<PlayerMovement>();
         m_playerData = GetComponent<PlayerData>();
+        m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
-
-        m_playerHealth.ResetHealth(m_playerData);
 	}
+
+    void Start()
+    {
+        m_playerHealth.ResetHealth(m_playerData);
+    }
 
     void FixedUpdate()
     {
@@ -39,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         //m_move = Utility.GetAxis().x;
         //m_move = Utility.GetAxisJoystick(joystick).x;
-
+        //
         //m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
         //m_playerMovement.JumpSwipe(m_move, m_jumpForce, m_rigidBody);
         //m_move = Utility.GetAxisJoystick(joystick).y;
@@ -61,7 +67,14 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log("im in public jump");
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
+
+    public void CatShooting()
+    {
+        m_playerAttack.Shoot();
+        m_animator.SetTrigger("");
+    }
+
+
 }

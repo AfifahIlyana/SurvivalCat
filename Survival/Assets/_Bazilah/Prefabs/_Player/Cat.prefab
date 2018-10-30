@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4117417561278306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4157720553172782}
   - component: {fileID: 114826087881360612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4466446188662776}
   - component: {fileID: 114828005616642574}
   - component: {fileID: 137227415233516870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751233878970608}
   - component: {fileID: 114104742642509104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190267820566684}
   - component: {fileID: 114148921629495770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4073356364297068}
   - component: {fileID: 114008652531727352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4325144233874040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 4119875830020910}
   - component: {fileID: 114176168329224860}
   - component: {fileID: 137194838402424212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 4208410689431018}
   - component: {fileID: 114554058005366922}
   - component: {fileID: 137295185937338286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player spritesheet (cat)_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4711251516330826}
   - component: {fileID: 114008758677657620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,13 +379,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1355862797460222}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.01, y: -0.69, z: -0.02}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -2.01, y: -0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4885211448064194}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4208410689431018
 Transform:
   m_ObjectHideFlags: 1
@@ -671,7 +671,7 @@ Animator:
   m_GameObject: {fileID: 1668260749087390}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 993022ded99cd44a8b2f7b7ef987b960, type: 2}
+  m_Controller: {fileID: 9100000, guid: 635e2f870dbd840d3a0a48e1becbd789, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -802,7 +802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isRotating: 0000
-  m_maxSpeed: 10
+  m_maxSpeed: 5
+  m_isFacingRight: 1
 --- !u!114 &114554058005366922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -836,8 +837,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf19b118f5b134f73aba6fdafd741947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   bulletSpawn: {fileID: 0}
   bulletPrefab: {fileID: 0}
+=======
+  bulletSpawn: {fileID: 4203037046360308}
+  bulletPrefab: {fileID: 1903538287203888, guid: ae42bab5ee3174925b6b4655ed347b8d,
+    type: 2}
+>>>>>>> daccf23c71ef93421b296f1d7cde29139231dd75
 --- !u!114 &114664977929686186
 MonoBehaviour:
   m_ObjectHideFlags: 1

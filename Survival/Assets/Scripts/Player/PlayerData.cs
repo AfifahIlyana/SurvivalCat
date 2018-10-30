@@ -4,7 +4,7 @@ public class PlayerData : MonoBehaviour
 {
     [HideInInspector]
     public int m_health;
-    [HideInInspector]
+    //[HideInInspector]
     public int m_score;
     [HideInInspector]
     public int m_attack;

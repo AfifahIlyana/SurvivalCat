@@ -19,12 +19,7 @@ public class MyUIManager : MonoBehaviour
 
     public void UpdateScoreStatus(GameObject player)
     {
-        Debug.Log("updating score ui now");
-        Debug.Log(player.GetComponent<PlayerData>().m_score.ToString());
-        Debug.Log(m_currentScore.text);
         m_currentScore.text = player.GetComponent<PlayerData>().m_score.ToString();
-        Debug.Log(m_currentScore.text);
-        Debug.Log("updating score ui done!");
     }
 
     private void AppearAndDestroy(string type)

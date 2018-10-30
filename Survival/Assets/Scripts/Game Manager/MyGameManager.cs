@@ -4,6 +4,7 @@ public class MyGameManager : MonoBehaviour
 {
     private GameObject m_player;
     private ScoreSystem m_scoreSystem;
+    private MyUIManager m_myUiManager;
 
     //[HideInInspector]
     public int m_lastHeight;
@@ -12,6 +13,7 @@ public class MyGameManager : MonoBehaviour
     {
         m_player = GameObject.Find("Cat");
         m_scoreSystem = GetComponent<ScoreSystem>();
+        m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
     void Start () 
     {
@@ -24,6 +26,7 @@ public class MyGameManager : MonoBehaviour
         if (m_player != null)
         {
             m_lastHeight = m_scoreSystem.HeightScore(m_lastHeight, m_player);
+            m_myUiManager.UpdateScoreStatus(m_player);
         }
 	}
 }

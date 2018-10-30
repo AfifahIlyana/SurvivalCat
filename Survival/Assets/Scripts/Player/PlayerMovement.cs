@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float m_maxSpeed = 10f;
 
     private float m_initialRotation = 0;
-    private bool m_isFacingRight = true;
+    public bool m_isFacingRight = true;
     private Quaternion m_targetRotation;
 
     private Vector3 m_firstFinger;
@@ -101,15 +101,6 @@ public class PlayerMovement : MonoBehaviour
     public void RotateTest5() {
         transform.rotation = Quaternion.Lerp(transform.rotation, m_targetRotation, 5f * Time.deltaTime);
     }
-
-
-    //Rotation alternative
-    //float currentAngle = transform.rotation.eulerAngles.y;
-    //transform.rotation = Quaternion.AngleAxis(currentAngle + (Time.deltaTime * -90f), Vector3.up);
-    //
-    //Quaternion target = Quaternion.Euler(0, 90 * dir, 0);
-    //// Dampen towards the target rotation
-    //transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5f);
 
     public void JumpSwipe(float move, float jumpForce, Rigidbody rigidBody)
     {
