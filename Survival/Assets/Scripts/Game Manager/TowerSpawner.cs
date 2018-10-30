@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerSpawner : MonoBehaviour {
+public class TowerSpawner : MonoBehaviour
+{
+    public void MoveTower()
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
 }
