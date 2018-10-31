@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void TakeDamage(int damage)
+    {
+        EnemyData enemy = GetComponent<EnemyData>();
+
+        enemy.m_health -= damage;
+
+        if (enemy.m_health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

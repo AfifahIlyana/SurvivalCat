@@ -98,7 +98,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4203037046360308}
-  m_Layer: 8
+  - component: {fileID: 114304881634041238}
+  m_Layer: 0
   m_Name: Bullet Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,13 +380,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1355862797460222}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.01, y: -0.69, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.979, y: -0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4885211448064194}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4208410689431018
 Transform:
   m_ObjectHideFlags: 1
@@ -517,7 +518,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668260749087390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.37, y: 3.51, z: -0.56}
+  m_LocalPosition: {x: -2.37, y: 3.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4510972805046228}
@@ -565,8 +566,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6128738, y: 3.2128031, z: 0.2}
-  m_Center: {x: 0.042888522, y: -0.7222353, z: 0}
+  m_Size: {x: 1.6128738, y: 3.2128031, z: 0.64783025}
+  m_Center: {x: 0.042888522, y: -0.7222353, z: 0.2239151}
 --- !u!82 &82161753163155712
 AudioSource:
   m_ObjectHideFlags: 1
@@ -775,6 +776,21 @@ MonoBehaviour:
   m_Bones: []
   m_BoneTransforms:
   - {fileID: 4711251516330826}
+--- !u!114 &114304881634041238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355862797460222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17fc14f37b8f4c96b316fa42651dfb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 1903538287203888, guid: ae42bab5ee3174925b6b4655ed347b8d, type: 2}
+    size: 3
 --- !u!114 &114307424319885752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -803,7 +819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isRotating: 0000
   m_maxSpeed: 5
-  m_isFacingRight: 1
 --- !u!114 &114554058005366922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -837,14 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf19b118f5b134f73aba6fdafd741947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  bulletSpawn: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-=======
   bulletSpawn: {fileID: 4203037046360308}
-  bulletPrefab: {fileID: 1903538287203888, guid: ae42bab5ee3174925b6b4655ed347b8d,
-    type: 2}
->>>>>>> daccf23c71ef93421b296f1d7cde29139231dd75
 --- !u!114 &114664977929686186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -933,7 +941,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43040204077138552, guid: dbd51177a27414c728005a7814f60f80, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4711251516330826}
   m_BlendShapeWeights: []
@@ -981,7 +989,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43284735840161660, guid: b59f668091e844642aaef4e7c6228b14, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4190267820566684}
   m_BlendShapeWeights: []
@@ -1029,7 +1037,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43782249679407436, guid: dc2325d51bcc84df496e522b1519c437, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4157720553172782}
   - {fileID: 4751233878970608}

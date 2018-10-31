@@ -21,10 +21,15 @@ public class Enemy : MonoBehaviour {
 
     public void Update()
     {
-        transform.Translate(direction * currentSpeed * Time.deltaTime);
+        transform.Translate(direction * currentSpeed * Time.deltaTime); 
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        CheckEdgesPlatform(other);
+    }
+
+    private void CheckEdgesPlatform(Collider other)
     {
         if (other.gameObject.tag == "Edge")
         {
@@ -35,11 +40,8 @@ public class Enemy : MonoBehaviour {
             theScale.x *= -1;
             transform.localScale = theScale;
             direction.x *= -1;
-        } 
+        }
     }
-
-  
-
 
     public void TakeDamage(int damage)
     {
