@@ -6,7 +6,7 @@ public class MyGameManager : MonoBehaviour
     private ScoreSystem m_scoreSystem;
     private MyUIManager m_myUiManager;
 
-    //[HideInInspector]
+    [HideInInspector]
     public int m_lastHeight;
 
     private void Awake()

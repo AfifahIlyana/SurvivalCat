@@ -2,9 +2,9 @@
 
 public class PlayerHealth : MonoBehaviour 
 {
-    public void TakeDamage ()
+    public void TakeDamage (int reduceHealth, GameObject player)
     {
-        
+        player.GetComponent<PlayerData>().m_health -= reduceHealth;
     }
 
     public void AddHealth (int addHealth, GameObject player)
