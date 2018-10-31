@@ -4,13 +4,5 @@ using UnityEngine;
 
 public class EnemyData : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int m_health = 120;
 }

@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour, IPooledObject {
     
     public float speed = 20f;
     public int damage = 40;
     public Rigidbody rb;
 
     // Use this for initialization
-    void Update()
+    public void OnObjectSpawn()
     {
-
         var localVelocity = transform.InverseTransformDirection(rb.velocity);
       
-        if (GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().m_isFacingRight)
+        if (GameObject.FindWithTag("Player").transform.localScale.x == 1 )
         {
-            localVelocity = -(transform.right) * speed;
+            localVelocity = -(transform.right) * speed * Time.deltaTime;
         }
 
-        else
+        else if(GameObject.FindWithTag("Player").transform.localScale.x == -1)
         {
-            localVelocity = transform.right * speed;
-            Destroy(gameObject, 10f);
+            localVelocity = transform.right * speed * Time.deltaTime;
         }
 
         rb.velocity = transform.TransformDirection(localVelocity);
@@ -30,7 +28,7 @@ public class Bullet : MonoBehaviour {
 
     //void OnTriggerEnter (Collider hitInfo)
     //{
-    //    Enemy enemy = hitInfo.GetComponent<Enemy>();
+    //    EnemyHealth enemy = hitInfo.GetComponent<EnemyHealth>();
 
     //    if (enemy != null)
     //    {

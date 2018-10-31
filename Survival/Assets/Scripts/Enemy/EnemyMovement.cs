@@ -4,13 +4,35 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    private float currentSpeed = 1f;
+
+    private Animator animator;
+
+    Vector3 direction = new Vector3(-1, 0, 0);
+
+    public void Move()
+    {
+        transform.Translate(direction * currentSpeed * Time.deltaTime);
+    }
+
+    public void CheckEdgesPlatform(Collider other)
+    {
+        if (other.gameObject.tag == "Edge")
+        {
+            Debug.Log("The edge is triggered");
+
+            //turn around
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+            direction.x *= -1;
+        }
+    }
+
+    public void Die()
+    {
+        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }
