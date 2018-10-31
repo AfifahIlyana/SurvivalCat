@@ -4,28 +4,23 @@
 [RequireComponent(typeof(EnemyAttack))]
 [RequireComponent(typeof(EnemyData))]
 [RequireComponent(typeof(EnemyMovement))]
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour 
 {
-    private EnemyMovement m_enemyMovement;
-    private Animator m_animator;
-
-    public void Start()
-    {
-        m_animator = GetComponent<Animator>();
-        m_enemyMovement = GetComponent<EnemyMovement>();
-    }
+    private Rigidbody m_rigidBody;
+    private MyUIManager m_myUiManager;
 
     private float m_timeSinceLastDamage;
+
+    private void Start()
+    {
+        m_rigidBody = GetComponent<Rigidbody>();
+        m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
+    }
 
     private void Update()
     {
         m_timeSinceLastDamage += Time.deltaTime;
-    }
-
-    private void FixedUpdate()
-    {
-        m_enemyMovement.Move();
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,15 +29,11 @@ public class EnemyController : MonoBehaviour
         {
             if (m_timeSinceLastDamage > 1f)
             {
-                other.GetComponent<PlayerHealth>().TakeDamage();
+                other.GetComponent<PlayerHealth>().TakeDamage(1, other.gameObject);
+                m_myUiManager.UpdateHealthStatus(other.gameObject.GetComponent<PlayerData>().m_health, false);
 
                 m_timeSinceLastDamage = 0;
             }
         }
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        m_enemyMovement.CheckEdgesPlatform(other);
     }
 }
