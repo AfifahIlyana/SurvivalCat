@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
 {
     private Rigidbody m_rigidBody;
     private MyUIManager m_myUiManager;
+    private EnemyAttack m_enemyAttack;
+    private EnemyMovement m_enemyMovement;
 
     private float m_timeSinceLastDamage;
 
@@ -16,11 +18,23 @@ public class EnemyController : MonoBehaviour
     {
         m_rigidBody = GetComponent<Rigidbody>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
+        m_enemyAttack = GetComponent<EnemyAttack>();
+        m_enemyMovement = GetComponent<EnemyMovement>();
     }
 
     private void Update()
     {
         m_timeSinceLastDamage += Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
+        m_enemyMovement.Move();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        m_enemyMovement.CheckEdgesPlatform(other);
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,5 +49,10 @@ public class EnemyController : MonoBehaviour
                 m_timeSinceLastDamage = 0;
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        m_enemyAttack.Attack(collision);
     }
 }

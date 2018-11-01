@@ -24,6 +24,7 @@ public class ObjectPoolers : MonoBehaviour
 
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
+    public static GameObject objectToSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -47,13 +48,14 @@ public class ObjectPoolers : MonoBehaviour
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        if(!poolDictionary.ContainsKey(tag))
+        if (!poolDictionary.ContainsKey(tag))
         {
             Debug.LogWarning("Pool with tag " + tag + " doesn't exist ");
             return null;
         }
 
-        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+        objectToSpawn = poolDictionary[tag].Dequeue();
 
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
@@ -61,14 +63,14 @@ public class ObjectPoolers : MonoBehaviour
 
         IPooledObject pooledObject = objectToSpawn.GetComponent<IPooledObject>();
 
-        if(pooledObject != null)
+        if (pooledObject != null)
         {
             pooledObject.OnObjectSpawn();
         }
+
         //put back to the queue
         poolDictionary[tag].Enqueue(objectToSpawn);
-
-        return objectToSpawn; 
+        return objectToSpawn;
     }
 
 

@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4203037046360308}
-  - component: {fileID: 114304881634041238}
+  - component: {fileID: 114261865253576384}
   m_Layer: 0
   m_Name: Bullet Spawn
   m_TagString: Untagged
@@ -543,7 +543,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65203880168759316
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Bones: []
   m_BoneTransforms:
   - {fileID: 4711251516330826}
---- !u!114 &114304881634041238
+--- !u!114 &114261865253576384
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7cd6c68e80e44f48c305a38cebd610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 0
+  m_health: 3
   m_score: 0
   m_attack: 0
   m_speed: 0
@@ -941,7 +941,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43040204077138552, guid: dbd51177a27414c728005a7814f60f80, type: 2}
   m_Bones:
   - {fileID: 4711251516330826}
   m_BlendShapeWeights: []
@@ -989,7 +989,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43284735840161660, guid: b59f668091e844642aaef4e7c6228b14, type: 2}
   m_Bones:
   - {fileID: 4190267820566684}
   m_BlendShapeWeights: []
@@ -1037,7 +1037,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43782249679407436, guid: dc2325d51bcc84df496e522b1519c437, type: 2}
   m_Bones:
   - {fileID: 4157720553172782}
   - {fileID: 4751233878970608}
