@@ -4,9 +4,11 @@ using System.Collections;
 
 public class MusicManager : MonoBehaviour {
 
-      private MusicPlayer music;
+    
+    
       public Button musicToggleButton;
       public Sprite [] offOnbutton;
+      private MusicPlayer music;
 
     void Start()
     {
