@@ -72,9 +72,8 @@ public class PlayerController : MonoBehaviour
 
     public void CatShooting()
     {
-        m_playerAttack.Shoot();
         m_animator.SetTrigger("isShooting");
+        m_playerAttack.Shoot();
     }
-
 
 }

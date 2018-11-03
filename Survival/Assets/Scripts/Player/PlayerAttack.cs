@@ -10,13 +10,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+     
        objectPooler = ObjectPoolers.Instance;
     }
 
     public void Shoot()
     {
-       // Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        // Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
-   
     }
+
 }
