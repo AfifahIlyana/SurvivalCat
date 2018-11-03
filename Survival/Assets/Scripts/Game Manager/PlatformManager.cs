@@ -20,7 +20,10 @@ public class PlatformManager : MonoBehaviour
     {
         if (Utility.objectMovedUp == gameObject.transform.name)
         {
-            m_platformSpawner.ReshufflePlatformPosition(platformHolderNumber);
+            if (m_platformSpawner != null)
+            {
+                m_platformSpawner.ReshufflePlatformPosition(platformHolderNumber);
+            }
         }
     }
 }

@@ -10,10 +10,7 @@ public class PlatformSpawner : MonoBehaviour
     [HideInInspector]
     public GameObject[,] m_platformGroups;
     private int m_platformGroupSize;
-
-    //private int[] m_randomNumbers;
-
-    List<int> m_randomNumbers = new List<int>();
+    private List<int> m_randomNumbers = new List<int>();
 
     private void Start()
     {
@@ -22,20 +19,11 @@ public class PlatformSpawner : MonoBehaviour
         m_randomNumbers = new List<int>();
 
         GenerateUniqueRandomNumber();
+        AssignPlatformGroupToArray();
 
         for (int i = 0; i < m_platformHolder.Length; i++)
         {
-            AssignPlatformGroupToArray(i);
-        }
-
-        for (int i = 0; i < m_platformHolder.Length; i++)
-        {
-            for (int z = 0; z < m_platformGroupSize; z++)
-            {
-                m_randomNumbers[z] = 99;
-            }
-            ResetUniqueRandomNumber();
-            PlacePlatformGroupRandomly(i);
+            ReshufflePlatformPosition(i);
         }
     }
 
@@ -79,11 +67,14 @@ public class PlatformSpawner : MonoBehaviour
         }
     }
 
-    private void AssignPlatformGroupToArray(int i)
+    private void AssignPlatformGroupToArray()
     {
-        for (int y = 0; y < m_platformGroupSize; y++)
+        for (int i = 0; i < m_platformHolder.Length; i++)
         {
-            m_platformGroups[i,y] = m_platformHolder[i].transform.GetChild(y).gameObject;
+            for (int y = 0; y < m_platformGroupSize; y++)
+            {
+                m_platformGroups[i, y] = m_platformHolder[i].transform.GetChild(y).gameObject;
+            }
         }
     }
 
