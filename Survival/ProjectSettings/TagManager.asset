@@ -25,7 +25,7 @@ TagManager:
   - Player
   - Enemy
   - Bullet
-  - 
+  - Particles
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SkyCity
+    uniqueID: 4174772841
+    locked: 0
   - name: Mountain
     uniqueID: 1490012149
     locked: 0
