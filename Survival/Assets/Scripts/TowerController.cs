@@ -29,6 +29,8 @@ public class TowerController : MonoBehaviour
         if (playerHeightRelativeToTower >= m_playerTresholdHeight)
         {
             transform.position += Vector3.up * m_moveTower;
+
+            Utility.objectMovedUp = gameObject.transform.name;
         }
     }
 }
