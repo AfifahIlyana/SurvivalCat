@@ -5,42 +5,76 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_platformHolder;
+    private GameObject[] m_platformHolder;
 
-    private int m_platformGroupSize = 15;
-    private GameObject[] m_platformGroups;
-
-    //private int[] m_randomNumbers;
-
-    List<int> m_randomNumbers = new List<int>();
+    [HideInInspector]
+    public GameObject[,] m_platformGroups;
+    private int m_platformGroupSize;
+    private List<int> m_randomNumbers = new List<int>();
 
     private void Start()
     {
-        m_platformGroupSize = m_platformHolder.transform.childCount;
-        m_platformGroups = new GameObject[m_platformGroupSize];
+        m_platformGroupSize = m_platformHolder[0].transform.childCount;
+        m_platformGroups = new GameObject[m_platformHolder.Length,m_platformGroupSize];
         m_randomNumbers = new List<int>();
 
         GenerateUniqueRandomNumber();
         AssignPlatformGroupToArray();
-        PlacePlatformGroupRandomly();
+
+        for (int i = 0; i < m_platformHolder.Length; i++)
+        {
+            ReshufflePlatformPosition(i);
+        }
     }
 
-    private void PlacePlatformGroupRandomly()
+    private void Update()
     {
-        for (int i = 0; i < m_platformGroupSize; i++)
-        {
-            int j = m_randomNumbers[i];
+        ReshufflePlatformPositionWhenClicked(0);
+        ReshufflePlatformPositionWhenClicked(1);
+    }
 
-            m_platformGroups[j].SetActive(true);
-            m_platformGroups[j].transform.Translate(Vector3.up * i);
+    private void ReshufflePlatformPositionWhenClicked(int i)
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            for (int z = 0; z < m_platformGroupSize; z++)
+            {
+                m_randomNumbers[z] = 99;
+            }
+            ResetUniqueRandomNumber();
+            PlacePlatformGroupRandomly(i);
+        }
+    }
+
+    public void ReshufflePlatformPosition(int i)
+    {
+        for (int z = 0; z < m_platformGroupSize; z++)
+        {
+            m_randomNumbers[z] = 99;
+        }
+        ResetUniqueRandomNumber();
+        PlacePlatformGroupRandomly(i);
+    }
+
+    private void PlacePlatformGroupRandomly(int i)
+    {
+        for (int j = 0; j < m_platformGroupSize; j++)
+        {
+            int k = m_randomNumbers[j];
+            m_platformGroups[i,k].transform.localPosition = Vector3.zero;
+            m_platformGroups[i,k].SetActive(true);
+            m_platformGroups[i,k].transform.Translate(Vector3.up * j);
         }
     }
 
     private void AssignPlatformGroupToArray()
     {
-        for (int i = 0; i < m_platformGroupSize; i++)
+        for (int i = 0; i < m_platformHolder.Length; i++)
         {
-            m_platformGroups[i] = m_platformHolder.transform.GetChild(i).gameObject;
+            for (int y = 0; y < m_platformGroupSize; y++)
+            {
+                m_platformGroups[i, y] = m_platformHolder[i].transform.GetChild(y).gameObject;
+            }
         }
     }
 
@@ -49,6 +83,14 @@ public class PlatformSpawner : MonoBehaviour
         for (int i = 0; i < m_platformGroupSize; i++)
         {
             m_randomNumbers.Add(UniqueRandomInt(m_platformGroupSize));
+        }
+    }
+
+    private void ResetUniqueRandomNumber()
+    {
+        for (int i = 0; i < m_platformGroupSize; i++)
+        {
+            m_randomNumbers[i] = UniqueRandomInt(m_platformGroupSize);
         }
     }
 
