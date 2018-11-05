@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Utility : MonoBehaviour 
 {
+    public static string objectMovedUp = "";
 
     public static Vector3 GetAxis()
     {
