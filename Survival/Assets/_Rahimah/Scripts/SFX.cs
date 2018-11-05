@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour {
-    
-    static MusicPlayer instance = null;
+public class SFX : MonoBehaviour {
+
+    public static SFX instance;
 
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
+        MakeInstance();
+    }
+
+    void MakeInstance()
+    {
+        if (instance == null)
         {
             instance = this;
-            GameObject.DontDestroyOnLoad(gameObject);
+            print("making instance");
         }
     }
 
-    public void ToggleSound()
+    public void ToggleSoundfx()
     {
         if (PlayerPrefs.GetInt("Muted", 0) == 0)
         {
@@ -30,5 +31,4 @@ public class MusicPlayer : MonoBehaviour {
             PlayerPrefs.SetInt("Muted", 0);
         }
     }
-
 }

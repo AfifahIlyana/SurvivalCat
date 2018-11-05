@@ -1056,7 +1056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9d6f7c380b14cd4a5e00d10f86073f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpeed: 1
 --- !u!114 &114296780074245202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1306,6 +1305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365cd8cba12534381afe30ebc2e70229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticle: {fileID: 0}
+  deathParticleSpawn: {fileID: 0}
 --- !u!114 &114849704659636370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1333,6 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcffcea0123c541ac88480e4f87c575d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_animator: {fileID: 0}
 --- !u!114 &114928703954223900
 MonoBehaviour:
   m_ObjectHideFlags: 1
