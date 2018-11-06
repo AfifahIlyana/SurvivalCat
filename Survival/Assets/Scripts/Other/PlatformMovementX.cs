@@ -36,7 +36,7 @@ public class PlatformMovementX : MonoBehaviour
     }
 
     private void Update() {
-        if (transform.position.y + 0.6f < (m_player.transform.position.y))
+        if (transform.position.y + 0.6f < (m_player.transform.position.y - 2.3))
         {
             m_baseCollider.gameObject.SetActive(true);
         }

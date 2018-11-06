@@ -4,7 +4,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public void TakeDamage (int reduceHealth, GameObject player)
     {
+        Debug.Log("mau kurang ? ");
         player.GetComponent<PlayerData>().m_health -= reduceHealth;
+        Debug.Log("inda mau kurang");
 
         if (player.GetComponent<PlayerData>().m_health <= 0)
         {
