@@ -688,7 +688,6 @@ GameObject:
   - component: {fileID: 108351534}
   - component: {fileID: 108351538}
   - component: {fileID: 108351537}
-  - component: {fileID: 108351536}
   - component: {fileID: 108351535}
   m_Layer: 5
   m_Name: MuteSfx
@@ -696,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &108351534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -754,7 +753,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 108351536}
+      - m_Target: {fileID: 1940083129}
         m_MethodName: Pausesfx
         m_Mode: 1
         m_Arguments:
@@ -767,21 +766,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &108351536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 108351533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8f058ad47c99c4a88471357176379e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sfxToggleButton: {fileID: 108351537}
-  offOnbutton:
-  - {fileID: 21300000, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
-  - {fileID: 21300002, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
 --- !u!114 &108351537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9044,6 +9028,9 @@ GameObject:
   - component: {fileID: 1940083125}
   - component: {fileID: 1940083124}
   - component: {fileID: 1940083123}
+  - component: {fileID: 1940083127}
+  - component: {fileID: 1940083128}
+  - component: {fileID: 1940083129}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9133,6 +9120,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1940083127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940083122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75d6f9339b7b48d29a7002eaf85fc79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hearts: []
+  m_currentScore: {fileID: 0}
+  plus10: {fileID: 0}
+  plus30: {fileID: 0}
+--- !u!114 &1940083128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940083122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15970d79ed1478d4487994dbccf004ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicToggleButton: {fileID: 2109640379}
+  offOnbutton:
+  - {fileID: 21300000, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
+  - {fileID: 21300002, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
+--- !u!114 &1940083129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940083122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8f058ad47c99c4a88471357176379e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxToggleButton: {fileID: 108351537}
+  offOnbutton:
+  - {fileID: 21300000, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
+  - {fileID: 21300002, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
 --- !u!1001 &1941702613
 Prefab:
   m_ObjectHideFlags: 0
@@ -9677,6 +9709,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1545764197863876, guid: bb3a6ae3b1f084f48964b4d10c22b255, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3a6ae3b1f084f48964b4d10c22b255, type: 2}
   m_IsPrefabAsset: 0
@@ -9907,7 +9943,6 @@ GameObject:
   - component: {fileID: 2109640380}
   - component: {fileID: 2109640379}
   - component: {fileID: 2109640378}
-  - component: {fileID: 2109640377}
   m_Layer: 5
   m_Name: MuteMusic
   m_TagString: Untagged
@@ -9933,21 +9968,6 @@ RectTransform:
   m_AnchoredPosition: {x: 292, y: 82}
   m_SizeDelta: {x: 75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2109640377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2109640375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15970d79ed1478d4487994dbccf004ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicToggleButton: {fileID: 2109640379}
-  offOnbutton:
-  - {fileID: 21300000, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
-  - {fileID: 21300002, guid: 5ccf0921cd89b494e9d737000abf2c1b, type: 3}
 --- !u!114 &2109640378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9987,7 +10007,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2109640377}
+      - m_Target: {fileID: 1940083128}
         m_MethodName: PauseMusic
         m_Mode: 1
         m_Arguments:
@@ -10078,6 +10098,12 @@ Prefab:
       propertyPath: PlayerSpawnPoint
       value: 
       objectReference: {fileID: 130670928}
+    - target: {fileID: 114083744737120518, guid: 3e8009380e250a64584e7449321c58c3,
+        type: 2}
+      propertyPath: Characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1668260749087390, guid: 6f264311c92c54fc3bb1bb87264aa269,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8009380e250a64584e7449321c58c3, type: 2}
   m_IsPrefabAsset: 0
