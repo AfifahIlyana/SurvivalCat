@@ -1,21 +1,24 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SFXManager : MonoBehaviour {
 
     public Image sfxToggleButton;
     public Sprite[] offOnbutton;
-    private SFX sound;
+    MyUIManager sfx;
+    AudioSource playersfx;
 
     void Start()
     {
-        sound = GameObject.FindObjectOfType<SFX>();
+        sfx = GameObject.FindObjectOfType<MyUIManager>();
+        playersfx = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         UpdateIconAndVolumes();
     }
-
+   
     public void Pausesfx()
     {
-        sound.ToggleSoundfx();
+        sfx.ToggleSoundfx();
         UpdateIconAndVolumes();
     }
 
@@ -23,12 +26,12 @@ public class SFXManager : MonoBehaviour {
     {
         if (PlayerPrefs.GetInt("Muted", 0) == 0)
         {
-            sound.GetComponent<AudioSource>().volume = 1;
+            playersfx.GetComponent<AudioSource>().volume = 1;
             sfxToggleButton.GetComponent<Image>().sprite = offOnbutton[0];
         }
         else
         {
-            sound.GetComponent<AudioSource>().volume = 0;
+            playersfx.GetComponent<AudioSource>().volume = 0;
             sfxToggleButton.GetComponent<Image>().sprite = offOnbutton[1];
         }
     }

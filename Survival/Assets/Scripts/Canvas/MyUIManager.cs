@@ -12,6 +12,7 @@ public class MyUIManager : MonoBehaviour
     [SerializeField]
     private GameObject plus30;
 
+
     public void UpdateHealthStatus (int healthLeft, bool heartStatus)
     {
         m_hearts[healthLeft].SetActive(heartStatus);
@@ -51,5 +52,17 @@ public class MyUIManager : MonoBehaviour
 
         }
 
+    }
+
+    public void ToggleSoundfx()
+    {
+        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        {
+            PlayerPrefs.SetInt("Muted", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Muted", 0);
+        }
     }
 }

@@ -36,11 +36,12 @@ public class PlatformMovementX : MonoBehaviour
     }
 
     private void Update() {
-        if (transform.position.y + 0.6f < (m_player.transform.position.y))
-        {
-            m_baseCollider.gameObject.SetActive(true);
+        if (m_player != null) {
+            if (transform.position.y + 0.6f < (m_player.transform.position.y))
+            {
+                m_baseCollider.gameObject.SetActive(true);
+            }
         }
-
         if (transform.position.x < m_leftLimit) {
             MoveRight();
             
