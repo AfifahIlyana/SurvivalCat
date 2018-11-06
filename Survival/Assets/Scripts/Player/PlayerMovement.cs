@@ -86,12 +86,32 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    public void ActivateRotatePlayer() {
-        if (Input.GetKeyDown(KeyCode.Q) || m_isRotating[1]) {
+    public void ActivateRotatePlayer() 
+    {
+        if (Input.GetKeyDown(KeyCode.Q) || m_isRotating[1]) 
+        {
             //m_isRotating[1] = true;
             m_targetRotation = transform.rotation;
             m_targetRotation *= Quaternion.AngleAxis(90, Vector3.up);
-        } else if (Input.GetKeyDown(KeyCode.E) || m_isRotating[0]) {
+        } 
+        else if (Input.GetKeyDown(KeyCode.E) || m_isRotating[0]) 
+        {
+            //m_isRotating[0] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(-90, Vector3.up);
+        }
+    }
+
+    public void ActivateRotatePlayer(int num)
+    {
+        if (num == 1)
+        {
+            //m_isRotating[1] = true;
+            m_targetRotation = transform.rotation;
+            m_targetRotation *= Quaternion.AngleAxis(90, Vector3.up);
+        }
+        else if (num == 0)
+        {
             //m_isRotating[0] = true;
             m_targetRotation = transform.rotation;
             m_targetRotation *= Quaternion.AngleAxis(-90, Vector3.up);
