@@ -21,12 +21,21 @@ public class FollowGameObjectTransformation : MonoBehaviour
 
     void Update()
     {
-        FollowGameObjectPosition();
-        FollowGameObjectRotation();
+        if (m_gameObject != null)
+        {
+            FollowGameObjectPosition();
+            FollowGameObjectRotation();
+        }
     }
 
     private void FollowGameObjectRotation()
     {
+        if (m_gameObject == null)
+        {
+            Debug.LogWarning("GameObject has not being assigned to FollowGameObjectRotation");
+            return;
+        }
+
         if (m_rotation)
         {
             transform.rotation = m_gameObject.transform.rotation;
@@ -35,6 +44,12 @@ public class FollowGameObjectTransformation : MonoBehaviour
 
     private void FollowGameObjectPosition()
     {
+        if (m_gameObject == null)
+        {
+            Debug.LogWarning("GameObject has not being assigned to FollowGameObjectRotation");
+            return;
+        }
+
         if (m_position)
         {
             if (m_goingUpOnly)
