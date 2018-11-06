@@ -6,6 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
     ObjectPoolers objectPooler;
 
+    public GameObject bulletPrefab;
+
     public Transform bulletSpawn;
 
     private void Start()
@@ -16,7 +18,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void Shoot()
     {
-        // Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
     }
 
