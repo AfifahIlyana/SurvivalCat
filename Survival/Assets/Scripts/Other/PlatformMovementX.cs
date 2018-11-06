@@ -23,8 +23,8 @@ public class PlatformMovementX : MonoBehaviour
     {
         m_baseCollider.gameObject.SetActive(false);
 
-        m_rightLimit = transform.position.x + 3;
-        m_leftLimit = transform.position.x - 3;
+        m_rightLimit = 0.5f;
+        m_leftLimit = -0.5f;
 
         // Randomly chooses the direction of the platfrom (-1, 0, 1)
         m_direction = Random.Range(-1, 2);
@@ -35,22 +35,30 @@ public class PlatformMovementX : MonoBehaviour
  
     }
 
-    private void Update() {
-        if (transform.position.y + 0.6f < (m_player.transform.position.y))
+    private void Update() 
+    {
+        if (m_player != null)
         {
-            m_baseCollider.gameObject.SetActive(true);
+            if (transform.position.y + 0.6f <= (m_player.transform.position.y))
+            {
+                m_baseCollider.gameObject.SetActive(true);
+            }
         }
 
-        if (transform.position.x < m_leftLimit) {
-            MoveRight();
-            
-        } else if (transform.position.x > m_rightLimit) {
+        if (transform.localPosition.x >= m_rightLimit) 
+        {
             MoveLeft();
+            
+        }
+
+        if (transform.localPosition.x <= m_leftLimit) 
+        {
+            MoveRight();
 
         }
 
         Vector3 movement = Vector3.right * m_direction * Time.deltaTime;
-        transform.Translate(movement);
+        transform.Translate(movement, Space.Self);
 
     }
 

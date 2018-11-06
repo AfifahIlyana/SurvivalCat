@@ -29,10 +29,4 @@ public class EnemyMovement : MonoBehaviour {
             direction.x *= -1;
         }
     }
-
-    public void Die()
-    {
-        // Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
 }

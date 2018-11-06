@@ -7,19 +7,26 @@
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour 
 {
+    
+    private Animator m_animator;
     private Rigidbody m_rigidBody;
-    private MyUIManager m_myUiManager;
+
     private EnemyAttack m_enemyAttack;
     private EnemyMovement m_enemyMovement;
+    private PlayerHealth m_playerHealth;
+    private MyUIManager m_myUiManager;
 
     private float m_timeSinceLastDamage;
 
     private void Start()
     {
+        m_animator = GetComponent<Animator>();
         m_rigidBody = GetComponent<Rigidbody>();
-        m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
         m_enemyAttack = GetComponent<EnemyAttack>();
         m_enemyMovement = GetComponent<EnemyMovement>();
+
+        m_playerHealth = GetComponent<PlayerHealth>();
+        m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
 
     private void Update()
@@ -37,22 +44,32 @@ public class EnemyController : MonoBehaviour
         m_enemyMovement.CheckEdgesPlatform(other);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            if (m_timeSinceLastDamage > 1f)
-            {
-                other.GetComponent<PlayerHealth>().TakeDamage(1, other.gameObject);
-                m_myUiManager.UpdateHealthStatus(other.gameObject.GetComponent<PlayerData>().m_health, false);
-
-                m_timeSinceLastDamage = 0;
-            }
-        }
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        m_enemyAttack.Attack(collision);
+        if (m_timeSinceLastDamage > 1f)
+        {
+            m_animator.SetBool("isAttacking", true);
+            EnemyMovement.currentSpeed = 0;
+
+            if (collision.transform.tag == "Player")
+            {
+                Debug.Log("inda mau kurang health si " + collision.gameObject);
+
+                m_playerHealth.TakeDamage(1, collision.gameObject);
+                m_myUiManager.UpdateHealthStatus(collision.gameObject.GetComponent<PlayerData>().m_health, false);
+
+                m_timeSinceLastDamage = 0;
+            }
+
+        }
+
+        else
+        {
+            m_animator.SetBool("isAttacking", false);
+        }
+
     }
+
+
 }

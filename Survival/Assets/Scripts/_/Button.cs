@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 
-    private bool rotated = false;
-    private Animator animButton;
+    [System.Serializable]
+    private enum Rotation { AntiClockwise, Clockwise };
+    [SerializeField]
+    private Rotation m_rotation;
+    private bool m_isRotated = false;
+    private Animator m_animButton;
 
-    private void Start() {
-        animButton = GetComponent<Animator>();
+    private void Start() 
+    {
+        m_animButton = GetComponent<Animator>();
 
     }
 
@@ -16,34 +21,34 @@ public class Button : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<PlayerMovement>().RotatePlayerNow();
-        }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        if (other.tag == "Player") {
-            animButton.SetBool("ButtonDown", true);
-
-            // Disable character control
-            // Trigger tower rotation
-            // Enable character control
-
-            if (rotated == false) {
-                rotated = true;
-                other.GetComponent<PlayerMovement>().RotatePlayerNow();
+            if (!m_isRotated)
+            {
+                m_isRotated = true;
+                other.GetComponent<PlayerMovement>().ActivateRotatePlayer((int)m_rotation);
 
             }
         }
     }
 
-    private void OnTriggerExit(Collider other) {
-        animButton.SetBool("ButtonDown", false);
+    private void OnTriggerStay(Collider other) 
+    {
+        m_animButton.SetBool("ButtonDown", true);
+
+        // Disable character control
+        // Trigger tower rotation
+        // Enable character control
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        m_animButton.SetBool("ButtonDown", false);
 
     }
 
-    public void Rotates() {
-        rotated = !rotated;
-        Debug.Log(rotated);
+    public void Rotates() 
+    {
+        m_isRotated = !m_isRotated;
+        Debug.Log(m_isRotated);
 
     }
     
