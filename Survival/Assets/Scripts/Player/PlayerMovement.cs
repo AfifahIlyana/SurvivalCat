@@ -33,15 +33,20 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void JumpKeyboard(float move, float jumpForce, Rigidbody rigidBody)
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
+        }
+
+    }
+
     public void Jump(float move, float jumpForce, Rigidbody rigidBody)
     {
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
-        //}
-
         rigidBody.AddRelativeForce(new Vector3(move, jumpForce, 0));
     }
+
 
     public void RotatePlayer()
     {
