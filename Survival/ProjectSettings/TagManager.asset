@@ -47,6 +47,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ocean
+    uniqueID: 1637229187
+    locked: 0
+  - name: Cave
+    uniqueID: 3675162671
+    locked: 0
   - name: SkyCity
     uniqueID: 4174772841
     locked: 0
@@ -56,6 +62,12 @@ TagManager:
   - name: Forest
     uniqueID: 165634695
     locked: 0
+  - name: Ground
+    uniqueID: 2212964363
+    locked: 0
+  - name: Space
+    uniqueID: 3159350307
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -64,6 +76,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 3109051869
+    locked: 0
+  - name: Foreground
+    uniqueID: 1866189963
     locked: 0
   - name: UI
     uniqueID: 4078793279
