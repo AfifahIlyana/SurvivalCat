@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("mau kurang ? ");
         player.GetComponent<PlayerData>().m_health -= reduceHealth;
-        Debug.Log("inda mau kurang");
+
 
         if (player.GetComponent<PlayerData>().m_health <= 0)
         {

@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
     public GameObject bulletPrefab;
 
     public Transform bulletSpawn;
+    public Transform bulletSpawn2;
+    public Transform bulletSpawn3;
 
     private void Start()
     {
@@ -18,7 +20,15 @@ public class PlayerAttack : MonoBehaviour
 
     public void Shoot()
     {
+
         objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
+
+    }
+
+    public void ShootForDog()
+    {
+        objectPooler.SpawnFromPool("Bullet", bulletSpawn2.position, bulletSpawn2.rotation);
+        objectPooler.SpawnFromPool("Bullet", bulletSpawn3.position, bulletSpawn3.rotation);
     }
 
 }
