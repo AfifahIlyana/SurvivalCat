@@ -11,25 +11,35 @@ public class RotateWithCamera : MonoBehaviour
 
 	void Start () 
     {
-        if (m_position)
+        if (m_player != null)
         {
-            transform.position = m_player.transform.position;
+            if (m_position)
+            {
+                transform.position = m_player.transform.position;
+            }
+            if (m_rotation)
+            {
+                transform.rotation = m_player.transform.rotation;
+            }
         }
-        if (m_rotation)
+        else
         {
-            transform.rotation = m_player.transform.rotation;
+            Debug.LogWarning("Player has not being assigned to RotateWithCamera");
         }
-	}
+    }
 	
 	void Update () 
     {
-        if (m_position)
+        if (m_player != null)
         {
-            transform.position = m_player.transform.position;
+            if (m_position)
+            {
+                transform.position = m_player.transform.position;
+            }
+            if (m_rotation)
+            {
+                transform.rotation = m_player.transform.rotation;
+            }
         }
-        if (m_rotation)
-        {
-            transform.rotation = m_player.transform.rotation;
-        }
-	}
+    }
 }
