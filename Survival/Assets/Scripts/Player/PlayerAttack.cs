@@ -27,8 +27,19 @@ public class PlayerAttack : MonoBehaviour
 
     public void ShootForDog()
     {
+        objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
         objectPooler.SpawnFromPool("Bullet", bulletSpawn2.position, bulletSpawn2.rotation);
         objectPooler.SpawnFromPool("Bullet", bulletSpawn3.position, bulletSpawn3.rotation);
+    }
+
+    public void ShootForDogKeyboard()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
+            objectPooler.SpawnFromPool("Bullet", bulletSpawn2.position, bulletSpawn2.rotation);
+            objectPooler.SpawnFromPool("Bullet", bulletSpawn3.position, bulletSpawn3.rotation);
+        }
     }
 
 }

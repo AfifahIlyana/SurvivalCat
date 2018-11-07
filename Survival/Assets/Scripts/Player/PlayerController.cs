@@ -59,14 +59,17 @@ public class PlayerController : MonoBehaviour
 
             case Type.keyboard:
                 m_move = Utility.GetAxis().x;
+                m_playerMovement.Move(m_rigidBody, m_move, m_animator);
+                m_playerMovement.JumpKeyboard(m_move, m_jumpForce, m_rigidBody);
+                m_playerAttack.ShootForDogKeyboard();
+                break;
+                 
+            case Type.joystick:
+                m_move = Utility.GetAxisJoystick(joystick).x;
                 break;
 
         }
 
-        //m_move = Utility.GetAxis().x;
-        //m_move = Utility.GetAxisJoystick(joystick).x;
-        //
-        //m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
         //m_playerMovement.JumpSwipe(m_move, m_jumpForce, m_rigidBody);
         //m_move = Utility.GetAxisJoystick(joystick).y;
     }
