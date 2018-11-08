@@ -17,7 +17,6 @@ public class Option : MonoBehaviour {
         } else {
             isShown = false;
             optionPanel.SetActive(false);
-
         }
     }
 
