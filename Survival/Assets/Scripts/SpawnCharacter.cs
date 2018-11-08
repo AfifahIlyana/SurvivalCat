@@ -12,6 +12,5 @@ public class SpawnCharacter : MonoBehaviour {
 	void Start () {
         Instantiate(Characters[PlayerNum.CharacterNum],PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
     }
-	
 
 }
