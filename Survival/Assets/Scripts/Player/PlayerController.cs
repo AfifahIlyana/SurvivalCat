@@ -9,14 +9,16 @@
 
 public class PlayerController : MonoBehaviour 
 {
-    public enum Type
+    [System.Serializable]
+    private enum Type
     {
         buttons,
         keyboard,
         joystick
     }
 
-    public Type inputController = new Type();
+    [SerializeField]
+    private Type inputController = new Type();
 
     private Animator m_animator;
     private Rigidbody m_rigidBody;

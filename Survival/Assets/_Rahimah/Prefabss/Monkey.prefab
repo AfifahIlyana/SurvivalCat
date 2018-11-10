@@ -953,6 +953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72053144e843a1147913698a0e8530d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputController: 0
   m_jumpForce: 300
   joystick: {fileID: 0}
 --- !u!114 &114458922249880162
@@ -1105,6 +1106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   bulletSpawn: {fileID: 0}
+  bulletSpawn2: {fileID: 0}
+  bulletSpawn3: {fileID: 0}
 --- !u!114 &114857722235963518
 MonoBehaviour:
   m_ObjectHideFlags: 1
