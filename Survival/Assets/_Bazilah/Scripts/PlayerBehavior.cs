@@ -6,6 +6,7 @@ public class PlayerBehavior : MonoBehaviour {
 
     //private Transform playerPosition;
     private PlayerController playerController;
+    private PlayerAttack playerAttack;
     private GameObject player;
 
     private void Start()
@@ -23,8 +24,31 @@ public class PlayerBehavior : MonoBehaviour {
 
     public void PlayerMovement(float horizontal)
     {
-        Debug.Log("inda mau");
         playerController.UpdateMoveValue(horizontal);
-        Debug.Log("lagi tia inda mau");
+    }
+
+    public void PlayerJumping()
+    {
+        playerController.Jump();
+    }
+
+    public void PlayerActions()
+    {
+       
+                                              
+        if(player.name.Contains("Cat"))
+        {
+            playerController.CatShooting();
+        }
+
+        else if(player.name.Contains("Dog"))
+        {
+            playerController.DogShooting();
+        }
+
+        else if(player.name.Contains("Monkey"))
+        {
+            playerController.MonkeyAttacking();
+        }
     }
 }
