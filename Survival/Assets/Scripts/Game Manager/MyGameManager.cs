@@ -11,7 +11,7 @@ public class MyGameManager : MonoBehaviour
 
     private void Awake()
     {
-        m_player = GameObject.Find("Cat");
+        m_player = GameObject.FindGameObjectWithTag("Player");
         m_scoreSystem = GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }

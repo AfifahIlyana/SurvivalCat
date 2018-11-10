@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (player.GetComponent<PlayerData>().m_health <= 0)
         {
-            GameOver gameover = GameObject.FindGameObjectWithTag("GameOverTrigger").GetComponent<GameOver>();
+            GameOver gameover = GameObject.Find("Canvas").GetComponent<GameOver>();
             gameover.TriggerGameOver();
         }
     }

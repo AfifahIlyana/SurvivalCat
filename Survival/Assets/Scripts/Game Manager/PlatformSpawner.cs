@@ -12,6 +12,9 @@ public class PlatformSpawner : MonoBehaviour
     private int m_platformGroupSize;
     private List<int> m_randomNumbers = new List<int>();
 
+    [SerializeField]
+    private float m_height;
+
     private void Start()
     {
         m_platformGroupSize = m_platformHolder[0].transform.childCount;
@@ -63,7 +66,7 @@ public class PlatformSpawner : MonoBehaviour
             int k = m_randomNumbers[j];
             m_platformGroups[i,k].transform.localPosition = Vector3.zero;
             m_platformGroups[i,k].SetActive(true);
-            m_platformGroups[i,k].transform.Translate(Vector3.up * j);
+            m_platformGroups[i,k].transform.Translate(Vector3.up * j * m_height);
         }
     }
 
