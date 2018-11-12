@@ -13,8 +13,8 @@ public class PlatformSpawner : MonoBehaviour
     private List<int> m_randomNumbers = new List<int>();
 
     [SerializeField]
-    private float m_height;
-
+    private float m_height = 6.8f;
+    
     private void Start()
     {
         m_platformGroupSize = m_platformHolder[0].transform.childCount;
