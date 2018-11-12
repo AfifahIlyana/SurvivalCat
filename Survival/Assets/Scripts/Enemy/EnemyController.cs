@@ -25,11 +25,7 @@ public class EnemyController : MonoBehaviour
         m_enemyAttack = GetComponent<EnemyAttack>();
         m_enemyMovement = GetComponent<EnemyMovement>();
 
-<<<<<<< HEAD
-        m_playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-=======
         m_playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
->>>>>>> 30702ea33d2382d3d2aff2a0222c71741b9a8772
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
 
@@ -53,12 +49,6 @@ public class EnemyController : MonoBehaviour
     {
         if (m_timeSinceLastDamage > 1f)
         {
-<<<<<<< HEAD
-            
-
-=======
-           
->>>>>>> 30702ea33d2382d3d2aff2a0222c71741b9a8772
             if (collision.transform.tag == "Player")
             {
 

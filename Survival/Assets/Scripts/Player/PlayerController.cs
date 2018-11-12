@@ -102,4 +102,14 @@ public class PlayerController : MonoBehaviour
         m_playerAttack.Shoot();
     }
 
+    public void DogShooting()
+    {
+        m_animator.SetTrigger("isShooting");
+        m_playerAttack.ShootForDog();
+    }
+
+    public void MonkeyAttacking()
+    {
+        m_animator.SetTrigger("isAttacking");
+    }
 }

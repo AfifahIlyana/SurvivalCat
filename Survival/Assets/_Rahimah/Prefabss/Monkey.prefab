@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 114886259788032018}
   m_Layer: 0
   m_Name: Monkey
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7cd6c68e80e44f48c305a38cebd610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 0
+  m_health: 3
   m_score: 0
   m_attack: 0
   m_speed: 0
