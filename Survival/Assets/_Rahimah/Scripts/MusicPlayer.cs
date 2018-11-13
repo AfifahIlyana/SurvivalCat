@@ -17,17 +17,19 @@ public class MusicPlayer : MonoBehaviour {
             instance = this;
             GameObject.DontDestroyOnLoad(gameObject);
         }
+
+        
     }
 
     public void ToggleSound()
     {
-        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
         {
-            PlayerPrefs.SetInt("Muted", 1);
+            PlayerPrefs.SetInt("Mute", 1);
         }
         else
         {
-            PlayerPrefs.SetInt("Muted", 0);
+            PlayerPrefs.SetInt("Mute", 0);
         }
     }
 

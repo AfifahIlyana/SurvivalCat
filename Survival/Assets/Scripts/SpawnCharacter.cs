@@ -10,7 +10,6 @@ public class SpawnCharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        
         Instantiate(Characters[PlayerNum.CharacterNum],PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
     }
 

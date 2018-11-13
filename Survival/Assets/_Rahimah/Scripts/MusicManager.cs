@@ -5,23 +5,24 @@ public class MusicManager : MonoBehaviour {
 
       public Image musicToggleButton;
       public Sprite [] offOnbutton;
-      private MusicPlayer music;
+      private GameObject music;
 
     void Start()
     {
-        music = GameObject.FindObjectOfType<MusicPlayer>();
+        //music = GameObject.FindObjectOfType<MusicPlayer>();
+        music = GameObject.Find("Music");
         UpdateIconAndVolume();
     } 
 
     public void PauseMusic()
     {
-        music.ToggleSound();
+        music.GetComponent<MusicPlayer>().ToggleSound();
         UpdateIconAndVolume();
     }
 
     void UpdateIconAndVolume()
     {
-        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
         {
             music.GetComponent<AudioSource>().volume = 1;
             musicToggleButton.GetComponent<Image>().sprite = offOnbutton[0];
