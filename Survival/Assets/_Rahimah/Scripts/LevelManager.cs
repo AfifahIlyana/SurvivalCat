@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
     MusicPlayer musicPlayer;
+ 
     void Start()
     {
         musicPlayer = GameObject.FindObjectOfType<MusicPlayer>();
+     
     }
 
 	public void LoadLevel(int level)
