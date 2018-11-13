@@ -9,14 +9,16 @@
 
 public class PlayerController : MonoBehaviour 
 {
-    public enum Type
+    [System.Serializable]
+    private enum Type
     {
         buttons,
         keyboard,
         joystick
     }
 
-    public Type inputController = new Type();
+    [SerializeField]
+    private Type inputController = new Type();
 
     private Animator m_animator;
     private Rigidbody m_rigidBody;
@@ -112,4 +114,14 @@ public class PlayerController : MonoBehaviour
         m_playerAttack.Shoot();
     }
 
+    public void DogShooting()
+    {
+        m_animator.SetTrigger("isShooting");
+        m_playerAttack.ShootForDog();
+    }
+
+    public void MonkeyAttacking()
+    {
+        m_animator.SetTrigger("isAttacking");
+    }
 }

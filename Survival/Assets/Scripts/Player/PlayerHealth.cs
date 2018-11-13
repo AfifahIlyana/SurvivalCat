@@ -4,13 +4,12 @@ public class PlayerHealth : MonoBehaviour
 {
     public void TakeDamage (int reduceHealth, GameObject player)
     {
-        Debug.Log("mau kurang ? ");
         player.GetComponent<PlayerData>().m_health -= reduceHealth;
 
 
         if (player.GetComponent<PlayerData>().m_health <= 0)
         {
-            GameOver gameover = GameObject.FindGameObjectWithTag("GameOverTrigger").GetComponent<GameOver>();
+            GameOver gameover = GameObject.Find("Canvas").GetComponent<GameOver>();
             gameover.TriggerGameOver();
         }
     }

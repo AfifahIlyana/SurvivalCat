@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     ObjectPoolers objectPooler;
+    Animator m_playerAnimator;
 
     public GameObject bulletPrefab;
 
@@ -14,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-     
+        m_playerAnimator = GetComponent<Animator>();
        objectPooler = ObjectPoolers.Instance;
     }
 
@@ -39,6 +40,9 @@ public class PlayerAttack : MonoBehaviour
             objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
             objectPooler.SpawnFromPool("Bullet", bulletSpawn2.position, bulletSpawn2.rotation);
             objectPooler.SpawnFromPool("Bullet", bulletSpawn3.position, bulletSpawn3.rotation);
+
+            m_playerAnimator.SetBool("isShooting", true);
+            //m_playerAnimator.SetBool("isShooting", false);
         }
     }
 

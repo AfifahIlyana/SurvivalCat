@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
         m_enemyAttack = GetComponent<EnemyAttack>();
         m_enemyMovement = GetComponent<EnemyMovement>();
 
-        m_playerHealth = GetComponent<PlayerHealth>();
+        m_playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
 
@@ -45,16 +45,20 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (m_timeSinceLastDamage > 1f)
         {
-            m_animator.SetBool("isAttacking", true);
-            EnemyMovement.currentSpeed = 0;
-
             if (collision.transform.tag == "Player")
             {
+
+                m_animator.SetBool("isAttacking", true);
+                EnemyMovement.currentSpeed = 0;
+
                 Debug.Log("inda mau kurang health si " + collision.gameObject);
+
+                m_animator.SetBool("isAttacking", true);
+                EnemyMovement.currentSpeed = 0;
 
                 m_playerHealth.TakeDamage(1, collision.gameObject);
                 m_myUiManager.UpdateHealthStatus(collision.gameObject.GetComponent<PlayerData>().m_health, false);
@@ -62,12 +66,14 @@ public class EnemyController : MonoBehaviour
                 m_timeSinceLastDamage = 0;
             }
 
+            else
+            {
+                m_animator.SetBool("isAttacking", false);
+            }
+
         }
 
-        else
-        {
-            m_animator.SetBool("isAttacking", false);
-        }
+
 
     }
 
