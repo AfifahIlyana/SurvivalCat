@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
-        myUImanager.ToggleSoundfx();
+       // myUImanager.ToggleSoundfx();
 
 
     }
@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case Type.keyboard:
+                Debug.Log("Keyboard pressed");
                 m_move = Utility.GetAxis().x;
                 m_playerMovement.Move(m_rigidBody, m_move, m_animator);
                 m_playerMovement.JumpKeyboard(m_move, m_jumpForce, m_rigidBody);
