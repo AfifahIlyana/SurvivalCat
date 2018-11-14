@@ -38,14 +38,7 @@ public class BackgroundSwitch : MonoBehaviour {
                 }
 
             } else {
-                if (!firstPassed) {
-                    firstPassed = true;
-
-                } else {
-                    // Vector2 groundOffset = new Vector2(gameObject * 2f, 0);
-                    // transform.position = (Vector2)transform.position + groundOffset;
-
-                }
+                spaceBG.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1800f, gameObject.transform.position.z);
 
             }
 
