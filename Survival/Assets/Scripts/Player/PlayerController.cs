@@ -9,6 +9,17 @@
 
 public class PlayerController : MonoBehaviour 
 {
+    [System.Serializable]
+    private enum Type
+    {
+        buttons,
+        keyboard,
+        joystick
+    }
+
+    [SerializeField]
+    private Type inputController = new Type();
+
     private Animator m_animator;
     private Rigidbody m_rigidBody;
 
@@ -24,6 +35,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Joystick joystick;
 
+    MyUIManager myUImanager;
+
 	void Awake () 
     {
         m_animator = GetComponent<Animator>();
@@ -32,24 +45,50 @@ public class PlayerController : MonoBehaviour
         m_playerData = GetComponent<PlayerData>();
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
-	}
+
+       // myUImanager.ToggleSoundfx();
+
+
+    }
 
     void Start()
     {
         m_playerHealth.ResetHealth(m_playerData);
     }
 
+    void OnEnable()
+    {
+     //updatemutestatus 
+    // getplayerpref music/sound
+    }
+
     void FixedUpdate()
     {
-        m_playerMovement.Move(m_rigidBody, m_move, m_animator);
+        
+        switch(inputController)
+        {
+            case Type.buttons:
+                m_playerMovement.Move(m_rigidBody, m_move, m_animator);
+                break;
 
-        //m_move = Utility.GetAxis().x;
-        //m_move = Utility.GetAxisJoystick(joystick).x;
-        //
-        //m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
+            case Type.keyboard:
+                Debug.Log("Keyboard pressed");
+                m_move = Utility.GetAxis().x;
+                m_playerMovement.Move(m_rigidBody, m_move, m_animator);
+                m_playerMovement.JumpKeyboard(m_move, m_jumpForce, m_rigidBody);
+                m_playerAttack.ShootForDogKeyboard();
+                break;
+                 
+            case Type.joystick:
+                m_move = Utility.GetAxisJoystick(joystick).x;
+                break;
+
+        }
+
         //m_playerMovement.JumpSwipe(m_move, m_jumpForce, m_rigidBody);
         //m_move = Utility.GetAxisJoystick(joystick).y;
     }
+
 
 
     void Update()
@@ -76,4 +115,14 @@ public class PlayerController : MonoBehaviour
         m_playerAttack.Shoot();
     }
 
+    public void DogShooting()
+    {
+        m_animator.SetTrigger("isShooting");
+        m_playerAttack.ShootForDog();
+    }
+
+    public void MonkeyAttacking()
+    {
+        m_animator.SetTrigger("isAttacking");
+    }
 }

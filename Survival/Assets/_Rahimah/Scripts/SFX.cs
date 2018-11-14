@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class SFX : MonoBehaviour {
 
-   
-    public void ToggleSoundfx()
+
+    static SFX instance = null;
+
+    void Awake()
     {
-        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        if (instance != null)
         {
-            PlayerPrefs.SetInt("Muted", 1);
+            Destroy(gameObject);
         }
         else
         {
-            PlayerPrefs.SetInt("Muted", 0);
+            instance = this;
+            GameObject.DontDestroyOnLoad(gameObject);
         }
     }
+
 }
