@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
-        myUImanager.ToggleSoundfx();
+        //myUImanager.ToggleSoundfx();
 
 
     }

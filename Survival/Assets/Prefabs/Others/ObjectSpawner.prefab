@@ -21,12 +21,12 @@ GameObject:
   - component: {fileID: 4947858030270858}
   - component: {fileID: 114059721485100142}
   m_Layer: 0
-  m_Name: Enemy Spawner
+  m_Name: ObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1926793049927614
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926793049927614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.55, y: 0.81, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4947858030270858}
@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121837977323066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.98, z: 0}
+  m_LocalPosition: {x: 0, y: 2.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4762350474241482}
@@ -82,11 +82,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  diamond: {fileID: 0}
-  diamondSpecial: {fileID: 0}
-  drumstick: {fileID: 0}
+  - {fileID: 1674594736783322, guid: 108e14e9b48abc243b58c807e94153cf, type: 2}
+  - {fileID: 1942003919724644, guid: 9d4a62439a317164b8c17fe61cb62fb1, type: 2}
+  - {fileID: 1238600542632600, guid: 0aaa6101c753c114196717981a193c9e, type: 2}
+  diamond: {fileID: 1140687926285500, guid: bcf17f4bb66f9e742b96249e877eabe9, type: 2}
+  diamondSpecial: {fileID: 1986998712017584, guid: 3c7cd6dd962609d4a92ce001aec125fd,
+    type: 2}
+  drumstick: {fileID: 1708655392598718, guid: fb5348fb30cc5104688d8dce400a0fc5, type: 2}
   potion: {fileID: 0}
 --- !u!114 &114565013975824592
 MonoBehaviour:
