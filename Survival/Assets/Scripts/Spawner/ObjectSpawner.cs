@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class ObjectSpawner : MonoBehaviour {
     
     public GameObject[] enemyPrefab;
     public GameObject diamond;
@@ -38,11 +38,11 @@ public class EnemySpawner : MonoBehaviour {
             if(rn > 3f)
             {
                 //for the enemy character 
-                int i = Random.Range(0, 2);
+                int i = Random.Range(0, 3);
 
                 foreach(Transform child in transform)
                 {
-                    GameObject enemy = (GameObject)Instantiate(enemyPrefab[i], gameObject.transform.position, Quaternion.identity);
+                    GameObject enemy = Instantiate(enemyPrefab[i], transform.position, transform.rotation);
                     enemy.transform.parent = child;
                 }
             }
