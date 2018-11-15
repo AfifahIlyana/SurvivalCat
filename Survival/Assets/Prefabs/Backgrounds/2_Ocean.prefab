@@ -641,7 +641,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4475209911797692}
-  - component: {fileID: 65906014074390024}
   m_Layer: 0
   m_Name: 2_Ocean
   m_TagString: Untagged
@@ -1688,18 +1687,6 @@ Transform:
   m_Father: {fileID: 4258553225934702}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65906014074390024
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1692461033249572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 400, y: 70, z: 80}
-  m_Center: {x: 30, y: -40, z: 0}
 --- !u!212 &212031602051827420
 SpriteRenderer:
   m_ObjectHideFlags: 1

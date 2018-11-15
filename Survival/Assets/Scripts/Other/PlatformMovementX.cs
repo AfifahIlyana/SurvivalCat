@@ -16,13 +16,11 @@ public class PlatformMovementX : MonoBehaviour
     {
         m_rigidBody = GetComponent<Rigidbody>();
         m_baseCollider = GetComponentInChildren<Collider>();
-        
+        m_player = GameObject.FindWithTag("Player");
     }
 
     private void Start() 
     {
-
-        m_player = GameObject.FindWithTag("Player");
         m_baseCollider.gameObject.SetActive(false);
 
         m_rightLimit = 3f;
