@@ -30,6 +30,7 @@ public class PowerUpsSystem : MonoBehaviour
             {
                 if (m_scoreSystem != null)
                 {
+                    Debug.Log("Collided with Diamond");
                     m_scoreSystem.AddScore(m_point, other.gameObject);
                 }
             }

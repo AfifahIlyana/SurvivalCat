@@ -8,29 +8,13 @@ public class FollowPlayer : MonoBehaviour {
     private Transform playerPosition;
 
     private void Start() {
+        Debug.Log("Test");
         player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.GetComponent<Transform>();
     }
 
     private void Update() {
         transform.position = playerPosition.position;
-
+        transform.rotation = playerPosition.rotation;
     }
-
-    public void PlayerMoveRight() {
-        
-    }
-
-    public void PlayerMoveLeft() {
-
-    }
-
-    public void PlayerJump() {
-
-    }
-
-    public void PlayerAttack() {
-
-    }
-
 }
