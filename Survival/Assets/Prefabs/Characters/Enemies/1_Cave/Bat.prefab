@@ -91,6 +91,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1386617897218048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4466392862329718}
+  m_Layer: 0
+  m_Name: DeathParticleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1414374728022032
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4186739797088032}
   - component: {fileID: 95039115842271308}
+<<<<<<< HEAD
   - component: {fileID: 65436265133711824}
   - component: {fileID: 65577014630042248}
   - component: {fileID: 54320706362665356}
@@ -190,9 +206,20 @@ GameObject:
   - component: {fileID: 114887483370971082}
   - component: {fileID: 114664048469600204}
   - component: {fileID: 114610161525280558}
+=======
+  - component: {fileID: 82060959519851302}
+  - component: {fileID: 65436265133711824}
+  - component: {fileID: 65577014630042248}
+  - component: {fileID: 54320706362665356}
+  - component: {fileID: 114803133983920844}
+  - component: {fileID: 114105582853613006}
+  - component: {fileID: 114457475078785046}
+  - component: {fileID: 114223270104774582}
+  - component: {fileID: 114600186525049318}
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,14 +335,18 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1674594736783322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.4645405, y: 4.3285246, z: -0.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 4790057578250946}
   - {fileID: 4154023011332918}
   - {fileID: 4755190036987502}
   - {fileID: 4982673197438308}
+<<<<<<< HEAD
   - {fileID: 4866726598041336}
+=======
+  - {fileID: 4466392862329718}
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -349,6 +380,19 @@ Transform:
   m_Father: {fileID: 4982673197438308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.526}
+--- !u!4 &4466392862329718
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386617897218048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23, y: 2.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4186739797088032}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4738928036508046
 Transform:
   m_ObjectHideFlags: 1
@@ -476,7 +520,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1674594736783322}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -494,8 +538,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7505279, y: 0.8375616, z: 1}
-  m_Center: {x: -0.12473604, y: 2.8310704, z: 0}
+  m_Size: {x: 3.881569, y: 0.8375618, z: 1}
+  m_Center: {x: -0.13538633, y: 2.8310704, z: 0}
 --- !u!65 &65577014630042248
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -506,8 +550,103 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0757227, y: 0.8466859, z: 1}
-  m_Center: {x: -0.13446516, y: 2.837073, z: 0}
+  m_Size: {x: 0.84034675, y: 1.8477676, z: 1}
+  m_Center: {x: -0.1344648, y: 2.3365326, z: 0}
+--- !u!82 &82060959519851302
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674594736783322}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95039115842271308
 Animator:
   serializedVersion: 3
@@ -564,7 +703,11 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &114128064449419340
+=======
+--- !u!114 &114105582853613006
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -575,7 +718,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883ec5df6274c4429b7ef2c5b97e23c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_health: 120
+=======
+  m_health: 50
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
 --- !u!114 &114217890469924530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -598,6 +745,20 @@ MonoBehaviour:
   - {fileID: 4054271863467598}
   - {fileID: 4133849733299006}
   - {fileID: 4231339519702334}
+--- !u!114 &114223270104774582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674594736783322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365cd8cba12534381afe30ebc2e70229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticle: {fileID: 1965343156803978, guid: aa8d6482d70a23445b4b2a928ed1b845,
+    type: 2}
+  deathParticleSpawn: {fileID: 4466392862329718}
 --- !u!114 &114238723685764682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,11 +771,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
   m_Length: 0.4826343
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4231339519702334}
   m_AttachedIK: {fileID: 0}
 --- !u!114 &114413306148150382
+=======
+  m_Length: 0.48263404
+  m_Child: {fileID: 0}
+  m_ChildTransform: {fileID: 4231339519702334}
+  m_AttachedIK: {fileID: 0}
+--- !u!114 &114457475078785046
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -622,7 +791,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1674594736783322}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: af9d6f7c380b14cd4a5e00d10f86073f, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: dcffcea0123c541ac88480e4f87c575d, type: 3}
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114512220072145586
@@ -637,7 +810,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
   m_Length: 0.45424074
+=======
+  m_Length: 0.45424032
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4738928036508046}
   m_AttachedIK: {fileID: 0}
@@ -663,6 +840,17 @@ MonoBehaviour:
   - {fileID: 4913101788983102}
   - {fileID: 4768539649713904}
   - {fileID: 4738928036508046}
+--- !u!114 &114600186525049318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674594736783322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e79ad5d519848c194914c66c5ca0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114610099000541718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -675,7 +863,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
   m_Length: 0.08265678
+=======
+  m_Length: 0.082656994
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4768539649713904}
   m_AttachedIK: {fileID: 0}
@@ -735,7 +927,11 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &114887483370971082
+=======
+--- !u!114 &114803133983920844
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -743,7 +939,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1674594736783322}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: dcffcea0123c541ac88480e4f87c575d, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: af9d6f7c380b14cd4a5e00d10f86073f, type: 3}
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114899384383815562
@@ -774,7 +974,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
   m_Length: 0.09744751
+=======
+  m_Length: 0.09744757
+>>>>>>> 9d774bc865a0cfa113fd52b755d2dab71af5a1d7
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4133849733299006}
   m_AttachedIK: {fileID: 0}
