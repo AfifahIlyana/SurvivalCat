@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Joystick joystick;
 
-  //  MyUIManager myUImanager;
+    MyUIManager myUImanager;
 
 	void Awake () 
     {
@@ -46,7 +46,9 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
-     //   myUImanager.ToggleSoundfx();
+        myUImanager.ToggleSoundfx();
+
+
     }
 
     void Start()
@@ -54,7 +56,11 @@ public class PlayerController : MonoBehaviour
         m_playerHealth.ResetHealth(m_playerData);
     }
 
- 
+    void OnEnable()
+    {
+     //updatemutestatus 
+    // getplayerpref music/sound
+    }
 
     void FixedUpdate()
     {
