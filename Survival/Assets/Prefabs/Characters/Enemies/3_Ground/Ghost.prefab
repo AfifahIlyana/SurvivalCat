@@ -85,11 +85,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4743946681855076}
   - component: {fileID: 95151303167260660}
-  - component: {fileID: 114088491494251892}
-  - component: {fileID: 114426502515011570}
   - component: {fileID: 65472230643654988}
   - component: {fileID: 65375942518635704}
   - component: {fileID: 54692139423660240}
+  - component: {fileID: 114466151210955578}
+  - component: {fileID: 114587601228386534}
+  - component: {fileID: 114524298727168368}
+  - component: {fileID: 114062289339252932}
+  - component: {fileID: 114438427480948164}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -124,6 +127,21 @@ GameObject:
   - component: {fileID: 114722945047206356}
   m_Layer: 0
   m_Name: Hand_left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1337632800524816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4030050678267042}
+  m_Layer: 0
+  m_Name: DeathParticlesSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,6 +294,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4030050678267042
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337632800524816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.17281452, y: -1.1, z: 0.1459961}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4743946681855076}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4032552114417628
 Transform:
   m_ObjectHideFlags: 1
@@ -443,6 +474,7 @@ Transform:
   - {fileID: 4497175111103526}
   - {fileID: 4507961322384438}
   - {fileID: 4204865461157376}
+  - {fileID: 4030050678267042}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -513,7 +545,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65375942518635704
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -524,8 +556,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2257576, y: 2.6307535, z: 1}
-  m_Center: {x: -0.121204555, y: -0.81537676, z: 0}
+  m_Size: {x: 2.8598866, y: 3.809671, z: 1}
+  m_Center: {x: -0.07377678, y: -0.76794887, z: 0}
 --- !u!65 &65472230643654988
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -536,8 +568,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5646415, y: 4.272524, z: 1}
-  m_Center: {x: 0.066111565, y: -0.920053, z: 0}
+  m_Size: {x: 2.5646415, y: 3.9744067, z: 1}
+  m_Center: {x: 0.066111565, y: -0.7709944, z: 0}
 --- !u!95 &95151303167260660
 Animator:
   serializedVersion: 3
@@ -556,6 +588,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114062289339252932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256529240986784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365cd8cba12534381afe30ebc2e70229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticle: {fileID: 0}
+  deathParticleSpawn: {fileID: 4030050678267042}
 --- !u!114 &114078503613926808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -577,17 +622,6 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4939022968840280}
   - {fileID: 4789288151687506}
---- !u!114 &114088491494251892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256529240986784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35b67260e48c574f835b6dae244713c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114162415998281394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,7 +679,7 @@ MonoBehaviour:
   m_Bones: []
   m_BoneTransforms:
   - {fileID: 4563249022560300}
---- !u!114 &114426502515011570
+--- !u!114 &114438427480948164
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,11 +687,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1256529240986784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: febe956ee5bde4401acbb5b49151e097, type: 3}
+  m_Script: {fileID: 11500000, guid: 33e79ad5d519848c194914c66c5ca0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpeed: 1
-  health: 100
+--- !u!114 &114466151210955578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256529240986784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d6f7c380b14cd4a5e00d10f86073f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114524298727168368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256529240986784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcffcea0123c541ac88480e4f87c575d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114525190964626540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -695,6 +749,18 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4585811825979078}
   - {fileID: 4032552114417628}
+--- !u!114 &114587601228386534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256529240986784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883ec5df6274c4429b7ef2c5b97e23c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 120
 --- !u!114 &114618593618900712
 MonoBehaviour:
   m_ObjectHideFlags: 1
