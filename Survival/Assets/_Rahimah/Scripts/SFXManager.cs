@@ -11,9 +11,7 @@ public class SFXManager : MonoBehaviour {
 
      void Start()
     {
-       
         sfx = GameObject.FindObjectOfType<MyUIManager>();
-
     }
 
     void FixedUpdate()

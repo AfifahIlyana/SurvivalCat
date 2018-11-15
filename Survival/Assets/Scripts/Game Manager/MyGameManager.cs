@@ -5,15 +5,11 @@ public class MyGameManager : MonoBehaviour
     private GameObject m_player;
     private ScoreSystem m_scoreSystem;
     private MyUIManager m_myUiManager;
-    static MyGameManager instance = null;
     
     [HideInInspector]
     public int m_lastHeight;
 
-    public bool isMuteMusic;
-    public bool isMuteSfx;
-    public int volumeMusic;
-    public int volumeSfx;
+
 
     private void Awake()
     {
@@ -21,15 +17,8 @@ public class MyGameManager : MonoBehaviour
         m_scoreSystem = GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
 
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            GameObject.DontDestroyOnLoad(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
+       
     }
 
 

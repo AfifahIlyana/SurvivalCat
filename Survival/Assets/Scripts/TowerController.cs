@@ -12,7 +12,7 @@ public class TowerController : MonoBehaviour
     [SerializeField]
     private int m_moveTower = 30;
 
-    private void Start()
+    private void Awake()
     {
         m_player = GameObject.FindGameObjectWithTag("Player");
     }
