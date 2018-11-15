@@ -326,7 +326,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942003919724644}
   m_LocalRotation: {x: -0, y: -0, z: -0.14938942, w: 0.9887784}
-  m_LocalPosition: {x: 26.6, y: -8.2, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4671917208024038}
@@ -362,7 +362,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 2
 --- !u!65 &65157367806472276
 BoxCollider:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.27885702
+  m_Length: 0.2788565
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4366003712705718}
   m_AttachedIK: {fileID: 0}
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.0219648
+  m_Length: 1.0219644
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4478013447867094}
   m_AttachedIK: {fileID: 0}
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.9123336
+  m_Length: 0.9123337
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4924717043564058}
   m_AttachedIK: {fileID: 0}
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.0149233
+  m_Length: 1.0149218
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4196573641279378}
   m_AttachedIK: {fileID: 0}
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.9457061
+  m_Length: 0.9457066
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4166088574152144}
   m_AttachedIK: {fileID: 0}

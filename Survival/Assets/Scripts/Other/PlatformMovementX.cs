@@ -8,6 +8,8 @@ public class PlatformMovementX : MonoBehaviour
     private Collider m_baseCollider;
 
     private GameObject m_player;
+    private GameObject m_enemy;
+
     private float m_rightLimit;
     private float m_leftLimit;
     private float m_direction;
@@ -16,11 +18,13 @@ public class PlatformMovementX : MonoBehaviour
     {
         m_rigidBody = GetComponent<Rigidbody>();
         m_baseCollider = GetComponentInChildren<Collider>();
-        m_player = GameObject.FindWithTag("Player");
+
     }
 
     private void Start() 
     {
+        m_enemy = GameObject.FindWithTag("Enemy");
+        m_player = GameObject.FindWithTag("Player");
         m_baseCollider.gameObject.SetActive(false);
 
         m_rightLimit = 3f;
@@ -41,7 +45,7 @@ public class PlatformMovementX : MonoBehaviour
             if (transform.position.y + 0.6f + 2.4f <= (m_player.transform.position.y)) {
                 m_baseCollider.gameObject.SetActive(true);
             }
-        } else {
+        } else if(m_enemy) {
             Debug.LogWarning("Player not found");
 
         }

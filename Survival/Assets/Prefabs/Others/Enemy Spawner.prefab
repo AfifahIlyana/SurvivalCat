@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1926793049927614
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,11 +82,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  diamond: {fileID: 0}
-  diamondSpecial: {fileID: 0}
-  drumstick: {fileID: 0}
+  - {fileID: 1674594736783322, guid: 108e14e9b48abc243b58c807e94153cf, type: 2}
+  - {fileID: 1942003919724644, guid: 9d4a62439a317164b8c17fe61cb62fb1, type: 2}
+  - {fileID: 1238600542632600, guid: 0aaa6101c753c114196717981a193c9e, type: 2}
+  diamond: {fileID: 1140687926285500, guid: bcf17f4bb66f9e742b96249e877eabe9, type: 2}
+  diamondSpecial: {fileID: 1986998712017584, guid: 3c7cd6dd962609d4a92ce001aec125fd,
+    type: 2}
+  drumstick: {fileID: 1708655392598718, guid: fb5348fb30cc5104688d8dce400a0fc5, type: 2}
   potion: {fileID: 0}
 --- !u!114 &114565013975824592
 MonoBehaviour:
