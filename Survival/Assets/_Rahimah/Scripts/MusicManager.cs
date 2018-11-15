@@ -22,7 +22,7 @@ public class MusicManager : MonoBehaviour {
 
     void UpdateIconAndVolume()
     {
-        if (PlayerPrefs.GetInt("MuteMusic", 0) == 0)
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
         {
             music.GetComponent<AudioSource>().volume = 1;
             musicToggleButton.GetComponent<Image>().sprite = offOnbutton[0];
