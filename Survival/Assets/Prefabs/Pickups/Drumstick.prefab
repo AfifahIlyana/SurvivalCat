@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1708655392598718}
+  m_RootGameObject: {fileID: 1166753728807198}
   m_IsPrefabAsset: 1
---- !u!1 &1708655392598718
+--- !u!1 &1166753728807198
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4154538166341114}
-  - component: {fileID: 33781780967473006}
-  - component: {fileID: 23558811125965032}
-  - component: {fileID: 65132585701067334}
-  - component: {fileID: 95326309596496228}
-  - component: {fileID: 114305478056932574}
+  - component: {fileID: 4496024067683714}
+  - component: {fileID: 33264168976836644}
+  - component: {fileID: 23201167588704354}
+  - component: {fileID: 65403509793196040}
+  - component: {fileID: 95555939578056178}
+  - component: {fileID: 114609005526845216}
   m_Layer: 0
   m_Name: Drumstick
   m_TagString: Untagged
@@ -31,25 +31,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4154538166341114
+--- !u!4 &4496024067683714
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708655392598718}
+  m_GameObject: {fileID: 1166753728807198}
   m_LocalRotation: {x: 0.17101006, y: -0.030153684, z: 0.17101006, w: 0.96984637}
-  m_LocalPosition: {x: 8.185186, y: 22.4, z: -2.4}
+  m_LocalPosition: {x: 11.53, y: 22.4, z: -4.51}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 20}
---- !u!23 &23558811125965032
+--- !u!23 &23201167588704354
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708655392598718}
+  m_GameObject: {fileID: 1166753728807198}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,32 +79,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33781780967473006
+--- !u!33 &33264168976836644
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708655392598718}
+  m_GameObject: {fileID: 1166753728807198}
   m_Mesh: {fileID: 4300000, guid: 94509628e989e974e9ae0f1fdcb7a08c, type: 3}
---- !u!65 &65132585701067334
+--- !u!65 &65403509793196040
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708655392598718}
+  m_GameObject: {fileID: 1166753728807198}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.49400002, y: 1.1951289, z: 0.51942}
   m_Center: {x: -6.783144e-10, y: -0.020231515, z: -6.0294614e-10}
---- !u!95 &95326309596496228
+--- !u!95 &95555939578056178
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708655392598718}
+  m_GameObject: {fileID: 1166753728807198}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b89828c414a29d24c9bb8b6e70fd2c70, type: 2}
@@ -116,14 +116,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114305478056932574
+--- !u!114 &114609005526845216
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708655392598718}
+  m_GameObject: {fileID: 1166753728807198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c37c99db37ba0af4793b6041db8c37eb, type: 3}
+  m_Script: {fileID: 11500000, guid: f9ee4a0ed23b84d36a715a51905ff515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_type: drumstick
+  m_point: 1
+  m_audioClip: {fileID: 8300000, guid: 508e77299b405794b86377626a6b1865, type: 3}

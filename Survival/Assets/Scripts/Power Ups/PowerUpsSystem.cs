@@ -7,6 +7,8 @@ public class PowerUpsSystem : MonoBehaviour
     private AudioSource m_audioSource;
     private ScoreSystem m_scoreSystem;
     private MyUIManager m_myUiManager;
+    private Animator m_plusScore_10;
+    private Animator m_plusScore_30;
 
     [SerializeField]
     private string m_type;
@@ -20,6 +22,8 @@ public class PowerUpsSystem : MonoBehaviour
         m_audioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
         m_scoreSystem = GameObject.Find("Game Manager").GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
+        m_plusScore_10 = GameObject.Find("+10").GetComponent<Animator>();
+        m_plusScore_30 = GameObject.Find("+30").GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,8 +34,15 @@ public class PowerUpsSystem : MonoBehaviour
             {
                 if (m_scoreSystem != null)
                 {
-                    Debug.Log("Collided with Diamond");
                     m_scoreSystem.AddScore(m_point, other.gameObject);
+                    m_plusScore_10.SetTrigger("AddScore");
+                }
+            }
+
+            if (m_type.ToLower() == "specialdiamond") {
+                if (m_scoreSystem != null) {
+                    m_scoreSystem.AddScore(m_point, other.gameObject);
+                    m_plusScore_30.SetTrigger("AddScore");
                 }
             }
 
