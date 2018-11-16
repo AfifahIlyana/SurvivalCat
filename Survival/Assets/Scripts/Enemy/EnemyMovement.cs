@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (other.gameObject.tag == "Edge")
         {
-            Debug.Log("The edge is triggered");
+            //Debug.Log("The edge is triggered");
 
             //turn around
             Vector3 theScale = transform.localScale;

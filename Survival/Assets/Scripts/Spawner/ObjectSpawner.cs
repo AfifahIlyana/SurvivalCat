@@ -28,7 +28,7 @@ public class ObjectSpawner : MonoBehaviour {
 
         if(rn >= 5f)
         {
-            Debug.Log("No spawner");
+            //Debug.Log("No spawner");
             return;
         }
 
@@ -45,7 +45,7 @@ public class ObjectSpawner : MonoBehaviour {
                 {
                     GameObject enemy = Instantiate(enemyPrefab[i], transform.position, transform.rotation);
                     enemy.transform.parent = child;
-                    Debug.Log("Enemy: " + enemyPrefab[i].name);
+                   // Debug.Log("Enemy: " + enemyPrefab[i].name);
                 }
             }
 

@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour {
     private Transform playerPosition;
 
     private void Start() {
-        Debug.Log("Test");
+       // Debug.Log("Test");
         player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.GetComponent<Transform>();
     }

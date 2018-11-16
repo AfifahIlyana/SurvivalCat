@@ -39,9 +39,13 @@ public class PlatformMovementX : MonoBehaviour
     private void Update() 
     {
         if (m_player != null) {
-            if (transform.position.y + 0.6f + 2.4f <= (m_player.transform.position.y)) {
+            if (transform.position.y + 0.6f + 2.0f <= (m_player.transform.position.y)) {
                 m_baseCollider.gameObject.SetActive(true);
+            } else {
+                m_baseCollider.gameObject.SetActive(false);
             }
+
+
         } else {
             Debug.LogWarning("Player not found");
 

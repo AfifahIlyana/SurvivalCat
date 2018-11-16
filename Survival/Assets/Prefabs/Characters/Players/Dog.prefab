@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 114070586847463300}
   - component: {fileID: 114474463966759662}
   - component: {fileID: 114739133125000008}
+  - component: {fileID: 114469723275976806}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Player
@@ -1056,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isRotating: 0000
-  m_maxSpeed: 10
+  m_maxSpeed: 8.5
 --- !u!114 &114418374782097212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1073,6 +1074,17 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114469723275976806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402158213230264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28e581e1f96c924eb4d9629a550d054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114474463966759662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1204,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputController: 0
-  m_jumpForce: 300
+  m_jumpForce: 600
   joystick: {fileID: 0}
 --- !u!114 &114808323173704018
 MonoBehaviour:
