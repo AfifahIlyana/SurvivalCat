@@ -55,7 +55,7 @@ public class ObjectSpawner : MonoBehaviour {
                 if(rn >= 5f)
                 {
                     //+10
-                    Instantiate(diamondSpecial, transform.position, Quaternion.identity);
+                    Instantiate(diamond, transform.position, Quaternion.identity);
                 }
 
                 else if(rn > 2f)
