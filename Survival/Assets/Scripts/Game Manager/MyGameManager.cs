@@ -17,23 +17,23 @@ public class MyGameManager : MonoBehaviour
 
     private void Awake()
     {
-        
+         // if (instance != null) {
+         //     Destroy(gameObject);
+         // } else {
+         //     instance = this;
+         //     GameObject.DontDestroyOnLoad(gameObject);
+         // }
     }
 
 
 
-    void Start () 
+        void Start () 
     {
         m_player = GameObject.FindGameObjectWithTag("Player");
         m_scoreSystem = GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
 
-      //  if (instance != null) {
-      //      Destroy(gameObject);
-      //  } else {
-      //      instance = this;
-      //      GameObject.DontDestroyOnLoad(gameObject);
-      //  }
+
 
         m_scoreSystem.ResetScore(m_player);
         m_lastHeight = 0;
