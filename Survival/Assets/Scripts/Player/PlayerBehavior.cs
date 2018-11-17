@@ -9,11 +9,15 @@ public class PlayerBehavior : MonoBehaviour {
     private PlayerAttack playerAttack;
     private GameObject player;
 
+    private GroundCheck groundCheck;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         //playerPosition = player.GetComponent<Transform>();
+
+        groundCheck = player.GetComponent<GroundCheck>();
 
     }
 
@@ -27,14 +31,17 @@ public class PlayerBehavior : MonoBehaviour {
     {
 
         playerController.UpdateMoveValue(horizontal);
-        Debug.Log("Horizontal:" + horizontal);
+       // Debug.Log("Horizontal:" + horizontal);
 
 
     }
 
     public void PlayerJumping()
     {
-        playerController.Jump();
+      //  Debug.Log(groundCheck.IsGrounded());
+
+        if(groundCheck.IsGrounded())
+            playerController.Jump();
     }
 
     public void PlayerActions()

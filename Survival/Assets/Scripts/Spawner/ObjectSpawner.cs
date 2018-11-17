@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class ObjectSpawner : MonoBehaviour {
     
     public GameObject[] enemyPrefab;
     public GameObject diamond;
@@ -10,16 +10,16 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //RandomSpawner();
+        RandomSpawner();
 	}
 
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            RandomSpawner();
-        }
+    //    if (Input.GetKeyDown(KeyCode.I))
+    //    {
+    //        RandomSpawner();
+    //    }
     }
 
     public void RandomSpawner()
@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour {
 
         if(rn >= 5f)
         {
+            //Debug.Log("No spawner");
             return;
         }
 
@@ -38,12 +39,13 @@ public class EnemySpawner : MonoBehaviour {
             if(rn > 3f)
             {
                 //for the enemy character 
-                int i = Random.Range(0, 2);
+                int i = Random.Range(0, 3);
 
                 foreach(Transform child in transform)
                 {
-                    GameObject enemy = Instantiate(enemyPrefab[i], child.transform.position, Quaternion.identity);
+                    GameObject enemy = Instantiate(enemyPrefab[i], transform.position, Quaternion.identity);
                     enemy.transform.parent = child;
+                   // Debug.Log("Enemy: " + enemyPrefab[i].name);
                 }
             }
 
@@ -53,7 +55,7 @@ public class EnemySpawner : MonoBehaviour {
                 if(rn >= 5f)
                 {
                     //+10
-                    Instantiate(diamondSpecial, transform.position, Quaternion.identity);
+                    Instantiate(diamond, transform.position, Quaternion.identity);
                 }
 
                 else if(rn > 2f)

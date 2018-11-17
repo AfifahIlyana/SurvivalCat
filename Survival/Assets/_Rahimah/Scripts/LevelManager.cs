@@ -19,6 +19,11 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 1;
     }
 
+    public void ResetLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
     
     
 }
