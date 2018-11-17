@@ -10,26 +10,13 @@ public class MyGameManager : MonoBehaviour
     [HideInInspector]
     public int m_lastHeight;
 
-    public bool isMuteMusic;
-    public bool isMuteSfx;
-    public int volumeMusic;
-    public int volumeSfx;
-
     private void Awake()
     {
         m_player = GameObject.FindGameObjectWithTag("Player");
         m_scoreSystem = GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
 
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            GameObject.DontDestroyOnLoad(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);   
     }
 
 
