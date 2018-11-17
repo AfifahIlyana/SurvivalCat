@@ -14,7 +14,23 @@ public class Weapon : MonoBehaviour {
 	public void Shoot () {
         //Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         //ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, transform.rotation );
-        animator.SetTrigger("isShooting");
+        animator.SetTrigger("isAttacking");
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
+
+        if (collision.transform.tag == "Enemy")
+        {
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+
+            gameObject.SetActive(false);
+        }
+
+    }
 
 }
