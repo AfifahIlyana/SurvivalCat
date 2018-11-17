@@ -43,7 +43,7 @@ public class ObjectSpawner : MonoBehaviour {
 
                 foreach(Transform child in transform)
                 {
-                    GameObject enemy = Instantiate(enemyPrefab[i], transform.position, Quaternion.identity);
+                    GameObject enemy = Instantiate(enemyPrefab[i], transform.position, transform.rotation);
                     enemy.transform.parent = child;
                    // Debug.Log("Enemy: " + enemyPrefab[i].name);
                 }

@@ -46,20 +46,11 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
-        //myUImanager.ToggleSoundfx();
-
-
     }
 
     void Start()
     {
         m_playerHealth.ResetHealth(m_playerData);
-    }
-
-    void OnEnable()
-    {
-     //updatemutestatus 
-    // getplayerpref music/sound
     }
 
     void FixedUpdate()

@@ -10,14 +10,17 @@ public class MyGameManager : MonoBehaviour
     [HideInInspector]
     public int m_lastHeight;
 
-    public bool isMuteMusic;
-    public bool isMuteSfx;
-    public int volumeMusic;
-    public int volumeSfx;
-
-    private void Awake()
+    void Awake()
     {
-        
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            GameObject.DontDestroyOnLoad(gameObject);
+        }
     }
 
 
@@ -27,13 +30,6 @@ public class MyGameManager : MonoBehaviour
         m_player = GameObject.FindGameObjectWithTag("Player");
         m_scoreSystem = GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
-
-      //  if (instance != null) {
-      //      Destroy(gameObject);
-      //  } else {
-      //      instance = this;
-      //      GameObject.DontDestroyOnLoad(gameObject);
-      //  }
 
         m_scoreSystem.ResetScore(m_player);
         m_lastHeight = 0;
@@ -47,4 +43,16 @@ public class MyGameManager : MonoBehaviour
             m_myUiManager.UpdateScoreStatus(m_player);
         }
 	}
+
+    public void ToggleSoundfx()
+    {
+        if (PlayerPrefs.GetInt("Mutedsfx", 0) == 0)
+        {
+            PlayerPrefs.SetInt("Mutedsfx", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Mutedsfx", 0);
+        }
+    }
 }
