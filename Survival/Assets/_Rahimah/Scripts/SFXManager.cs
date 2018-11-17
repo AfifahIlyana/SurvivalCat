@@ -6,17 +6,15 @@ public class SFXManager : MonoBehaviour {
 
     public Image sfxToggleButton;
     public Sprite[] offOnbutton;
-    MyUIManager sfx;
+    MyGameManager sfx;
     AudioSource playersfx;
-
-     void Start()
+    void Start()
     {
-       
-        sfx = GameObject.FindObjectOfType<MyUIManager>();
-
+        sfx = GameObject.FindObjectOfType<MyGameManager>();
     }
 
-    void FixedUpdate()
+
+    void Update()
     {
         playersfx = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         UpdateIconAndVolume();
