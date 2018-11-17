@@ -19,7 +19,7 @@ public class FollowGameObjectTransformation : MonoBehaviour
         FollowGameObjectRotation();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (m_gameObject != null)
         {
@@ -56,7 +56,7 @@ public class FollowGameObjectTransformation : MonoBehaviour
             {
                 if (m_gameObject.transform.position.y > m_maxHeight)
                 {
-                    m_maxHeight++;
+                    m_maxHeight += transform.position.y;
                 }
                 transform.position = Vector3.up * m_maxHeight;
             }

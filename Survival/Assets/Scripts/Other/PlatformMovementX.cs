@@ -16,15 +16,16 @@ public class PlatformMovementX : MonoBehaviour
     {
         m_rigidBody = GetComponent<Rigidbody>();
         m_baseCollider = GetComponentInChildren<Collider>();
-        m_player = GameObject.FindWithTag("Player");
+
     }
 
     private void Start() 
     {
+        m_player = GameObject.FindWithTag("Player");
         m_baseCollider.gameObject.SetActive(false);
 
-        m_rightLimit = 0.5f;
-        m_leftLimit = -0.5f;
+        m_rightLimit = 3f;
+        m_leftLimit = -3f;
 
         // Randomly chooses the direction of the platfrom (-1, 0, 1)
         m_direction = Random.Range(-1, 2);
@@ -37,12 +38,17 @@ public class PlatformMovementX : MonoBehaviour
 
     private void Update() 
     {
-        if (m_player != null)
-        {
-            if (transform.position.y + 0.6f <= (m_player.transform.position.y))
-            {
+        if (m_player != null) {
+            if (transform.position.y + 0.6f + 2.0f <= (m_player.transform.position.y)) {
                 m_baseCollider.gameObject.SetActive(true);
+            } else {
+                m_baseCollider.gameObject.SetActive(false);
             }
+
+
+        } else {
+            Debug.LogWarning("Player not found");
+
         }
 
         if (transform.localPosition.x >= m_rightLimit) 

@@ -6,25 +6,29 @@ public class SFXManager : MonoBehaviour {
 
     public Image sfxToggleButton;
     public Sprite[] offOnbutton;
-    MyUIManager sfx;
+    MyGameManager sfx;
     AudioSource playersfx;
-
     void Start()
     {
-        sfx = GameObject.FindObjectOfType<MyUIManager>();
+        sfx = GameObject.FindObjectOfType<MyGameManager>();
+    }
+
+
+    void Update()
+    {
         playersfx = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
-        UpdateIconAndVolumes();
+        UpdateIconAndVolume();
     }
    
     public void Pausesfx()
     {
         sfx.ToggleSoundfx();
-        UpdateIconAndVolumes();
+        UpdateIconAndVolume();
     }
 
-    void UpdateIconAndVolumes()
+    void UpdateIconAndVolume()
     {
-        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        if (PlayerPrefs.GetInt("Mutedsfx", 0) == 0)
         {
             playersfx.GetComponent<AudioSource>().volume = 1;
             sfxToggleButton.GetComponent<Image>().sprite = offOnbutton[0];

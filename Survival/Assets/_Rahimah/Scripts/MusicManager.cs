@@ -5,7 +5,7 @@ public class MusicManager : MonoBehaviour {
 
       public Image musicToggleButton;
       public Sprite [] offOnbutton;
-      private MusicPlayer music;
+      MusicPlayer music;
 
     void Start()
     {
@@ -15,13 +15,13 @@ public class MusicManager : MonoBehaviour {
 
     public void PauseMusic()
     {
-        music.ToggleSound();
+        music.GetComponent<MusicPlayer>().ToggleSound();
         UpdateIconAndVolume();
     }
 
     void UpdateIconAndVolume()
     {
-        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        if (PlayerPrefs.GetInt("MuteMusic", 0) == 0)
         {
             music.GetComponent<AudioSource>().volume = 1;
             musicToggleButton.GetComponent<Image>().sprite = offOnbutton[0];

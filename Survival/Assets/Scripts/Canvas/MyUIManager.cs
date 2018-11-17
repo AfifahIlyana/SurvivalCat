@@ -54,15 +54,7 @@ public class MyUIManager : MonoBehaviour
 
     }
 
-    public void ToggleSoundfx()
-    {
-        if (PlayerPrefs.GetInt("Muted", 0) == 0)
-        {
-            PlayerPrefs.SetInt("Muted", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Muted", 0);
-        }
-    }
+    
+
+
 }
