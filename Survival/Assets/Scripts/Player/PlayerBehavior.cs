@@ -29,7 +29,6 @@ public class PlayerBehavior : MonoBehaviour {
 
     public void PlayerMovement(float horizontal)
     {
-
         playerController.UpdateMoveValue(horizontal);
        // Debug.Log("Horizontal:" + horizontal);
 

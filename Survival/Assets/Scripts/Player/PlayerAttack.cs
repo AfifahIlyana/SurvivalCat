@@ -16,14 +16,12 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         m_playerAnimator = GetComponent<Animator>();
-       objectPooler = ObjectPoolers.Instance;
+        objectPooler = ObjectPoolers.Instance;
     }
 
     public void Shoot()
     {
-
         objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
-
     }
 
     public void ShootForDog()
@@ -43,6 +41,19 @@ public class PlayerAttack : MonoBehaviour
 
             m_playerAnimator.SetBool("isShooting", true);
             //m_playerAnimator.SetBool("isShooting", false);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            Weapon.m_collider.enabled = true;
+        }
+
+        else
+        {
+            Weapon.m_collider.enabled = false;
         }
     }
 

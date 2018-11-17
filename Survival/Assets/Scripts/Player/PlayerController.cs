@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAttack m_playerAttack;
     private PlayerHealth m_playerHealth;
 
+
     [SerializeField]
     private float m_jumpForce = 300f;
     private float m_move;
@@ -123,5 +124,6 @@ public class PlayerController : MonoBehaviour
     public void MonkeyAttacking()
     {
         m_animator.SetTrigger("isAttacking");
+
     }
 }
