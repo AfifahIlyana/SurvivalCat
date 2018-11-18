@@ -4,17 +4,35 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    private Animator animator;
+    public int damage = 80;
 
-	// Use this for initialization
-	void Start () {
-        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-	}
-	
-	public void Shoot () {
-        //Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-        //ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, transform.rotation );
-        animator.SetTrigger("isShooting");
-	}
+    //private GameObject player;
+    //private Collision m_collision;
+
+    public static Collider m_collider;
+
+    private void Start()
+    {
+        m_collider = GetComponent<Collider>();
+        m_collider.enabled = false;
+    }
+
+  
+    private void OnTriggerEnter(Collider collision)
+    {
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
+
+        if (collision.transform.tag == "Enemy")
+        {
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+
+        }
+
+
+    }
+
 
 }

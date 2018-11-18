@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAttack m_playerAttack;
     private PlayerHealth m_playerHealth;
 
+
     [SerializeField]
     private float m_jumpForce = 300f;
     private float m_move;
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
     private Joystick joystick;
 
     MyUIManager myUImanager;
-    
 
 	void Awake () 
     {
@@ -47,19 +47,11 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
-        //myUImanager.ToggleSoundfx();
-        
     }
 
     void Start()
     {
         m_playerHealth.ResetHealth(m_playerData);
-    }
-
-    void OnEnable()
-    {
-     //updatemutestatus 
-    // getplayerpref music/sound
     }
 
     void FixedUpdate()
@@ -95,8 +87,6 @@ public class PlayerController : MonoBehaviour
         //m_playerMovement.RotatePlayer();
         m_playerMovement.ActivateRotatePlayer();
         m_playerMovement.RotateTest5();
-        
-
 
     }
 
@@ -107,7 +97,6 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
 
@@ -126,7 +115,6 @@ public class PlayerController : MonoBehaviour
     public void MonkeyAttacking()
     {
         m_animator.SetTrigger("isAttacking");
-    }
-    
 
+    }
 }
