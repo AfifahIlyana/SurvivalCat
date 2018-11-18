@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 114669002466245238}
   - component: {fileID: 114717784842442712}
   - component: {fileID: 114946269991488382}
+  - component: {fileID: 65132049923657480}
+  - component: {fileID: 65412301563357682}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Enemy
@@ -143,11 +145,11 @@ GameObject:
   - component: {fileID: 65996943708687392}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1928887030834214
 GameObject:
   m_ObjectHideFlags: 1
@@ -255,8 +257,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1131084884643486}
-  m_LocalRotation: {x: -0, y: -0, z: -0.14938942, w: 0.9887784}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.695656, y: 176.6905, z: -55.515556}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4762750923669236}
@@ -264,7 +266,7 @@ Transform:
   - {fileID: 4870892407387520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4671917208024038
 Transform:
   m_ObjectHideFlags: 1
@@ -364,6 +366,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
+--- !u!65 &65132049923657480
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1131084884643486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.7423854, y: 3.011053, z: 3.8665571}
+  m_Center: {x: 1.1666507, y: 0.97959054, z: 0.13150403}
+--- !u!65 &65412301563357682
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1131084884643486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.474494, y: 4.7705474, z: 3.6351209}
+  m_Center: {x: 1.1288246, y: 0.29709336, z: 0.14014363}
 --- !u!65 &65483051916080432
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -374,8 +400,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.7423854, y: 3.011053, z: 1}
-  m_Center: {x: 1.1666507, y: 0.9795906, z: 0}
+  m_Size: {x: 6.7423854, y: 3.011053, z: 3.8665571}
+  m_Center: {x: 1.1666507, y: 0.97959054, z: 0.13150403}
 --- !u!65 &65996943708687392
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -386,8 +412,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.474494, y: 4.266421, z: 1}
-  m_Center: {x: 1.1288247, y: 0.54915535, z: 0}
+  m_Size: {x: 4.474494, y: 4.7705474, z: 3.6351209}
+  m_Center: {x: 1.1288246, y: 0.29709336, z: 0.14014363}
 --- !u!82 &82061122396673650
 AudioSource:
   m_ObjectHideFlags: 1
@@ -513,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.0219648
+  m_Length: 1.0219716
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4040774873176888}
   m_AttachedIK: {fileID: 0}
@@ -583,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.014922
+  m_Length: 1.0149221
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4423279174465696}
   m_AttachedIK: {fileID: 0}
@@ -611,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.9123337
+  m_Length: 0.9123328
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4671917208024038}
   m_AttachedIK: {fileID: 0}
@@ -684,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.27885658
+  m_Length: 0.27885476
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4778018813837278}
   m_AttachedIK: {fileID: 0}
@@ -700,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.94570625
+  m_Length: 0.94569826
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4757260182754506}
   m_AttachedIK: {fileID: 0}
@@ -747,8 +773,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -353389365
-  m_SortingLayer: 0
+  m_SortingLayerID: -1185915427
+  m_SortingLayer: 2
   m_SortingOrder: 1
   serializedVersion: 2
   m_Quality: 0

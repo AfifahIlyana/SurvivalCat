@@ -54,9 +54,9 @@ public class FollowGameObjectTransformation : MonoBehaviour
         {
             if (m_goingUpOnly)
             {
-                if (m_gameObject.transform.position.y > m_maxHeight)
+                while (m_gameObject.transform.position.y > m_maxHeight)
                 {
-                    m_maxHeight += transform.position.y;
+                    m_maxHeight += 0.1f;
                 }
                 transform.position = Vector3.up * m_maxHeight;
             }

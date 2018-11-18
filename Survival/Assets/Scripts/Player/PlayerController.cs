@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private Joystick joystick;
 
     MyUIManager myUImanager;
+    
 
 	void Awake () 
     {
@@ -47,8 +48,7 @@ public class PlayerController : MonoBehaviour
         m_playerHealth = GetComponent<PlayerHealth>();
 
         //myUImanager.ToggleSoundfx();
-
-
+        
     }
 
     void Start()
@@ -95,6 +95,8 @@ public class PlayerController : MonoBehaviour
         //m_playerMovement.RotatePlayer();
         m_playerMovement.ActivateRotatePlayer();
         m_playerMovement.RotateTest5();
+        
+
 
     }
 
@@ -105,6 +107,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
+
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
 
@@ -124,4 +127,6 @@ public class PlayerController : MonoBehaviour
     {
         m_animator.SetTrigger("isAttacking");
     }
+    
+
 }

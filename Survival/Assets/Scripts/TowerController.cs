@@ -31,6 +31,12 @@ public class TowerController : MonoBehaviour
             transform.position += Vector3.up * m_moveTower;
 
             Utility.objectMovedUp = gameObject.transform.name;
+
+            if (gameObject.tag == "PlatformGrouping") {
+                BroadcastMessage("RandomSpawner");
+
+            }
+
         }
     }
 }
