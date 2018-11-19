@@ -22,7 +22,7 @@ public class SFXManager : MonoBehaviour {
    
     public void Pausesfx()
     {
-        sfx.ToggleSoundfx();
+        //sfx.ToggleSoundfx();
         UpdateIconAndVolume();
     }
 
