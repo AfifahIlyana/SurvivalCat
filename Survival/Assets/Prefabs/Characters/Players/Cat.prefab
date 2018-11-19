@@ -942,10 +942,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf19b118f5b134f73aba6fdafd741947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1903538287203888, guid: ae42bab5ee3174925b6b4655ed347b8d,
+    type: 2}
   bulletSpawn: {fileID: 4203037046360308}
   bulletSpawn2: {fileID: 0}
   bulletSpawn3: {fileID: 0}
+  catShootingSound: {fileID: 0}
+  dogShootingSound: {fileID: 0}
+  monkeyAttackSound: {fileID: 0}
 --- !u!114 &114664977929686186
 MonoBehaviour:
   m_ObjectHideFlags: 1
