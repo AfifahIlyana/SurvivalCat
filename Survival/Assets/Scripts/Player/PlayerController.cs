@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAttack m_playerAttack;
     private PlayerHealth m_playerHealth;
 
+
     [SerializeField]
     private float m_jumpForce = 300f;
     private float m_move;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         m_playerData = GetComponent<PlayerData>();
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
+
 
     }
 
@@ -114,5 +116,12 @@ public class PlayerController : MonoBehaviour
     public void MonkeyAttacking()
     {
         m_animator.SetTrigger("isAttacking");
+        Invoke("Attack", 1f);
+    }
+
+    private void Attack()
+    {
+        Weapon.m_collider.enabled = true;
+        AudioSource.PlayClipAtPoint(m_playerAttack.monkeyAttackSound, transform.position);
     }
 }

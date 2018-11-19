@@ -968,6 +968,9 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4630002713255616}
   bulletSpawn2: {fileID: 4231318582734918}
   bulletSpawn3: {fileID: 4444831991053336}
+  catShootingSound: {fileID: 0}
+  dogShootingSound: {fileID: 0}
+  monkeyAttackSound: {fileID: 0}
 --- !u!114 &114165761656152320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1181,6 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28e581e1f96c924eb4d9629a550d054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cheatMode: 0
 --- !u!114 &114474463966759662
 MonoBehaviour:
   m_ObjectHideFlags: 1

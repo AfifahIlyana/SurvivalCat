@@ -29,7 +29,6 @@ public class PlayerBehavior : MonoBehaviour {
 
     public void PlayerMovement(float horizontal)
     {
-
         playerController.UpdateMoveValue(horizontal);
        // Debug.Log("Horizontal:" + horizontal);
 
@@ -40,8 +39,9 @@ public class PlayerBehavior : MonoBehaviour {
     {
       //  Debug.Log(groundCheck.IsGrounded());
 
-        if(groundCheck.IsGrounded())
+        if(groundCheck.IsGrounded() == true)
             playerController.Jump();
+
     }
 
     public void PlayerActions()

@@ -459,7 +459,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261430320323472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2}
   m_Children:
   - {fileID: 4064348836559942}
@@ -799,8 +799,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.2402854, y: 1.2632389, z: 1}
-  m_Center: {x: -0.18521462, y: 0.3, z: 0}
+  m_Size: {x: 1.9715973, y: 1.2632389, z: 4}
+  m_Center: {x: -0.17022648, y: 0.3, z: 0}
 --- !u!65 &65649003129799412
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -811,7 +811,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7404335, y: 2.068978, z: 1}
+  m_Size: {x: 2.7404335, y: 2.068978, z: 4}
   m_Center: {x: -0.118272595, y: 0.17, z: 0}
 --- !u!82 &82308721445842636
 AudioSource:
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.100000024
+  m_Length: 0.10000008
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4854163540203118}
   m_AttachedIK: {fileID: 0}
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.29535642
+  m_Length: 0.29535645
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4573443396544652}
   m_AttachedIK: {fileID: 0}

@@ -28,12 +28,9 @@ public class PowerUpsSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            if (m_type.ToLower() == "diamond")
-            {
-                if (m_scoreSystem != null)
-                {
+        if (other.gameObject.tag == "Player") {
+            if (m_type.ToLower() == "diamond") {
+                if (m_scoreSystem != null) {
                     m_scoreSystem.AddScore(m_point, other.gameObject);
                     m_plusScore_10.SetTrigger("AddScore");
                 }
@@ -46,25 +43,23 @@ public class PowerUpsSystem : MonoBehaviour
                 }
             }
 
-            if (m_type.ToLower() == "drumstick")
-            {
+            if (m_type.ToLower() == "drumstick") {
                 int playerHealth = other.GetComponent<PlayerData>().m_health;
 
-                if (playerHealth < 3)
-                {
+                if (playerHealth < 3) {
                     other.GetComponent<PlayerHealth>().AddHealth(m_point, other.gameObject);
                     m_myUiManager.UpdateHealthStatus(playerHealth, true);
                 }
             }
 
-            if (m_audioSource != null)
-            {
+            if (m_audioSource != null) {
                 m_audioSource.clip = m_audioClip;
                 m_audioSource.Play();
             }
 
             Destroy(gameObject, 0f);
-
         }
+        
+
     }
 }
