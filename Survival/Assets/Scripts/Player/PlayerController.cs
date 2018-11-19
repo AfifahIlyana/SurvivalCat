@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
+
     }
 
     void Start()
@@ -115,6 +116,6 @@ public class PlayerController : MonoBehaviour
     public void MonkeyAttacking()
     {
         m_animator.SetTrigger("isAttacking");
-
+        AudioSource.PlayClipAtPoint(m_playerAttack.monkeyAttackSound, transform.position);
     }
 }
