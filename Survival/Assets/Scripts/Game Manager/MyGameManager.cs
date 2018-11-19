@@ -5,24 +5,10 @@ public class MyGameManager : MonoBehaviour
     private GameObject m_player;
     private ScoreSystem m_scoreSystem;
     private MyUIManager m_myUiManager;
-    static MyGameManager instance = null;
+
     
     [HideInInspector]
     public int m_lastHeight;
-
-    void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            GameObject.DontDestroyOnLoad(gameObject);
-        }
-    }
-
 
 
     void Start () 
@@ -44,15 +30,4 @@ public class MyGameManager : MonoBehaviour
         }
 	}
 
-    public void ToggleSoundfx()
-    {
-        if (PlayerPrefs.GetInt("Mutedsfx", 0) == 0)
-        {
-            PlayerPrefs.SetInt("Mutedsfx", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Mutedsfx", 0);
-        }
-    }
 }

@@ -50,17 +50,6 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Enemy")
-        {
-            Weapon.m_collider.enabled = true;
-        }
 
-        else
-        {
-            Weapon.m_collider.enabled = false;
-        }
-    }
 
 }
