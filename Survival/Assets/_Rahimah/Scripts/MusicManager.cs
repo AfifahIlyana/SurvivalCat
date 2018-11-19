@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour {
 
     public void PauseMusic()
     {
-        music.GetComponent<MusicPlayer>().ToggleSound();
+        music.ToggleSound();
         UpdateIconAndVolume();
     }
 

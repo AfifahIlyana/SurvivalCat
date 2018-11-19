@@ -11,6 +11,6 @@ public class PlayerNum : MonoBehaviour {
     public void playerselect(int selectedNum)
     {
         CharacterNum = selectedNum;
-        SceneManager.LoadScene(0); //load main menu scene
+        SceneManager.LoadScene(1); //load main menu scene
     }
 }

@@ -4,13 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
-
+    public float autoLoadNextLevelAfter;
     MusicPlayer musicPlayer;
  
     void Start()
     {
         musicPlayer = GameObject.FindObjectOfType<MusicPlayer>();
-     
+        if (autoLoadNextLevelAfter <= 0)
+        {
+            //
+        }
+        else
+        {
+            Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+        }
     }
 
 	public void LoadLevel(int level)
@@ -24,6 +31,12 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    
-    
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+
+
+
 }
