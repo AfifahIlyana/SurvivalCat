@@ -4,20 +4,31 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour {
 
-    private bool isGrounded = true;
+    public bool cheatMode = false; //  true for unlimited jump
 
-    private void OnCollisionEnter(Collision collision) {
-        isGrounded = true;
+    private bool isGrounded = true;
+    
+    private void OnCollisionStay(Collision collision) {
+        if(collision.gameObject.name == "Ground" || collision.gameObject.name == "Button")
+            isGrounded = true;
 
     }
 
     private void OnCollisionExit(Collision collision) {
-        isGrounded = false;
+        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button")
 
+            if (!cheatMode)
+                isGrounded = false;
+            else
+                isGrounded = true;
     }
 
     public bool IsGrounded() {
         return isGrounded;
+    }
+
+    public void SetGrounded(bool grounded) {
+        isGrounded = grounded;
     }
 
 }

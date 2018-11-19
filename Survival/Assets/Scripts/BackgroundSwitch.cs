@@ -11,12 +11,12 @@ public class BackgroundSwitch : MonoBehaviour {
     public GameObject previousBG_2;
 
     public GameObject spaceBG;
-
-    private bool firstPassed = false;
-
+    
     private void OnTriggerEnter(Collider other) {
 
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Player")
+            
+            {
             if (!gameObject.name.Contains("Space_BG")) {
 
                 if (nextBG_1 != null) {

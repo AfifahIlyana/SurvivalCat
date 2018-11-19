@@ -6,9 +6,6 @@ public class Weapon : MonoBehaviour {
 
     public int damage = 80;
 
-    //private GameObject player;
-    //private Collision m_collision;
-
     public static Collider m_collider;
 
     private void Start()
@@ -33,6 +30,4 @@ public class Weapon : MonoBehaviour {
 
 
     }
-
-
 }

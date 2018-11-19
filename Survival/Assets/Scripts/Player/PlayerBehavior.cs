@@ -39,8 +39,9 @@ public class PlayerBehavior : MonoBehaviour {
     {
       //  Debug.Log(groundCheck.IsGrounded());
 
-        if(groundCheck.IsGrounded())
+        if(groundCheck.IsGrounded() == true)
             playerController.Jump();
+
     }
 
     public void PlayerActions()
