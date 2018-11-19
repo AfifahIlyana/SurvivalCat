@@ -3,21 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SFX : MonoBehaviour {
+    SFXManager sfxmanager;
+ 
 
 
-    static SFX instance = null;
-
-    void Awake()
+    void Start()
     {
-        if (instance != null)
+        sfxmanager = GameObject.FindObjectOfType<SFXManager>();
+    }
+
+    public void Pausesfx()
+    {
+        ToggleSoundfx();
+        sfxmanager.UpdateIconAndVolume();
+    }
+
+
+    public void ToggleSoundfx()
+    {
+        if (PlayerPrefs.GetInt("Mutedsfx", 0) == 0)
         {
-            Destroy(gameObject);
+            PlayerPrefs.SetInt("Mutedsfx", 1);
         }
         else
         {
-            instance = this;
-            GameObject.DontDestroyOnLoad(gameObject);
+            PlayerPrefs.SetInt("Mutedsfx", 0);
         }
     }
-
 }

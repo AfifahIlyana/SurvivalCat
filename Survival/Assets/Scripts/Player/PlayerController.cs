@@ -116,6 +116,12 @@ public class PlayerController : MonoBehaviour
     public void MonkeyAttacking()
     {
         m_animator.SetTrigger("isAttacking");
+        Invoke("Attack", 1f);
+    }
+
+    private void Attack()
+    {
+        Weapon.m_collider.enabled = true;
         AudioSource.PlayClipAtPoint(m_playerAttack.monkeyAttackSound, transform.position);
     }
 }
