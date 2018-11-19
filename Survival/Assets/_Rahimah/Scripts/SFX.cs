@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SFX : MonoBehaviour {
+
     SFXManager sfxmanager;
  
-
-
     void Start()
     {
         sfxmanager = GameObject.FindObjectOfType<SFXManager>();
@@ -17,7 +16,6 @@ public class SFX : MonoBehaviour {
         ToggleSoundfx();
         sfxmanager.UpdateIconAndVolume();
     }
-
 
     public void ToggleSoundfx()
     {
