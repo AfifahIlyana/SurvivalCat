@@ -11,12 +11,16 @@ public class GetBestScore : MonoBehaviour {
         bestScoreText = GetComponent<Text>();
 
         UpdateBestScore();
+        
 
     }
 
     private void UpdateBestScore() {
         bestScoreText.text = PlayerPrefs.GetInt("Best").ToString();
+        
 
     }
+
+    
 
 }
