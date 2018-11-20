@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using UnityEngine.Advertisements;
-
 public class GameOver : MonoBehaviour {
 
     public GameObject pauseButton;
@@ -18,11 +16,20 @@ public class GameOver : MonoBehaviour {
 
     private Text scoreText;
 
+    public void ContinueGame() {
+        pauseButton.SetActive(true);
+        playerHealth.SetActive(true);
+        score.SetActive(true);
+        movementButton.SetActive(true);
+        actionButton.SetActive(true);
+        
+        Time.timeScale = 1;
+
+    }
+
     public void TriggerGameOver() {
 
         Time.timeScale = 0;
-
-        Advertisement.Show();
         
         pauseButton.SetActive(false);
         playerHealth.SetActive(false);
