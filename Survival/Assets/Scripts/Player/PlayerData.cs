@@ -2,7 +2,10 @@
 
 public class PlayerData : MonoBehaviour 
 {
-    //[HideInInspector]
+    [HideInInspector]
+    public static bool isPotionActivated = false;
+
+    [HideInInspector]
     public int m_health;
     [HideInInspector]
     public int m_score;

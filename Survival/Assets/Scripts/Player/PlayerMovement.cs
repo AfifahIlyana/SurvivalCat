@@ -19,7 +19,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(move));
 
         var localVelocity = transform.InverseTransformDirection(rigidBody.velocity);
-        localVelocity.x = move * m_maxSpeed;
+        if (PlayerData.isPotionActivated)
+        {
+            localVelocity.x = move * m_maxSpeed * 2f;
+        }
+        else
+        {
+            localVelocity.x = move * m_maxSpeed;
+        }
+        
         rigidBody.velocity = transform.TransformDirection(localVelocity);
 
         if (move < 0 && !m_isFacingRight)
