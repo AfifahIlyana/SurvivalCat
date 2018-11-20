@@ -117,7 +117,7 @@ public class ObjectSpawner : MonoBehaviour {
                 else
                 {
                     //potion
-                   // Instantiate(potion, transform.position, Quaternion.identity);
+                    Instantiate(potion, transform.position, Quaternion.identity);
                 }
             }
 
