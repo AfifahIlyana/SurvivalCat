@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         m_enemyMovement.CheckEdgesPlatform(other);
+        m_enemyMovement.MoveTowardsPlayer(gameObject, other);
     }
 
 
@@ -55,7 +56,7 @@ public class EnemyController : MonoBehaviour
                 m_animator.SetBool("isAttacking", true);
                 EnemyMovement.currentSpeed = 0;
 
-                Debug.Log("inda mau kurang health si " + collision.gameObject);
+                //Debug.Log("inda mau kurang health si " + collision.gameObject);
 
                 m_animator.SetBool("isAttacking", true);
                 EnemyMovement.currentSpeed = 0;
