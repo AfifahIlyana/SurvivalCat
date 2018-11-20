@@ -4,12 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SFXManager : MonoBehaviour {
 
- 
-  
     SFX_icon image;
     AudioSource playersfx;
 
-    
     void Update()
     {
         playersfx = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
@@ -17,8 +14,6 @@ public class SFXManager : MonoBehaviour {
         image = GameObject.FindObjectOfType<SFX_icon>();
         UpdateIconAndVolume();
     }
-
-
 
    public void UpdateIconAndVolume()
     {
