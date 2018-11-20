@@ -20,7 +20,7 @@ public class PowerUpsSystem : MonoBehaviour
     private void Awake()
     {
         m_audioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
-        m_scoreSystem = GameObject.Find("Game Manager").GetComponent<ScoreSystem>();
+        m_scoreSystem = GameObject.Find("Gameplay Manager").GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
         m_plusScore_10 = GameObject.Find("+10").GetComponent<Animator>();
         m_plusScore_30 = GameObject.Find("+30").GetComponent<Animator>();
@@ -52,6 +52,11 @@ public class PowerUpsSystem : MonoBehaviour
                 }
             }
 
+            if (m_type.ToLower() == "potion")
+            {
+                StartCoroutine("ActivatePotion");
+            }
+
             if (m_audioSource != null) {
                 m_audioSource.clip = m_audioClip;
                 m_audioSource.Play();
@@ -61,5 +66,12 @@ public class PowerUpsSystem : MonoBehaviour
         }
         
 
+    }
+
+    IEnumerator ActivatePotion ()
+    {
+        PlayerData.isPotionActivated = true;
+        yield return new WaitForSeconds(10f);
+        PlayerData.isPotionActivated = false;
     }
 }
