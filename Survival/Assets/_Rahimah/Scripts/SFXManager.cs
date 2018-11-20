@@ -27,8 +27,10 @@ public class SFXManager : MonoBehaviour {
         else
         {
             playersfx.GetComponent<AudioSource>().volume = 0;
-            image.OffToggle();
-  
+            if (image != null)
+            {
+                image.OffToggle();
+            }
         }
     }
 }
