@@ -11,6 +11,9 @@ public class GameOver : MonoBehaviour {
     public GameObject movementButton;
     public GameObject actionButton;
 
+    public GameObject continueButton;
+    public GameObject usualButton;
+
     public GameObject gameOverScreen; // add the game over screen UI 
     public SaveBestScore scoreSave;
 
@@ -22,7 +25,10 @@ public class GameOver : MonoBehaviour {
         score.SetActive(true);
         movementButton.SetActive(true);
         actionButton.SetActive(true);
-        
+
+        continueButton.SetActive(false);
+        usualButton.SetActive(true);
+
         Time.timeScale = 1;
 
     }

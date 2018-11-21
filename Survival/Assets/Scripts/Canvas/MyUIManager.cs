@@ -12,6 +12,11 @@ public class MyUIManager : MonoBehaviour
     [SerializeField]
     private GameObject plus30;
 
+    public void ResetHealthUpdate() {
+        for (int i = 0; i < m_hearts.Length; i++) {
+            m_hearts[i].SetActive(true);
+        }
+    }
 
     public void UpdateHealthStatus (int healthLeft, bool heartStatus)
     {

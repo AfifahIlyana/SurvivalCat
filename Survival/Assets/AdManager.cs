@@ -19,7 +19,7 @@ public class AdManager : MonoBehaviour {
         Advertisement.Initialize(gameID, true);
     }
 
-    private void Start() {
+    private void OnEnable() {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -67,8 +67,11 @@ public class AdManager : MonoBehaviour {
     private void ResetContinue() {
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         GroundCheck platform = player.GetComponent<GroundCheck>();
+        MyUIManager uiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
 
         playerHealth.ResetHealth(player.GetComponent<PlayerData>());
+
+        uiManager.ResetHealthUpdate();
 
         player.transform.position = new Vector3(platform.lastPlatform.transform.position.x, platform.lastPlatform.transform.position.y + 3.5f, platform.lastPlatform.transform.position.z);
 
