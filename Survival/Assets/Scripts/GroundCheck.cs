@@ -12,9 +12,8 @@ public class GroundCheck : MonoBehaviour {
     private void OnCollisionStay(Collision collision) {
         if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button") {
             isGrounded = true;
-
-        } if (collision.gameObject.name == "Ground") {
             lastPlatform = collision.gameObject;
+
         }
 
     }
