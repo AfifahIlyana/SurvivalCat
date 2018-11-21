@@ -5,12 +5,17 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour {
 
     public bool cheatMode = false; //  true for unlimited jump
+    public GameObject lastPlatform;
 
     private bool isGrounded = true;
     
     private void OnCollisionStay(Collision collision) {
-        if(collision.gameObject.name == "Ground" || collision.gameObject.name == "Button")
+        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button") {
             isGrounded = true;
+
+        } if (collision.gameObject.name == "Ground") {
+            lastPlatform = collision.gameObject;
+        }
 
     }
 

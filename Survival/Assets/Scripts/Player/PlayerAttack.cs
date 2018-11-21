@@ -26,7 +26,10 @@ public class PlayerAttack : MonoBehaviour
     public void Shoot()
     {
         objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
-        AudioSource.PlayClipAtPoint(catShootingSound, bulletSpawn.position);
+        if (catShootingSound != null)
+        {
+            AudioSource.PlayClipAtPoint(catShootingSound, bulletSpawn.position);
+        }
     }
 
     public void ShootForDog()
