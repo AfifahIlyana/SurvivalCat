@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public GameObject deathParticle;
     public Transform deathParticleSpawn;
-
+    
     public void TakeDamage(int damage)
     {
         EnemyData enemy = GetComponent<EnemyData>();
@@ -15,6 +15,13 @@ public class EnemyHealth : MonoBehaviour {
 
         if (enemy.m_health <= 0)
         {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            ScoreSystem score = GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreSystem>();
+            Animator plusScore = GameObject.Find("+50").GetComponent<Animator>();
+
+            score.AddScore(50, player);
+            plusScore.SetTrigger("AddScore");
+
             Instantiate(deathParticle, deathParticleSpawn.position, deathParticleSpawn.rotation);
             Destroy(gameObject);
         }
