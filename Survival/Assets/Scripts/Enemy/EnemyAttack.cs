@@ -16,14 +16,21 @@ public class EnemyAttack : MonoBehaviour
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
     }
 
-    public void Attack(Collision collision)
-    {
-        if (collision.transform.tag == "Player")
-        {
-            m_playerHealth.TakeDamage(1, collision.gameObject);
-            m_myUiManager.UpdateHealthStatus(collision.gameObject.GetComponent<PlayerData>().m_health, false);
-        }
-    }
+    //public void Attack(Collision collision)
+    //{
+    //    if (collision.transform.tag == "Player")
+    //    {
+    //        m_animator.SetBool("isAttacking", true);
+    //        EnemyMovement.currentSpeed = 0;
+    //        m_playerHealth.TakeDamage(1, collision.gameObject);
+    //        m_myUiManager.UpdateHealthStatus(collision.gameObject.GetComponent<PlayerData>().m_health, false);
+    //    }
+
+    //    else
+    //    {
+    //        m_animator.SetBool("isAttacking", false);
+    //    }
+    //}
 
     //public void Attack(Collider other)
     //{
