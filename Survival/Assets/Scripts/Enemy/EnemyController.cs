@@ -53,8 +53,8 @@ public class EnemyController : MonoBehaviour
             if (collision.transform.tag == "Player")
             {
 
-                m_animator.SetBool("isAttacking", true);
-                EnemyMovement.currentSpeed = 0;
+                //m_animator.SetBool("isAttacking", true);
+                //EnemyMovement.currentSpeed = 0;
 
                 //Debug.Log("inda mau kurang health si " + collision.gameObject);
 
