@@ -71,8 +71,8 @@ public class PowerUpsSystem : MonoBehaviour
     IEnumerator ActivatePotion ()
     {
         PlayerData.isPotionActivated = true;
-        yield return new WaitForSeconds(10f);
-        Debug.Log("FALSE");
+        yield return new WaitForSeconds(5f);
+
         PlayerData.isPotionActivated = false;
     }
 }

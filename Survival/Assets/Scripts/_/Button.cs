@@ -10,7 +10,7 @@ public class Button : MonoBehaviour {
     private Rotation m_rotation;
     private bool m_isRotated = false;
     private Animator m_animButton;
-
+    
     private void Start() 
     {
         m_animButton = GetComponent<Animator>();
@@ -23,6 +23,10 @@ public class Button : MonoBehaviour {
         {
             if (!m_isRotated)
             {
+                GameObject player = other.gameObject;
+
+                player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+
                 m_isRotated = true;
                 other.GetComponent<PlayerMovement>().ActivateRotatePlayer((int)m_rotation);
 

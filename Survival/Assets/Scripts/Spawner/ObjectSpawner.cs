@@ -99,25 +99,29 @@ public class ObjectSpawner : MonoBehaviour {
                 if(rn >= 5f)
                 {
                     //+10
-                    Instantiate(diamond, transform.position, Quaternion.identity);
+                    GameObject item = Instantiate(diamond, transform.position, Quaternion.identity);
+                    item.transform.parent = transform;
                 }
 
                 else if(rn > 2f)
                 {
                     //+30
-                    Instantiate(diamondSpecial, transform.position, Quaternion.identity);
+                    GameObject item = Instantiate(diamondSpecial, transform.position, Quaternion.identity);
+                    item.transform.parent = transform;
                 }
 
                 else if(rn > 0.5f)
                 {
                     //ayam
-                    Instantiate(drumstick, transform.position, Quaternion.identity);
+                    GameObject item = Instantiate(drumstick, transform.position, Quaternion.identity);
+                    item.transform.parent = transform;
                 }
 
                 else
                 {
                     //potion
-                    Instantiate(potion, transform.position, Quaternion.identity);
+                    GameObject item = Instantiate(potion, transform.position, Quaternion.identity);
+                    item.transform.parent = transform;
                 }
             }
 
