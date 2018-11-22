@@ -132,11 +132,27 @@ public class ObjectSpawner : MonoBehaviour {
         //for the enemy character 
         int i = Random.Range(startingIndex, lastIndex);
 
-        foreach (Transform child in transform) {
+        Vector3 position = transform.position;
 
-            GameObject enemy = Instantiate(enemyPrefab[i], transform.position, transform.rotation);
-            enemy.transform.parent = child;
+        if (i == 7) { // Skeleton
             // Debug.Log("Enemy: " + enemyPrefab[i].name);
+            position = new Vector3(transform.position.x, transform.position.y - 1.3f, transform.position.z);
+        } else if (i == 8) {
+            position = new Vector3(transform.position.x, transform.position.y - 0.14f, transform.position.z);
+
+        } else if (i == 9) { // Boar
+            position = new Vector3(transform.position.x, transform.position.y - 0.22f, transform.position.z);
+        } else if (i == 11) { // Alien 1
+            position = new Vector3(transform.position.x, transform.position.y - 0.78f, transform.position.z);
+        } else if (i == 13) {
+            position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+        }
+
+        foreach (Transform child in transform) {
+            
+            GameObject enemy = Instantiate(enemyPrefab[i], position, transform.rotation);
+            enemy.transform.parent = child;
+            
         }
 
     }
