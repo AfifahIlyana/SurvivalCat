@@ -24,8 +24,10 @@ public class Button : MonoBehaviour {
             if (!m_isRotated)
             {
                 GameObject player = other.gameObject;
+                PlayerController swishSound = player.GetComponent<PlayerController>();
 
                 player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+                swishSound.SwishSoundPlay();
 
                 m_isRotated = true;
                 other.GetComponent<PlayerMovement>().ActivateRotatePlayer((int)m_rotation);

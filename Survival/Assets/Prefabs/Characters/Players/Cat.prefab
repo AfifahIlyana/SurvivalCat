@@ -713,7 +713,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -972,6 +972,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 28adc4d11aee4c34a9d22bad0871cad7, type: 3}
   gameOverSound: {fileID: 8300000, guid: 0e05e11f68f6a0840b319a32d9adda14, type: 3}
   monkeyAttack: {fileID: 0}
+  swishSound: {fileID: 8300000, guid: e952768343c4d9f4ea5806b1d9b9dd7b, type: 3}
 --- !u!114 &114826087881360612
 MonoBehaviour:
   m_ObjectHideFlags: 1

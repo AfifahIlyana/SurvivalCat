@@ -27,7 +27,7 @@ public class UnlockCharacter : MonoBehaviour {
             dogLock.SetActive(false);
             dogUnlock.SetActive(true);
 
-            dogUnlock.SetActive(false);
+            monkeyLock.SetActive(false);
             monkeyUnlock.SetActive(true);
             
         }
