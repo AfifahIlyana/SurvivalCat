@@ -457,8 +457,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1402158213230264}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.86, y: 3.13, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4696280427855068}
@@ -856,7 +856,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -969,7 +969,7 @@ MonoBehaviour:
   bulletSpawn2: {fileID: 4231318582734918}
   bulletSpawn3: {fileID: 4444831991053336}
   catShootingSound: {fileID: 0}
-  dogShootingSound: {fileID: 0}
+  dogShootingSound: {fileID: 8300000, guid: 32abf019673db7447a94defb226486cd, type: 3}
   monkeyAttackSound: {fileID: 0}
 --- !u!114 &114165761656152320
 MonoBehaviour:
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.29870132
+  m_Length: 0.29870135
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4300595104220662}
   m_AttachedIK: {fileID: 0}
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheatMode: 0
+  lastPlatform: {fileID: 0}
 --- !u!114 &114474463966759662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1208,7 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.32735562
+  m_Length: 0.32735574
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4869621483100838}
   m_AttachedIK: {fileID: 0}
@@ -1318,6 +1319,11 @@ MonoBehaviour:
   inputController: 0
   m_jumpForce: 1400
   joystick: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: ac544cc828e845d4384b0e443629a56a, type: 3}
+  enemyDown: {fileID: 8300000, guid: 95948ec694dc0ef4d82f2f26a13aaf12, type: 3}
+  hitSound: {fileID: 8300000, guid: 28adc4d11aee4c34a9d22bad0871cad7, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 0e05e11f68f6a0840b319a32d9adda14, type: 3}
+  monkeyAttack: {fileID: 0}
 --- !u!114 &114808323173704018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1330,7 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.52489215
+  m_Length: 0.5248921
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4366082555798704}
   m_AttachedIK: {fileID: 0}

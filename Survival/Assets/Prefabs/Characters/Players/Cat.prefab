@@ -645,7 +645,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -950,7 +950,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4203037046360308}
   bulletSpawn2: {fileID: 0}
   bulletSpawn3: {fileID: 0}
-  catShootingSound: {fileID: 0}
+  catShootingSound: {fileID: 8300000, guid: 33703d8bccf50df4c89000d656ff1e74, type: 3}
   dogShootingSound: {fileID: 0}
   monkeyAttackSound: {fileID: 0}
 --- !u!114 &114664977929686186
@@ -967,6 +967,11 @@ MonoBehaviour:
   inputController: 0
   m_jumpForce: 1400
   joystick: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: ac544cc828e845d4384b0e443629a56a, type: 3}
+  enemyDown: {fileID: 8300000, guid: 95948ec694dc0ef4d82f2f26a13aaf12, type: 3}
+  hitSound: {fileID: 8300000, guid: 28adc4d11aee4c34a9d22bad0871cad7, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 0e05e11f68f6a0840b319a32d9adda14, type: 3}
+  monkeyAttack: {fileID: 0}
 --- !u!114 &114826087881360612
 MonoBehaviour:
   m_ObjectHideFlags: 1

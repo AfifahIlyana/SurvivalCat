@@ -19,6 +19,9 @@ public class EnemyHealth : MonoBehaviour {
             ScoreSystem score = GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreSystem>();
             Animator plusScore = GameObject.Find("+50").GetComponent<Animator>();
 
+            PlayerController audioDied = player.GetComponent<PlayerController>();
+            audioDied.EnemyDownSound();
+
             score.AddScore(50, player);
             plusScore.SetTrigger("AddScore");
 

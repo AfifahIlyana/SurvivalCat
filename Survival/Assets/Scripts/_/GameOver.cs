@@ -35,6 +35,9 @@ public class GameOver : MonoBehaviour {
 
     public void TriggerGameOver() {
 
+        PlayerController gameOverSound = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        gameOverSound.GameOverSoundPlay();
+
         Time.timeScale = 0;
         
         pauseButton.SetActive(false);

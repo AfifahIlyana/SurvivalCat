@@ -38,6 +38,12 @@ public class PlayerController : MonoBehaviour
 
     MyUIManager myUImanager;
 
+    public AudioClip jumpSound;
+    public AudioClip enemyDown;
+    public AudioClip hitSound;
+    public AudioClip gameOverSound;
+    public AudioClip monkeyAttack;
+
 	void Awake () 
     {
         m_animator = GetComponent<Animator>();
@@ -98,6 +104,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
+        AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
 
@@ -115,6 +122,7 @@ public class PlayerController : MonoBehaviour
 
     public void MonkeyAttacking()
     {
+        AudioSource.PlayClipAtPoint(monkeyAttack, transform.position);
         m_animator.SetTrigger("isAttacking");
         Invoke("Attack", 1f);
     }
@@ -124,4 +132,17 @@ public class PlayerController : MonoBehaviour
         Weapon.m_collider.enabled = true;
         AudioSource.PlayClipAtPoint(m_playerAttack.monkeyAttackSound, transform.position);
     }
+
+    public void EnemyDownSound() {
+        AudioSource.PlayClipAtPoint(enemyDown, transform.position);
+    }
+
+    public void HitSoundPlay() {
+        AudioSource.PlayClipAtPoint(hitSound, transform.position);
+    }
+
+    public void GameOverSoundPlay() {
+        AudioSource.PlayClipAtPoint(gameOverSound, transform.position);
+    }
+
 }

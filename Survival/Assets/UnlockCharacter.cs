@@ -19,16 +19,17 @@ public class UnlockCharacter : MonoBehaviour {
 
         Debug.Log(playableCharacter);
 
-        if (playableCharacter == 1 || playableCharacter == 2) {
+        if (playableCharacter == 1) {
             dogLock.SetActive(false);
             dogUnlock.SetActive(true);
-            
-            if (playableCharacter == 2) {
-                dogUnlock.SetActive(false);
-                monkeyUnlock.SetActive(true);
-                
-            }
 
+        } else if (playableCharacter == 2) {
+            dogLock.SetActive(false);
+            dogUnlock.SetActive(true);
+
+            dogUnlock.SetActive(false);
+            monkeyUnlock.SetActive(true);
+            
         }
     }
 

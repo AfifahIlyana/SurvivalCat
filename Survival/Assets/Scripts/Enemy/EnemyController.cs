@@ -61,6 +61,9 @@ public class EnemyController : MonoBehaviour
                 m_animator.SetBool("isAttacking", true);
                 EnemyMovement.currentSpeed = 0;
 
+                PlayerController hitSound = collision.gameObject.GetComponent<PlayerController>();
+                hitSound.HitSoundPlay();
+
                 m_playerHealth.TakeDamage(1, collision.gameObject);
                 m_myUiManager.UpdateHealthStatus(collision.gameObject.GetComponent<PlayerData>().m_health, false);
 

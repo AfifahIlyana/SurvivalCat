@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public AudioClip catShootingSound;
     public AudioClip dogShootingSound;
     public AudioClip monkeyAttackSound;
-
+    
     private void Start()
     {
         m_playerAnimator = GetComponent<Animator>();
@@ -52,7 +52,6 @@ public class PlayerAttack : MonoBehaviour
             //m_playerAnimator.SetBool("isShooting", false);
         }
     }
-
-
+    
 
 }
