@@ -22,6 +22,11 @@ public class AdManager : MonoBehaviour {
   //  private RewardBasedVideoAd rewardBasedVideoAd;
     private GameObject player;
 
+    public GameObject continueBtn;
+    public GameObject usualBtn;
+    public GameObject errorText_1;
+    public GameObject errorText_2;
+
     private void Awake() {
 #if UNITY_EDITOR
         gameID = "unused";
@@ -88,8 +93,8 @@ public class AdManager : MonoBehaviour {
         if (Advertisement.IsReady(zone)) {
             Advertisement.Show(zone, options);
         } else {
-            // handle error when theres not ad to show
-            // setActive the usual game over panel
+            NoAdsToShow();
+
         }
      } 
 
@@ -103,7 +108,7 @@ public class AdManager : MonoBehaviour {
         Debug.Log("Ad skipped. Son, I am dissapointed in you");
        break;
     case ShowResult.Failed:
-                ResetContinue();
+                ErrorShowingAd();
       break;
      }
      }
@@ -118,6 +123,18 @@ public class AdManager : MonoBehaviour {
 
          Time.timeScale = currentTimeScale;
      }
+
+    private void NoAdsToShow() {
+        continueBtn.SetActive(false);
+        usualBtn.SetActive(true);
+        errorText_1.SetActive(true);
+    }
+
+    private void ErrorShowingAd() {
+        continueBtn.SetActive(false);
+        usualBtn.SetActive(true);
+        errorText_2.SetActive(true);
+    }
 
     private void ResetContinue() {
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
