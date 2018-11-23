@@ -25,22 +25,22 @@ public class ObjectSpawner : MonoBehaviour {
     }
 
     private int CurrentBackground() {
-        if (transform.position.y < 800f)                                        // Cave
+        if (transform.position.y < 500f)                                        // Cave
             return 0;
 
-        else if (800f <= transform.position.y && transform.position.y < 1600f)  // Ocean
+        else if (500f <= transform.position.y && transform.position.y < 1400f)  // Ocean
             return 1;
 
-        else if (1600f <= transform.position.y && transform.position.y < 2400)  // Ground
+        else if (1400f <= transform.position.y && transform.position.y < 2300f)  // Ground
             return 2;
 
-        else if (2400 <= transform.position.y && transform.position.y < 3400)  // Forest
+        else if (2300f <= transform.position.y && transform.position.y < 3100f)  // Forest
             return 3;
 
-        else if (3400 <= transform.position.y && transform.position.y < 4900)  // Mountain
+        else if (3100f <= transform.position.y && transform.position.y < 4500f)  // Mountain
             return 4;
 
-        else if (4900 <= transform.position.y && transform.position.y < 8500f)  // Sky 
+        else if (4500f <= transform.position.y && transform.position.y < 8000f)  // Sky 
             return 5;
 
         else                                                                     // Space

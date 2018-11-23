@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerData : MonoBehaviour 
 {
@@ -13,4 +14,16 @@ public class PlayerData : MonoBehaviour
     public int m_attack;
     [HideInInspector]
     public int m_speed;
+
+    private void Update() {
+        if (isPotionActivated == true) {
+            StartCoroutine(DeActivatePotion());
+        }
+    }
+
+    IEnumerator DeActivatePotion() {
+        yield return new WaitForSeconds(10f);
+        PlayerData.isPotionActivated = false;
+    }
+
 }

@@ -19,11 +19,15 @@ public class PowerUpsSystem : MonoBehaviour
 
     private void Awake()
     {
-        m_audioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
+        
         m_scoreSystem = GameObject.Find("Gameplay Manager").GetComponent<ScoreSystem>();
         m_myUiManager = GameObject.Find("Canvas").GetComponent<MyUIManager>();
         m_plusScore_10 = GameObject.Find("+10").GetComponent<Animator>();
         m_plusScore_30 = GameObject.Find("+30").GetComponent<Animator>();
+    }
+
+    private void Start() {
+        m_audioSource = GameObject.FindWithTag("Player").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,7 +58,8 @@ public class PowerUpsSystem : MonoBehaviour
 
             if (m_type.ToLower() == "potion")
             {
-                StartCoroutine("ActivatePotion");
+                PlayerData.isPotionActivated = true;
+                
             }
 
             if (m_audioSource != null) {
@@ -68,11 +73,5 @@ public class PowerUpsSystem : MonoBehaviour
 
     }
 
-    IEnumerator ActivatePotion ()
-    {
-        PlayerData.isPotionActivated = true;
-        yield return new WaitForSeconds(5f);
-
-        PlayerData.isPotionActivated = false;
-    }
+    
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ScorePosition : MonoBehaviour {
 
-    private Rect plusScore;
+    private Transform plusScore;
 
     public void Start() {
-        plusScore = gameObject.GetComponent<Rect>();
+        plusScore = gameObject.GetComponent<Transform>();
     }
 
     public void ResetPosition() {

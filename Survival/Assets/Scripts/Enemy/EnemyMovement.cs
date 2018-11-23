@@ -28,13 +28,13 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (player.gameObject.tag == "Player")
         {
-            Debug.Log("e" + Vector3.Normalize(enemy.transform.localScale).x);
-            Debug.Log("p" + Vector3.Normalize(player.gameObject.transform.localScale).x);
-            Debug.Log("b" + (enemy.transform.localScale.x / enemy.transform.localScale.x == player.transform.localScale.x / player.transform.localScale.x));
+           // Debug.Log("e" + Vector3.Normalize(enemy.transform.localScale).x);
+           // Debug.Log("p" + Vector3.Normalize(player.gameObject.transform.localScale).x);
+           // Debug.Log("b" + (enemy.transform.localScale.x / enemy.transform.localScale.x == player.transform.localScale.x / player.transform.localScale.x));
 
             if (CheckPlayerEnemyDirection(enemy, player.gameObject))
             {
-                Debug.Log("in");
+               // Debug.Log("in");
                 ReverseDirection();
             }
         }

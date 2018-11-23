@@ -11,6 +11,8 @@ public class PlayerBehavior : MonoBehaviour {
 
     private GroundCheck groundCheck;
 
+    //public bool canMove = true;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,7 +31,9 @@ public class PlayerBehavior : MonoBehaviour {
 
     public void PlayerMovement(float horizontal)
     {
-        playerController.UpdateMoveValue(horizontal);
+
+      //  if (canMove == true)
+            playerController.UpdateMoveValue(horizontal);
        // Debug.Log("Horizontal:" + horizontal);
 
 

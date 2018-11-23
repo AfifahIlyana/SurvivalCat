@@ -10,7 +10,7 @@ public class GroundCheck : MonoBehaviour {
     private bool isGrounded = true;
     
     private void OnCollisionStay(Collision collision) {
-        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button") {
+        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button" || collision.gameObject.name == "Base" || collision.gameObject.tag == "Enemy") {
             isGrounded = true;
             lastPlatform = collision.gameObject;
 
@@ -19,7 +19,7 @@ public class GroundCheck : MonoBehaviour {
     }
 
     private void OnCollisionExit(Collision collision) {
-        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button")
+        if (collision.gameObject.name == "Ground" || collision.gameObject.name == "Button" || collision.gameObject.name == "Base" || collision.gameObject.tag == "Enemy")
 
             if (!cheatMode)
                 isGrounded = false;
