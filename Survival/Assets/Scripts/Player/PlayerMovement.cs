@@ -14,6 +14,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 m_firstFinger;
     private Vector3 m_lastFinger;
 
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            
+            ActivateRotatePlayer(0);
+        }
+    }
+
     public void Move(Rigidbody rigidBody, float move, Animator animator)
     {
         animator.SetFloat("speed", Mathf.Abs(move));

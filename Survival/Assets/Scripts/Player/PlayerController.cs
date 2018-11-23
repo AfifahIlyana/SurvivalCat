@@ -44,8 +44,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip gameOverSound;
     public AudioClip monkeyAttack;
     public AudioClip swishSound;
+  //  public AudioClip enemyhitSound;
 
-    private AudioSource m_audioSource;
+    private AudioSource[] m_audioSource;
 
 	void Awake () 
     {
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
         m_playerAttack = GetComponent<PlayerAttack>();
         m_playerHealth = GetComponent<PlayerHealth>();
 
-        m_audioSource = GetComponent<AudioSource>();
+        m_audioSource = GetComponents<AudioSource>();
 
     }
 
@@ -109,8 +110,8 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         //AudioSource.PlayClipAtPoint(jumpSound, transform.position);
-        m_audioSource.clip = jumpSound;
-        m_audioSource.Play();
+        m_audioSource[0].clip = jumpSound;
+        m_audioSource[0].Play();
 
         m_playerMovement.Jump(m_move, m_jumpForce, m_rigidBody);
     }
@@ -130,8 +131,8 @@ public class PlayerController : MonoBehaviour
     public void MonkeyAttacking()
     {
         //AudioSource.PlayClipAtPoint(monkeyAttack, transform.position);
-        m_audioSource.clip = monkeyAttack;
-        m_audioSource.Play();
+        m_audioSource[0].clip = monkeyAttack;
+        m_audioSource[0].Play();
 
         m_animator.SetTrigger("isAttacking");
         Invoke("Attack", 1f);
@@ -146,27 +147,32 @@ public class PlayerController : MonoBehaviour
 
     public void EnemyDownSound() {
         //AudioSource.PlayClipAtPoint(enemyDown, transform.position);
-        m_audioSource.clip = enemyDown;
-        m_audioSource.Play();
+        m_audioSource[1].clip = enemyDown;
+        m_audioSource[1].Play();
     }
 
     public void HitSoundPlay() {
         //AudioSource.PlayClipAtPoint(hitSound, transform.position);
-        m_audioSource.clip = hitSound;
-        m_audioSource.Play();
+        m_audioSource[2].clip = hitSound;
+        m_audioSource[2].Play();
     }
 
     public void GameOverSoundPlay() {
         //AudioSource.PlayClipAtPoint(gameOverSound, transform.position);
-        m_audioSource.clip = gameOverSound;
-        m_audioSource.Play();
+        m_audioSource[0].clip = gameOverSound;
+        m_audioSource[0].Play();
 
     }
 
     public void SwishSoundPlay() {
-        m_audioSource.clip = swishSound;
-        m_audioSource.Play();
+        m_audioSource[1].clip = swishSound;
+        m_audioSource[1].Play();
 
+    }
+
+    public void EnemyHitSound() {
+        m_audioSource[1].clip = hitSound;
+        m_audioSource[1].Play();
     }
 
 }

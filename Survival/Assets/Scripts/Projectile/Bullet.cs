@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour, IPooledObject {
         {
             if (enemy != null)
             {
+                
                 enemy.TakeDamage(damage);
             }
 

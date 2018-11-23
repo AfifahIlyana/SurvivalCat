@@ -35,11 +35,13 @@ public class GameOver : MonoBehaviour {
 
     public void TriggerGameOver() {
 
-        PlayerController gameOverSound = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        gameOverSound.GameOverSoundPlay();
+        PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player.GameOverSoundPlay();
 
         Time.timeScale = 0;
-        
+
+        player.UpdateMoveValue(0);
+
         pauseButton.SetActive(false);
         playerHealth.SetActive(false);
         score.SetActive(false);

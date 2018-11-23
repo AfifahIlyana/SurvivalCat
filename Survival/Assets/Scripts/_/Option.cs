@@ -5,6 +5,8 @@ using UnityEngine;
 public class Option : MonoBehaviour {
 
     public GameObject optionPanel;
+    public GameObject defaultPage;
+    public GameObject aboutPage;
 
     private bool isShown = false;
 
@@ -17,6 +19,8 @@ public class Option : MonoBehaviour {
         } else {
             isShown = false;
             optionPanel.SetActive(false);
+            defaultPage.SetActive(true);
+            aboutPage.SetActive(false);
         }
     }
 

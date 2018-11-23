@@ -22,10 +22,8 @@ public class Button : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            if (!m_isRotated)
-            {
+        if (other.gameObject.tag == "Player") {
+            if (!m_isRotated) {
                 GameObject player = other.gameObject;
                 PlayerController playerController = player.GetComponent<PlayerController>();
 
@@ -39,6 +37,9 @@ public class Button : MonoBehaviour {
                 //StartCoroutine(WaitStable());
 
             }
+
+        } else if (other.gameObject.tag == "Threshold") {
+            m_isRotated = false;
         }
     }
 
