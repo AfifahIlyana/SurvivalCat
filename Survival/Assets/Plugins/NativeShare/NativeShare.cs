@@ -1,9 +1,10 @@
 using UnityEngine;
+using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 
 #pragma warning disable 0414
-public class NativeShare
+public class NativeShare : MonoBehaviour
 {
 #if !UNITY_EDITOR && UNITY_ANDROID
 	private static AndroidJavaClass m_ajc = null;
@@ -111,17 +112,64 @@ public class NativeShare
 
 		return this;
 	}
+
+    //private string filepath;
+
+    private IEnumerator TakeSSAndShare() {
+        
+        yield return new WaitForEndOfFrame();
+
+        Texture2D ss = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        ss.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        ss.Apply();
+
+        string filepath = Path.Combine(Application.persistentDataPath, "shared img.png");
+        File.WriteAllBytes(filepath, ss.EncodeToPNG());
+        Debug.Log(filepath);
+        // To avoid memory leaks
+        Destroy(ss);
+        
+        new NativeShare().AddFile(filepath).SetSubject("Particle Jump!!").SetText("Jump Jump Shoot!\nCan you beat this score?").StartSharing();
+
+        //AddFile(filePath);
+        //SetSubject("Particle Jump!!");
+        //SetText("Jump Jump Shoot!");
+
+        // Share on WhatsApp only, if installed (Android only)
+        //if( NativeShare.TargetExists( "com.whatsapp" ) )
+        //	new NativeShare().AddFile( filePath ).SetText( "Hello world!" ).SetTarget( "com.whatsapp" ).Share();
+    }
     
-	public void Share()
+    public void Share()
 	{
-		if( files.Count == 0 && subject.Length == 0 && text.Length == 0 )
-		{
-			Debug.LogWarning( "Share Error: attempting to share nothing!" );
-			return;
-		}
+
+        StartCoroutine(TakeSSAndShare());
+        //StartCoroutine(WaitingSS());
+
+        
+	}
+
+    private void StartSharing() {
+        // AddFile(filepath);
+        //SetSubject("Particle Jump!!");
+        //SetText("Jump Jump Shoot!\nCan you beat this score?");
+
+        //Debug.Log("Coroutine Complete");
+
+      //  Debug.Log(files.Count);
+      //  Debug.Log(subject.Length);
+      //  Debug.Log(text.Length);
+
+        if (files.Count == 0 && subject.Length == 0 && text.Length == 0) {
+            Debug.LogWarning("Share Error: attempting to share nothing!");
+            Debug.Log("Attempting to share nothing");
+            return;
+        }
+
+        //Debug.Log("Passed here");
 
 #if UNITY_EDITOR
-		Debug.Log( "Shared!" );
+        Debug.Log("Shared!");
 #elif UNITY_ANDROID
 		AJC.CallStatic( "Share", Context, targetPackage, targetClass, files.ToArray(), mimes.ToArray(), subject, text, title );
 #elif UNITY_IOS
@@ -129,10 +177,10 @@ public class NativeShare
 #else
 		Debug.Log( "No sharing set up for this platform." );
 #endif
-	}
+    }
 
-	#region Utility Functions
-	public static bool TargetExists( string androidPackageName, string androidClassName = null )
+    #region Utility Functions
+    public static bool TargetExists( string androidPackageName, string androidClassName = null )
 	{
 #if !UNITY_EDITOR && UNITY_ANDROID
 		if( string.IsNullOrEmpty( androidPackageName ) )

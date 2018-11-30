@@ -80,6 +80,9 @@ public class PlayerController : MonoBehaviour
                 m_playerMovement.Move(m_rigidBody, m_move, m_animator);
                 m_playerMovement.JumpKeyboard(m_move, m_jumpForce, m_rigidBody);
                 m_playerAttack.ShootForDogKeyboard();
+                if (Input.GetKeyDown("g")) {
+                    MonkeyAttacking();
+                }
                 break;
                  
             case Type.joystick:
